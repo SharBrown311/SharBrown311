@@ -11,12 +11,12 @@ document.getElementById('square').addEventListener('mousedown' , function(){
     console.log(square.style.backgroundColor = "red");
 })
 //when mouse button is let go
-document.getElementById('square').addEventListener('mouseup' , function(){
+document.getElementById('square').addEventListener('mouseup' , function (){
     console.log(square.style.backgroundColor = "yellow");
 })
 //mouse button is double clicked
-document.getElementById('square').addEventListener('dblclick' , function(){
-    console.log(square.style.backgroundColor = "green");
+document.getElementById('square').addEventListener( 'dblclick' , function (){
+    console.log (square.style.backgroundColor = "green");
 })
 
 // document.getElementById('square').addEventListener ('onwheel' , function(){
@@ -33,19 +33,15 @@ window.addEventListener("wheel", function (event){
 //     document.getElementById("square").style.backgroundColor = "red";
 //   }
 document.addEventListener("keydown", function(event){
-    if(event.key == 'b'){
+    if (event.key == 'b'){
         square.style.backgroundColor = "blue"  
-    }else if
-    (event.key == 'g'){
+    }else if (event.key == 'g'){
         square.style.backgroundColor = 'green'
-    }else if
-    (event.key == 'y'){
+    }else if (event.key == 'y'){
         square.style.backgroundColor = 'yellow'
-    }else if
-    (event.key == 'o'){
+    }else if (event.key == 'o'){
         square.style.backgroundColor = 'orange'
-    }else if
-    (event.key == 'r'){
+    }else if (event.key == 'r'){
         square.style.backgroundColor = 'red'
     }
 }
