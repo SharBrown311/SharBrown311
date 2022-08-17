@@ -1,13 +1,13 @@
-.header {
+.header , h1 , h2 {
     display: flex;
     align-items: center;
     flex-direction: column;
+    right: 10px;
 }
 
-h4 {
-    color: rgb(219, 128, 49);
-    display: inline-flex;
-}
+/* span{
+    color: peachpuff;/*doesn't work*/
+/* } */
 
 .messages {
     display: flex;
@@ -26,12 +26,16 @@ h4 {
     padding: 5px;
 }
 
-.right {
+.messageRight {
     align-self: flex-end;
     background-color: lightblue;
 }
 
-.left {
+.messageLeft {
     align-self: flex-start;
     background-color: burlywood;
+}
+
+.headers{
+    text-align: center;
 }
