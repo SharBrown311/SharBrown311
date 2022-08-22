@@ -40,8 +40,8 @@ var brownBlue = true;
 var redBlack = false;
 var greenGold = false;
 var yellowOrange = false;
-var select = document.getElementById('themeDropDown')
-     themeDropDown.addEventListener('click' , function(e){
+var themeDropDown = document.getElementById('themeDropDown')
+     themeDropDown.addEventListener('click' , (event) => {
             var messageContainer = document.querySelector('#main')
             var messages = document.querySelectorAll('.messages')
             var messageRight = document.querySelectorAll('.messageRight')

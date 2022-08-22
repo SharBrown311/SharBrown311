@@ -12,7 +12,7 @@
 
     </header>
     <label>Themes</label>
-    <select id = "themeDropDown" onclick = "changeColor(e)">
+    <select id = "themeDropDown" onclick = "changeColor(MouseEvent , init)">
         <option  class ="listItems" onclick = "changeColor(e)";  
         style = "background-color: saddlebrown;color: lightblue" 
         value = "themeOne">Brown & Blue</option>
@@ -26,7 +26,7 @@
          Green & Gold</option>
         <option  class = "listItems" onclick = "changeColor(e)"; 
         value = 'themeFour';
-        style = "background-color: orangered; color: rgb(252, 252, 5); ">Orange & Yellow</option>
+        style = "background-color: orangered; color: rgb(252, 252, 5)">Orange & Yellow</option>
     }
     </select>
     <div id ="main">

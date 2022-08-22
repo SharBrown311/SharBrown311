@@ -28,12 +28,12 @@
 
 .messageRight {
     align-self: flex-end;
-    background-color: lightblue;
+    
 }
 
 .messageLeft {
     align-self: flex-start;
-    background-color: burlywood;
+
 }
 
 .headers{
