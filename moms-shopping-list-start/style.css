@@ -1,5 +1,8 @@
-.title {
+.titleLgHeader {
     text-align: center;
+    font-family: 'Fira Sans, sans serif';
+    background-color: linear-gradient(rgb(209, 14, 47) , rgb(21, 100, 170), rgb(26, 207, 26));
+
 }
 
 .main {
@@ -8,8 +11,12 @@
     margin: auto;
 }
 
-#add-item {
+#submitItem {
     border: 1px solid black;
+    text-align: center;
+    width: 80px;
+    position: relative;
+    left: 45%;
 }
 
 .input {
@@ -39,4 +46,9 @@
 #list div {
     margin-bottom: 10px;
     text-align: center;
+}
+
+.deleteItem{
+    width : 30px;
+    height: 40px  ;
 }
