@@ -49,16 +49,29 @@ var addItem = function () {
     li.appendChild(buttonDelete)
     li.appendChild(buttonEdit)
 }
-// //remove list item
 
+// edit value of input and be able to save afterwards
+// var editItem = document.querySelector('editItem').addEventListener('click' , update)
 
+// var update = function(){
+//     var txtValu = document.getElementById('txtValu')
+//     var listItem = document.getElementById (txtValu.value)
+//     form.addEventListener("submit",(e)=>{
+//         e.preventDefault()
+//         addItem()
+//     })//form element
 
-//     //edit value of input and be able to save afterwards
-// // var editItem = document.querySelector('editItem').addEventListener('click' , update)
+// }
 
-// // var update = function(){
-// //     var txtValu = document.getElementById('txtValu')
-// //     var listItem = document.getElementById (txtValu.value)
+var button = document.createElement('button')
+button.className = "buttonEdit"
+var buttonEdit  = document.getElementById('buttonEdit')
+buttonEdit.addEventListener('click' , update )
+console.log('button clicked');
 
-// // }
-
+function update(){
+var input = document.getElementById['txtValu'];
+console.log(input.value);
+txtValu.setAttribute('value','newValue');
+console.log(txtValu.value);
+}
