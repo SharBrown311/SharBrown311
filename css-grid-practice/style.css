@@ -1,0 +1,78 @@
+.containerOne{
+    height: 100%;
+    grid-gap: 13px;
+    display: grid;
+    grid-template-rows: 50px 50px 50px;
+    grid-template-areas: "u u u u u u d d d d d d"
+                         "t t t q q q q q q q q q"
+                         "c c c c c c c c c c c c" ;
+    
+   
+
+}
+
+#uno{
+    background-color: red;
+    grid-area: u;
+    border-radius: 5px;
+
+}
+#dos{
+background-color: blue;
+grid-area: d;
+border-radius: 5px;
+}
+#tres{
+background-color: green;
+grid-area: t;
+border-radius: 5px;
+}
+#quatro{
+grid-area: q;
+background-color: purple;
+border-radius: 5px;
+}
+#cinco{
+border-radius: 5px;    
+background-color: yellow;
+grid-area: c;
+}
+
+
+.containerTwo{
+    height: 100%;
+    grid-gap: 13px;
+    display: grid;
+    grid-template-columns:  70px 40px 40px;
+    grid-template-rows: 100px 100px 200px;
+    grid-template-areas: "o o o o o o o o o o o o "
+                         "t t t t h h h h h h h h "
+                         "t t t t f f f f i i i i"
+                        }
+
+
+#one{
+    grid-area: o;
+    background-color: red;
+    border-radius: 5px;
+}
+#two{
+    grid-area: t;
+    background-color: blue;
+    border-radius: 5px;    
+}
+#three{
+    grid-area: h;
+    background-color: green;
+    border-radius: 5px;
+}
+#four{
+    grid-area: f;
+    background-color: purple;
+    border-radius: 5px;
+}
+#five{
+    grid-area: i;
+    background-color: purple;
+    border-radius: 5px;
+}

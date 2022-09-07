@@ -18,11 +18,7 @@ document.getElementById('square').addEventListener('mouseup' , function (){
 document.getElementById('square').addEventListener( 'dblclick' , function (){
     console.log (square.style.backgroundColor = "green");
 })
-
-// document.getElementById('square').addEventListener ('onwheel' , function(){
-//     console.log(square.style.backgroundColor = "orange");
-// })
-
+//mouse wheel is spun
 window.addEventListener("wheel", function (event){
     square.style.backgroundColor = "orange"
 })
@@ -34,15 +30,17 @@ window.addEventListener("wheel", function (event){
 //   }
 document.addEventListener("keydown", function(event){
     if (event.key == 'b'){
-        square.style.backgroundColor = "blue"  
+        square.style.backgroundColor = "blue" //blue 
     }else if (event.key == 'g'){
-        square.style.backgroundColor = 'green'
+        square.style.backgroundColor = 'green'//green
     }else if (event.key == 'y'){
-        square.style.backgroundColor = 'yellow'
+        square.style.backgroundColor = 'yellow'//yellow
     }else if (event.key == 'o'){
-        square.style.backgroundColor = 'orange'
+        square.style.backgroundColor = 'orange'//orange
     }else if (event.key == 'r'){
-        square.style.backgroundColor = 'red'
+        square.style.backgroundColor = 'red'//red
+    }else if (event.key =='w'){
+        
     }
 }
 )
