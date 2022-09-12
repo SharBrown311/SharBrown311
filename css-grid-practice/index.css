@@ -1,0 +1,107 @@
+body{
+    margin: 40px;
+    display: grid;
+    justify-content: center;
+}
+h1{
+    text-align: center;
+}
+.wrapper{
+    height: 35%;
+    grid-gap: 13px;
+    display: grid;
+    grid-template-rows: 100px 100px 200px;
+    
+}
+.header{
+    font-weight: bolder;
+    border: solid black 2px;
+    border-radius: 10px;
+    grid-area: header;
+    background-color: rgba(211, 211, 211, 0.785);
+    color: whitesmoke
+}
+.sidebar{
+    font-weight: bolder;
+    border: solid black 2px;
+    border-radius: 10px;
+    grid-area: sidebar;
+    color: whitesmoke;
+    background-color: #383838 ;
+}
+.content{
+    font-weight: bolder;
+    border: solid black 2px;
+    border-radius: 10px;
+    height: auto;
+    grid-area: content;
+    color: whitesmoke;
+    background-color: #383838;
+    display: grid;
+}   
+.sidebar2{
+    font-weight: bolder;
+    border: solid black 2px;
+    border-radius: 10px;
+    height: 95px;
+    grid-area: sidebar2;
+    background-color: lightgrey;
+    color: black;
+    display: grid;
+  
+}
+.footer{
+    font-weight: bolder;
+    border: solid black 2px;
+    border-radius: 10px;
+    height: 95px;
+    grid-area: footer;
+    background-color: gray;
+    color: whitesmoke;
+    position: relative;
+    margin-top: 50px;
+}
+.wrapper{
+    color: darkgray;
+    background-color: white;
+}
+    /*cell phones/smartphones/default */
+    @media (min-width: 639px){
+    .wrapper{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas: "header"
+                        "sidebar"
+                        "content"
+                        "sidebar2"
+                        " footer";
+    max-width: 639px;
+    }
+}
+@media only screen and (min-width: 640px) {
+    /*tablets/ipads */
+.wrapper{
+    grid-gap: 15px;
+    grid-template-columns: 20% auto;
+    grid-template-areas: "header header"
+                         "sidebar content"
+                         "sidebar2 sidebar2"
+                         "footer footer";  
+                         max-width: 1006px;
+        }
+  }
+  
+  @media only screen and (min-width: 1007px)   {
+  /* laptops/desktops */
+    .wrapper {
+      grid-gap: 20px;
+      grid-template-columns: 120px auto 120px;
+      grid-template-areas:
+      "header  header  header"
+      "sidebar content sidebar2"
+      "footer  footer  footer";
+    }
+  }
+  .box{
+    background-color: darkgrey
+  }
