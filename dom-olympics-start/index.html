@@ -12,22 +12,12 @@
 
     </header>
     <label>Themes</label>
-    <select id = "themeDropDown" onclick = "changeColor(MouseEvent , init)">
-        <option  class ="listItems" onclick = "changeColor(e)";  
-        style = "background-color: saddlebrown;color: lightblue" 
-        value = "themeOne">Brown & Blue</option>
-        <option class = "listItems" onclick = "changeColor(e)";
-         value = "themeTwo"
-        style = "background-color:red; color:slategrey">
-        Red & Black</option>
-        <option  class = "listItems" onclick ="changeColor(e)";
-         value = "themeThree";
-         style = "background-color: rgb(127, 225, 127); color: rgb(204, 151, 15)">
-         Green & Gold</option>
-        <option  class = "listItems" onclick = "changeColor(e)"; 
-        value = 'themeFour';
-        style = "background-color: orangered; color: rgb(252, 252, 5)">Orange & Yellow</option>
-    }
+    <select name = 'themeDropDown'; id = 'themeDropDown'>
+        <option value = 'default'>Default</option>
+        <option  value = 'themeOne'>Brown & Blue</option>
+        <option value = 'themeTwo'>Red & Black</option>
+        <option  value = 'themeThree'>Green & Gold</option>
+        <option  value = 'themeFour'>Orange & Yellow</option>
     </select>
     <div id ="main">
         <button id = 'clear-button'>clear</button>
@@ -45,12 +35,11 @@
                 I'm just a simple farmer
             </div>
         </div>
-        <form name = 'newMessage' id="newMessage">
-            <input id ="input" value = "Ok then, catch ya later!"/>
-            <button id="sendButton">Send</button>
+        <form name = 'message'>
+            <input id ="input" value = "Thanks! GoodBye"/>
+            <button>Send</button>
         </form>
     </div>
-   
     <script src = "index.js"></script>
 </body>
 </html>

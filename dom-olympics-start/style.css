@@ -1,13 +1,18 @@
-.header , h1 , h2 {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    right: 10px;
+.header , 
+h1 {
+    position: relative;
+    text-align: center;
+    left: 70px;
 }
-
-/* span{
-    color: peachpuff;/*doesn't work*/
-/* } */
+h2{
+    text-align: center;
+    right: 20px;
+    padding-bottom: 25px;
+}
+.name{
+    color: peachpuff;
+    text-align: center;
+}
 
 .messages {
     display: flex;
@@ -26,16 +31,35 @@
     padding: 5px;
 }
 
-.messageRight {
+.messagesRight {
     align-self: flex-end;
+    background-color: aquamarine;
     
 }
 
-.messageLeft {
+.messagesLeft {
     align-self: flex-start;
+    background-color: coral;
 
 }
+#default {
+    background-color: black;
+    color: white;
+}
+themeOne {
+    background-color: saddlebrown;
+    color: lightblue;
 
-.headers{
-    text-align: center;
+}
+#themeTwo{
+    background-color:red; 
+    color:slategrey
+}
+#themeThree{
+    background-color: rgb(127, 225, 127); 
+    color: rgb(204, 151, 15)
+}
+#themeFour{
+ background-color: orangered; 
+ color: rgb(252, 252, 5)
 }

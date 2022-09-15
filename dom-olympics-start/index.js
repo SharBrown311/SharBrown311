@@ -1,21 +1,19 @@
 var h1 = document.createElement("h1");
       var spanName = document.createElement('span')
-        // spanName.setAttribute ('class', 'spanName');//doesn't work
+    
         var h2 = document.createElement('h2');
 
 
 var header = document.getElementById("header")
     header.appendChild(h1).textContent = "JavaScript made this!!"
-    header.appendChild(h2).textContent = ' made the JavaScript'
-    h2.prepend(span = 'Sharon')
+    h2.innerHTML = `<span class = "name">Sharon Brown</span> made the JavaScript`
+    header.appendChild(h2)
     
     
                 h1.style.display = "inline-flex";
                 h1.style.position = "relative";
                 h1.style.paddingLeft = "34%";
-                // h2.spanName.style.color = "orange"//-doesn't work
-
-
+                
 //array of messages to replace with  new text content 
     const messages = document.getElementsByClassName('messages')[0].children;
     messages[0].textContent = 'My wife accused me of being immature today';
@@ -25,9 +23,10 @@ var header = document.getElementById("header")
 
 //button to clear out contents of messages - after hitting
 //send all content reappears
+//BRONZE
 var clearButton = document.getElementById('clear-button')
 
-clearButton.addEventListener('click', (event) => {
+clearButton.addEventListener('click', (e) =>{
         clearContent();
     })
     function clearContent(){
@@ -36,55 +35,99 @@ clearButton.addEventListener('click', (event) => {
      messages[2].textContent = "";
      messages[3].textContent = "";
     }
-var brownBlue = true;
-var redBlack = false;
-var greenGold = false;
-var yellowOrange = false;
-var themeDropDown = document.getElementById('themeDropDown')
-     themeDropDown.addEventListener('click' , (event) => {
-            var messageContainer = document.querySelector('#main')
-            var messages = document.querySelectorAll('.messages')
-            var messageRight = document.querySelectorAll('.messageRight')
-            var messageLeft = document.querySelectorAll('.messageLeft')
-                // const listItems = 
-                // [listItems[0].messages.style.backgroundColor = 'brown',
-                //  listItems[1].messages.style.backgroundColor = 'red',
-                //  listItems[2].messages.style.backgroundColor = 'gold',
-                //  listItems[3].messages.style.backgroundColor = 'orange'
-                // ]
-            if (brownBlue = true) {
-                messageRight.style.backgroundColor = 'brown'
-                messageLeft.style.backgroundColor = 'blue'
-                brownBlue = true;
-                redBlack = false;
-                greenGold = false;
-                yellowOrange = false;
-            }else if(redBlack = true) {
-                messageRight.style.backgroundColor = 'black'
-                messageRight.style.color = 'white'
-                messageLeft.style.backgroundColor = 'red'
-                brownBlue = false;
-                redBlack = true;
-                greenGold = false;
-                yellowOrange = false; 
-            }else if(greenGold = true){
-                messageRight.style.backgroundColor = 'green'
-                messageLeft.style.backgroundColor = 'gold'
-                brownBlue = false;
-                redBlack = false;
-                greenGold = true;
-                yellowOrange = false;
-            }else if(yellowOrange = true){
-                messageRight.style.backgroundColor = 'yellow'
-                messageLeft.style.backgroundColor = 'orange'
-                brownBlue = false;
-                redBlack = false;
-                greenGold = false;
-                yellowOrange = true;
+    //change color of divs on selected option
+    //SILVER
+    const dropdown = document.getElementById('themeDropDown')
+    dropdown.addEventListener('change', activateToggle)
+    function activateToggle(){
+        let theme =  themeDropDown.value;
+        if(theme === "themeOne"){
+            let messagesLeft = document.getElementsByClassName('messagesLeft')
+            for(let i = 0; i < messagesLeft.length; i ++){
+                messagesLeft[i].style.backgroundColor = 'brown';
             }
-    })
+            let messagesRight = document.getElementsByClassName('messagesRight')
+            for(let i = 0; i < messagesRight.length; i ++){
+                messagesRight[i].style.backgroundColor = 'blue'
+            }
+        }else if(theme === "themeTwo"){
+            let messagesLeft = document.getElementsByClassName('messagesLeft')
+            for(let i = 0; i < messagesLeft.length; i ++){
+                messagesLeft[i].style.backgroundColor = 'red';
+            }
+            let messagesRight = document.getElementsByClassName('messagesRight')
+            for(let i = 0; i < messagesRight.length; i ++){
+                messagesRight[i].style.backgroundColor = 'black'
+                messagesRight[i].style.color = 'white';
+            }
+        }else if(theme === 'themeThree'){
+            let messagesLeft = document.getElementsByClassName('messagesLeft')
+            for(let i = 0; i < messagesLeft.length; i ++){
+                messagesLeft[i].style.backgroundColor = 'green';
+            }
+            let messagesRight = document.getElementsByClassName('messagesRight')
+            for(let i = 0; i < messagesRight.length; i ++){
+                messagesRight[i].style.backgroundColor = 'gold'
+            }
+        }else if(theme === 'themeFour'){
+            let messagesLeft = document.getElementsByClassName('messagesLeft')
+            for(let i = 0; i < messagesLeft.length; i ++){
+                messagesLeft[i].style.backgroundColor = 'orange';
+            }
+            let messagesRight = document.getElementsByClassName('messagesRight')
+            for(let i = 0; i < messagesRight.length; i ++){
+                messagesRight[i].style.backgroundColor = 'yellow'
+            }
+        }else if(theme === 'default'){
+            let messagesLeft = document.getElementsByClassName('messagesLeft')
+            for(let i = 0; i < messagesLeft.length; i ++){
+                messagesLeft[i].style.backgroundColor = 'aquamarine';
+            }
+            let messagesRight = document.getElementsByClassName('messagesRight')
+            for(let i = 0; i < messagesRight.length; i ++){
+                messagesRight[i].style.backgroundColor = 'coral'
+            }
+        }
+    
+    }
+
+    // //Gold 
+    // const button = document.message.querySelector('button')
+    // button.addEventListener('click' , newMessage)
+    // function newMessage(e){
+    //     e.preventDefault()
+    //     let newMessageBlock = document.createElement('div')
+    //         newMessageBlock.textContent = e.target.parentNode.input.value
+    //         if(messages.lastElementChild.className === 'messagesRight'){
+    //             newMessageBlock.className = 'messagesLeft'
+    //         }else{
+    //             newMessageBlock.className = 'messagesRight'
+    //         }
+    //         if(messages.childElementCount >= 8){
+    //             while(messages.childElementCount >= 8){
+    //                 messages.removeChild(messages.firstChild)
+    //             }
+    //         }
+    //         messages.appendChild(newMessageBlock)
+    //         activateToggle()
+    //         e.target.parentNode.input.value = '';
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
    
 
 
-//
+

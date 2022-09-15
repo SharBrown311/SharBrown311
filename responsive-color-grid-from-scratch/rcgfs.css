@@ -1,0 +1,102 @@
+.heading{
+    text-align: center;
+    background-color: mediumpurple;
+    color: antiquewhite;
+}
+.container{
+    width: 100%x;
+    border: solid white 1px;
+    display: grid;
+    grid-template-areas: "o o o o o o o o o o o o"
+                         "t t t h h h f f f i i i"
+                         "s s s s s s v v v v v v"
+                         "e e e e e e e e n n n n";
+    gap: 5px;
+
+   }
+
+#box1{
+    border: solid #f5C6D6 1px;
+    background-color: #f5C6D6;
+    height: 50px;
+    grid-area: o;
+    width: 100%;
+}
+#box2{
+    border: solid #ee2e84 1px;
+    background-color: #ee2e84;
+    height: 50px;
+    grid-area: t;
+    width: 100%;
+}
+
+#box3{
+    border: solid #ee2e84 1px;
+    background-color: #ee2e84;
+    height: 50px;
+    grid-area: h;
+    width: 100%;
+}
+
+#box4{
+    border: solid #ee2e84 1px;
+    background-color: #ee2e84;
+    height: 50px;
+    grid-area: f;
+    width: 100%;
+}
+
+#box5{
+    border: solid #ee2e84 1px;
+    background-color: #ee2e84;
+    height: 50px;
+    grid-area: i;
+    width: 100%;
+}
+
+#box6{
+    border: solid #85cfd8 1px;
+    background-color: #85cfd8; 
+    height: 50px;
+    grid-area: s;
+    width: 100%;
+}
+#box7{
+    border: solid #85cfd8 1px;
+    background-color: #85cfd8;
+    height: 50px;
+    grid-area: v;
+    width: 100%;
+}
+
+#box8{
+    border: solid #8dc63f 1px;
+    background-color: #8dc63f;
+    height: 50px;
+    grid-area: e;
+    width: 100%;
+}
+
+#box9{
+    border: solid #e76e34 1px;
+    background-color: #e76e34;
+    height: 50px;
+    grid-area: n;
+    width: 100%;
+}
+
+
+@media (min-width: 481px) and (max-width: 768px) { 
+    .container{
+    grid-template-areas: 'o o o o o o o o o o o o '
+                          't t t t t t t t t t t t'
+                          'h h h h h h h h h h h h'
+                          'f f f f f f f f f f f f'
+                          'i i i i i i i i i i i i'
+                          's s s s s s s s s s s s'
+                          'v v v v v v v v v v v v'
+                          'e e e e e e e e e e e e'
+                          'n n n n n n n n n n n n';
+                          max-width: 768px;
+}
+}

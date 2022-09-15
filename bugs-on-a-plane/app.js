@@ -1,47 +1,48 @@
-var form = document.querySelector("form");
-var buttonSubmit = document.getElementById("buttonSubmit"); 
-form.addEventListener('submit', (e)=>{
-    e.preventDefault()
-    console.log('clicked')
+const form = document.getElementById("airlineForm");
+const buttonSubmit = document.getElementById("buttonSubmit");
+console.log(airlineForm)
+airlineForm.addEventListener('submit', (event) => {
+  event.preventDefault()
+  console.log('clicked')
 })
-form.formAlert = (e)=> {
-    e.preventDefault()
-    console.log("we clicked on " + e.target.id);
-  var firstName = form.elements["firstName"].value;
-  console.log(firstName.value)
-  console.log(firstName.value)
-  var lastName = form.elements["lastName"].value;
-  var age = form.elements["age"].value;
-  var gender = form.elements["gender"].value;
-  var location = form.elements["travel-location"].value;
-  console.log(location)
+function formAlert (event){
+  event.preventDefault()
+  let firstName = form.elements.firstName.value;
+     firstName.value = ''
+    // console.log(firstName.value)
+  let lastName = form.elements.lastName.value;
+  let age = form.elements.age.value;
+  let gender = form.elements.gender.value;
+  let travelLocation = form.elements.travelLocation.value;
+  console.log(travelLocation)
   var diet = ['vegan', 'gluten', 'paleo'];
-  if (form.elements["vegan"].checked) {
-    diet.push(document.getElementById("vegan").value);
+  if (form.elements.diet[0].checked) {
+    diet.push(document.querySelector("vegan").value);
   }
-  if (form.elements["gluten"].checked) {
-    diet.push(document.getElementById("gluten").value);
+  else if (form.elements.diet[1].checked) {
+    diet.push(document.querySelector("gluten").value);
   }
-  if (form.elements["paleo"].checked) {
-    diet.push(document.getElementById("paleo").value);
+  else if (form.elements.diet[2].checked) {
+    diet.push(document.querySelector("paleo").value);
   }
-console.log(form.value)
+  console.log(form.elements.value)
   alert(
     "First Name: " +
-      firstName +
-      " Last Name: " +
-      lastName +
-      " Age: " +
-      age +
-      " Gender: " +
-      gender +
-      " Travel Location: " +
-      location +
-      " Diet: " +
-      diet +
-      " Awesome, now if you die, it won't be an accident.."
+    firstName +
+    " Last Name: " +
+    lastName +
+    " Age: " +
+    age +
+    " Gender: " +
+    gender +
+    " Travel Location: " +
+    travelLocation +
+    " Diet: " +
+    diet +
+    " Awesome, now if you die, it won't be an accident.."
+    
   );
-  
+
 }
 
 

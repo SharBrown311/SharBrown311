@@ -31,7 +31,7 @@ var addItem = function () {
 
     var buttonDelete = document.createElement('button')
     buttonDelete.addEventListener('click' , deleteItem)
-
+    
     // named function definition
     function deleteItem(e){
         console.log("delete was called")
@@ -39,7 +39,10 @@ var addItem = function () {
     }
     var buttonEdit = document.createElement('button')
     buttonDelete.innerHTML = "X"
+    buttonEdit.setAttribute('id', 'editItem')
+  
     buttonEdit.innerHTML = 'Edit'
+    onclick.buttonEdit.innerHTML 
     buttonDelete.style.height= '30px'
         buttonDelete.style.width = '43.09px'
         buttonDelete.style.backgroundColor = 'red'
@@ -48,9 +51,12 @@ var addItem = function () {
         buttonEdit.style.backgroundColor = 'blue'
     li.appendChild(buttonDelete)
     li.appendChild(buttonEdit)
-}
+    buttonEdit.addEventListener('click' , editItem)   
+     buttonEdit.onclick = makeAreaEditable;
+    var makeAreaEditable = function(){
 
-// edit value of input and be able to save afterwards
- var editItem = document.querySelector('editItem').addEventListener('click' , function(){
-    editItem = 
- )}
+                var textareaEdit = document.createElement('textarea');
+                textareaEdit.onclick = myFunction;
+                textareaEdit.customProperty = li.value;
+}
+}
