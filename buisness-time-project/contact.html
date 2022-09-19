@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link id="u-page-google-font" rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Lana, serif;
+        }
+
+        input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            background-color: bisque;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit] {
+            background-color: #45a049;
+
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .header-image {
+            height: 300px;
+            position: relative;
+            background-image: url("https://i.redd.it/u0ec2lyq16551.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            background-size: cover;
+        }
+
+        #the {
+            text-shadow: #c0c0c0;
+        }
+
+        #realm {
+
+            position: relative;
+            margin-top: 25%;
+            text-shadow: 4px 4px 4px #c0c0c0;
+
+        }
+
+        .header {
+            padding: 30px;
+            text-align: center;
+            background-image: linear-gradient(135deg, #1c6080 10%, #252429 100%);
+            font-family: 'Ms Madi', cursive;
+            font-weight: bold;
+            font-size: 52px;
+            text-shadow: 4px 4px 4px #c0c0c0;
+        }
+
+        ul {
+            font-size: large;
+            font-weight: bold;
+        }
+
+        .list_box {
+            border: solid 1px #1c6080;
+        }
+    </style>
+    <title>The Realm - Contact Us</title>
+</head>
+<header>
+    <div class="padding-x-md padding-y-xl flex flex-center">
+
+        <div class="text-center">
+            <div class="margin-bottom-xs">
+                <a href="title.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <div class="header">
+                    <div class='header-image'>
+                        <h2><span id='the'>The</span><span id='realm'> <br>Realm</span></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+</header>
+
+<body>
+
+    <h2><strong><em>Important: please read!</em></strong></h2>
+    <ul id='important'> -Before you submit a form to get in touch with us please have all this information available.-
+    </ul>
+    <div class='list_box'>
+        <li>Time and Date</li>
+        <li>Reason for Event</li>
+        <li>Theme Desired</li>
+        <li>How much space is available.</li>
+        <li>Estimated number of guests</li>
+        <li>Dates available for walkthrough of space. / The best time to reach you.</li>
+    </div>
+
+    <h3 style='text-align: center;'>Contact Form</h3>
+    <div class='container'>
+        <form action='/action_page.php'>
+            <label for="fName">First Name</label>
+
+            <input type="text" id='fName' name='firstname' placeholder="First Name">
+
+            <label for="lName">Last Name</label>
+            <input type="text" id='lName' name='lastname' placeholder="Last Name">
+
+            <label for ='email'>E-mail</label><br>
+            <input type="email" id = 'email' name="email" placeholder="email"><br><br>
+
+            <label for="pNumber">Phone Number</label><br>
+            <input type="number" id='pNumber' name='phone' placeholder="Phone Number">
+            <br>
+            <br>
+            <label for="address">Address</label>
+            <input type="text" id='address' name='address' placeholder='Address'>
+
+            <label for="request">Request/Question</label><br>
+            <textarea name="request" id="request" placeholder="Please be as descriptive as possible."></textarea>
+                <button type="submit" disabled>Submit Form</button>
+            <p>Please be aware it can take up to 48 hours to receive a response from one of our event planners.</p>
+
+        </form>
+    </div>
+    <div id = 'footer'>
+        <div class="wrapper"; style="border: solid 1px black; background-color: black; color: aliceblue;">
+            <ul>
+                <li>The Realm</li>
+                <li>Address: Building No. 1, ABC avenue, 122-31</li>
+                <li>Call Today: +91 8675309</li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

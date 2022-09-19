@@ -110,17 +110,70 @@ clearButton.addEventListener('click', (e) =>{
     //         }
     //         messages.appendChild(newMessageBlock)
     //         activateToggle()
-    //         e.target.parentNode.input.value = '';
-    // }
+    
+// let form = document.querySelector('form')
+// let newMessage = document.getElementById('input')
+// let toggleDiv = 'right';
+// //     // //Gold 
+//      form.addEventListener('submit' , function(event){
+ 
+//     event.preventDefault();
+//         let newThread = document.createElement('div')
+//      newThread.classList.add(form);
+     
+//         if(toggleDiv === 'right'){
+//         newThread.classList.add('left')
+//         toggleDiv = 'left'
+//         }else{
+//                newThread.classList.add('right');
+//         toggleDiv = 'right'
+//      } ;
+    
+//         newThread.textContent = newMessage.value; 
+//         newMessage.value = '';
+//     let addMessageDiv = document.getElementById('form').appendChild(newThread)
+// addMessageDiv.appendChild(newThread)
+
+ //})
+
+// //getting the input value
+// const inputValu = document.getElementById('input').value
+// //grabbing the send button
+// const sendBtn = document.getElementById('sendBtn')
+// sendBtn.addEventListener('click' , addMessage)
+
+// let currentSide = '';
+// function addMessage(){
+//     //get input value again inside function
+//     let inputValu = document.getElementById('input').value
+//     //getting message list div
+//     let msgList = document.getElementById('message-list')
+//     //creation of new div for the new element
+//     let newMsg = document.createElement('div')
+//     //setting input value to the textcontent of the new message
+//     newMsg.textContent = inputValu
+// switchSides(newMsg);
+// //appending div to message node
+// msgList.appendChild(newMsg)
+// getTheme()
+// document.getElementById('input').value
+// //return current side
+// }
 
 
+// function switchSides(newMsg){
+//     console.log(currentSide);
+//     if(currentSide === 'left'){
+//             newMsg.classList.add('messages', 'right')
+//             currentSide = 'right'
+//             console.log(currentSide)
+//         }else{
+//             newMsg.classList.add('messages' , 'left')
+//             console.log(currentSide)
+//             currentSide = 'left'
 
-
-
-
-
-
-
+//         }
+//     }
 
 
 

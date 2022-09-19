@@ -1,87 +1,174 @@
-header{
-    background: transparent;
-    display: grid;
-}
-
-iframe{
-    background: cover;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 1;
-    top:0;
-    bottom:0;
-    left: 0;
-    right: 0;
-    
-}
-#over{
-    z-index: 2;
-    font-size:5em;
-    position:absolute; 
-    top:20px;
-    left:20px
-}
-.wrapper{
-    display: block;
-    background-size: cover;
-    height: 100vh;
-    position: absolute;
-}
-
-#subtitle{
-    position: relative;
-    color: rgb(203, 54, 112);
-    text-align: center;
-    z-index: 3;
-    font-style: oblique;
-    margin-top: 70%;
-    padding-left: 25%;
-    text-decoration: underline;
-    
-}
-
-.menu-container{
-    position: absolute;
-    opacity: 0.7;
-    top: 105px;
-    left: 65%;
-    right: 55px;
-    font-size: 2em;
-    border-color: #000039;
-    padding-left: 5%;
-    padding-top: 5%;
-}
-
-.list-group-item-action{
-    background-color:plum;
-    color:#000039;
-    font-style: oblique;
-    opacity: 1;
-    text-align: center;
-}
-.list-group-item{
-    position: relative;
-    color:#000039 ;
-    width: 300px;
-    margin-right: 300px;
-    background-color: palevioletred;
-    border-color: #000039;
-}
-#brand-logo {
-    font-size: 34px;
-  }
-  
-  #app-navbar {
-    background: linear-gradient(120deg, #0cc9f9, #eb5a96);
+* {
+    box-sizing: border-box;
   }
   
   body {
-    background: #eee;
-  }
-  @media all{
-    body{
-    background-color: black;
- }
+  color-scheme: #c0c0c0 #1C6080 #C9E8FD #e5e6ea #252429;
+  background-color: #252429;
 }
+a{
+  border:solid 1px #6d5ea9;
+  background-color: white;
+  color: black;
+}
+
+ h2 {
+  font-family: 'Ms Madi', cursive;
+  color: #252429;
+  text-emphasis-color: #c0c0c0;
+ }
+ .header-image{
+  height: 300px;
+  position: relative;
+  background-image: url("https://i.redd.it/u0ec2lyq16551.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  background-size: cover;
+}
+#the{
+  text-shadow: #c0c0c0;
+}
+#realm{
+ 
+  position: relative;
+  margin-top: 25%;
+  text-shadow: 4px 4px 4px #c0c0c0;
+  
+}
+.header {
+    padding: 30px;
+    text-align: center;
+    background-image: linear-gradient( 135deg, #1c6080
+    10%, #252429 100%);
+    font-family: 'Ms Madi', cursive;
+    font-weight: bold;
+    font-size: 52px;
+    text-shadow: 4px 4px 4px #c0c0c0;
+  }
+  p{
+    border-image: linear-gradient(#252429) 1;
+    font-family: Lora, serif;
+    font-size: 16px;
+  }
+  /* Container for flexboxes */
+  .row {
+    display: -webkit-flex;
+    display: flex;
+  }
+  
+ 
+  .column {
+    background-image: linear-gradient( 135deg, #252429
+    10%, #252429 100%);
+    border: solid black 2px;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 10px;
+    height: 500px; 
+    width:400px;
+  }
+  #box1{
+    height: 500px;
+    width: 400px;
+  }
+
+
+  /* Style the footer */
+  .footer {
+    background-color: #252429;
+    padding: 10px;
+    text-align: center;
+  }
+  #design1{
+    position: relative;
+    height: 375px;
+    width: 440px;
+    top: -25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    filter: brightness(130%);
+}
+   #design2{
+    position: relative;
+    height: 375px;
+    width: 330px;
+    top: -25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    filter: brightness(130%);
+   }
+   #design3{
+    position: relative;
+    height: 375px;
+    width: 450px;
+    top: -25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    filter: brightness(130%);
+  
+   }
+   .container-left{
+    height:500px;
+    width: 500px;
+   }
+  
+   p{
+    font-family: Lora, serif;
+    text-align: left;
+    background-color: whitesmoke;
+  }
+   
+   h3{
+    text-shadow: none;
+    font-family: Lora, serif;
+   font-style: oblique; 
+   text-decoration: underline; 
+   position: relative; 
+   margin-left: 35px;
+   }
+   .text-container-left{
+    height: 550px;
+    width: 700px;
+    position: relative;
+    margin-left: 480px;
+    margin-top: -318px;
+   }
+  .staff-text{
+    font-family: Lora, serif;
+    font-size: 15px;
+    box-sizing: border-box;
+    position: relative;
+    padding-left: 5px;
+    background-color: whitesmoke;
+  
+  }
+  .staff-heading-text{
+    text-align: center;
+    font-family: Lora, serif;
+    font-weight: bold;
+    position: relative;
+    padding-left: 35px;
+    font-size: 15px;
+  }
+#themed{
+
+  position: relative;
+  font-size: 25px;
+  margin-left: 25px;
+}
+.checked {
+  color: orange;
+}
+
+
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .row {
+      -webkit-flex-direction: column;
+      flex-direction: column;
+    }
+  }
+
+
