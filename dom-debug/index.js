@@ -9,7 +9,7 @@ function createDropDown(){
     const dropDown = document.createElement("select")
     for (let i = 0; i < colors.length; i++){
         const option = document.createElement("option") 
-        option.innerHTML = colors[i]
+        option.innerText = colors[i]
         option.value = colors[i]
         dropDown.append(option)
     }
