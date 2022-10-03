@@ -6,7 +6,8 @@ for(var i=0;i<officeItems.length;i++){
     if(officeItems[i] === "computer")
        numofComputers++;
 }
-console.log(numofComputers) //Outputs 4
+console.log(numofComputers) 
+
 
 //Question #2
 var peopleWhoWantToSeeMadMaxFuryRoad = [
@@ -39,7 +40,7 @@ for(let i = 0 ; i < peopleWhoWantToSeeMadMaxFuryRoad.length; i ++){
     }else{
         console.log('Not Old Enough')
     }
-}   //outputs (Not Old Enough , Old Enough , Old Enough , Old Enough , Not Old Enough)
+}   
 
 //Optional Bonus Challenges for problem #2
     //1.
@@ -74,7 +75,7 @@ for(let i = 0 ; i < peopleWhoWantToSeeMadMaxFuryRoad.length; i ++){
             console.log(peopleWhoWantToSeeMadMaxFuryRoad[i].name + "is not old enough")
         }
     }
-    //Outputs Mike is not Old enough
+    
 
 
     //optional part 2
@@ -107,15 +108,15 @@ for(let i = 0 ; i < peopleWhoWantToSeeMadMaxFuryRoad.length; i ++){
             console.log(p[0].name +' is not old enough to see Mad Max Fury so don\'t\ let him in')
     }
 }
-    //outputs "Mike is not old enough to see Mad Max Fury so don't let him in"//
+    
 
     //Optional Bonus
 
     var switches = [2,1]
     var lights = false;
-    [2, 5, 435, 4, 3]// "The light is on" numbers are equal to lights being turned on and off
-    [1, 1, 1, 1, 3]  // "The light is on" example 1= on 2=off 3 =on 4 = off 5 = on
-    [9, 3, 4, 2]      // "The light is off"
+    [2, 5, 435, 4, 3]
+    [1, 1, 1, 1, 3]  
+    [9, 3, 4, 2]      
     
     for(var i = 0; i < switches.length; i ++) {
       for(var j = 0; j < switches[i]; j++) {
@@ -123,4 +124,4 @@ for(let i = 0 ; i < peopleWhoWantToSeeMadMaxFuryRoad.length; i ++){
         }
     }
     console.log(lights);
-    //outputs true
+
