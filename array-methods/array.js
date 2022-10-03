@@ -1,37 +1,51 @@
-var fruits = ['banana', 'apple', 'orange', 'watermelon'];
-var vegetables = ['carrot' , 'tomato' , 'pepper' , 'lettuce'];
+var fruits = ["banana", "apple", "orange", "watermelon"];
+var vegetables = ["carrot", "tomato", "pepper", "lettuce"];
 
-var vegetables = vegetables.pop();
-console.log("vegetables: ", vegetables);
-//output: "vegetables: " "lettuce"
 
-var fruits = fruits.shift();
-console.log("fruit: " , fruits);
-//output: "fruit: " "banana"
+//1:
+var vegetables1st = vegetables.pop()
+console.log(vegetables1st)
+console.log('Vegetables: ' , vegetables)
 
-var fruits = fruits.indexOf("orange", fruits)
-console.log(fruitsSecondChange)
-//output "fruits: 1
+//2:
+fruits1st = fruits.shift()
+console.log(fruits1st)
+console.log('Fruits: ' , fruits)
 
-var vegetablesSecondChange = vegetables.length
-console.log("Vegetables: " , vegetablesSecondChange)
-//output:3
-var vegetablesThirdChange = vegetables.push(3)
-console.log("Vegetables: " , vegetables)
-//output:
-//["carrot","tomato","pepper",3]
-var foods = fruits.concat(vegetables)
-console.log("Foods: " , foods)
-//output: // [object Array] (8)
-//["apple","orange","watermelon",1,"carrot","tomato","pepper",3]
-var foodsTwo = foods.splice(4 , 2)
-console.log("Foods: " , foodsTwo)
-//output: // [object Array] (2)
-//["carrot","tomato"]
-var foods = foods.reverse()
-console.log("Foods: " , foods)
-//output: // [object Array] (6)
-//[3,"pepper",1,"watermelon","orange","apple"]
-var foods = foods.join();
-console.log("Foods: " , foods)
-//output: "3,pepper,1,watermelon,orange,apple"
+//3: 
+fruits2nd = fruits.indexOf('orange' , fruits)
+console.log(fruits2nd)
+console.log('Fruits' , fruits)
+
+//4:
+fruits3rd = fruits.push(fruits2nd)
+console.log(fruits3rd)
+console.log('Fruits: ', fruits)
+
+//5: 
+vegetables2nd = vegetables.length
+console.log(vegetables2nd)
+console.log('Vegetables: ' , vegetables)
+
+//6:
+vegetables3rd = vegetables.push(vegetables2nd)
+console.log(vegetables3rd)
+console.log('Vegetables: ' , vegetables)
+
+//7:
+var food = fruits.concat(vegetables)
+console.log('Food: ' , food)
+
+//8:
+foods2nd = food.splice( 4, 2)
+console.log(foods2nd)
+console.log('Food: ' , food)
+
+
+//9: 
+food = food.reverse()
+console.log('Food: ' , food)
+
+//10: 
+food = food.toString()
+console.log('Food: ' , food)

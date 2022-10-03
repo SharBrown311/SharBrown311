@@ -99,7 +99,7 @@ function generateEnemy(){
     }else if (key === "q"){
         quitting()
     }else if(key === "p"){
-        console.log(`Player: ${user}, Inventory: ${inventory}, HP Remaining: ${userHealth}`)
+        console.log(`Player: ${user}- Inventory: ${inventory}- HP Remaining: ${userHealth}`)
     }
 }else if(randomEnemy < 2){
         enemy.name = enemies[2]
@@ -123,9 +123,9 @@ function generateEnemy(){
     console.log("You have encountered a Lizalfos. You can press 'f' to fight, 'r' to run, 'q' to quit or 'p' to view your inventory.")
     key = readline.keyIn("" , {hideEchoBack: true, mask: '', limit: 'frqp'})
     if (key === "f"){
-        fighting();
+        fighting()
     } else if (key === "r"){
-        running();
+        running()
     }else if (key === "q"){
         quitting()
     }else if(key === "p"){
@@ -136,11 +136,11 @@ function generateEnemy(){
     enemy.damage =  5
     enemy.health = 20
     console.log("You have encountered a Keese. You can press 'f' to fight, 'r' to run, 'q' to quit or 'p' to view your inventory.")
-    //key = readline.keyIn("" , {hideEchoBack: true, mask: '', limit: 'frqp'})
+    key = readline.keyIn("" , {hideEchoBack: true, mask: '', limit: 'frqp'})
     if (key === "f"){
-        fighting();
+        fighting()
     } else if (key === "r"){
-        running();
+        running()
     }else if( key === "q"){
         quitting()
     }else if(key === "p"){
@@ -151,11 +151,11 @@ function generateEnemy(){
         enemy.damage =  20
         enemy.health = 80
         console.log("You have encountered a Wizzrobe.You can press 'f' to fight, 'r' to run, 'q' to quit or 'p' to view your inventory.")
-        //key = readline.keyIn("" , {hideEchoBack: true, mask: '', limit: 'frqp'})
+        key = readline.keyIn("" , {hideEchoBack: true, mask: '', limit: 'frqp'})
         if (key === "f"){
-            fighting();
+            fighting()
         } else if (key === "r"){
-            running();
+            running()
         }else if(key === "q"){
             quitting()
         }else if(key === "p"){
@@ -166,13 +166,13 @@ function generateEnemy(){
         enemy.damage =  1
         enemy.health = 10
         console.log("You have encountered a Skulltula. You can press 'f' to fight, 'r' to run, 'q' to quit or 'p' to view your inventory.")
-        //key = readline.keyIn("" , {hideEchoBack: true, mask: '', limit: 'frqp'})
+        key = readline.keyIn("" , {hideEchoBack: true, mask: '', limit: 'frqp'})
         if (key === "f"){
-            fighting();
+            fighting()
         } else if (key === "r"){
-            running();
+            running()
         }else if (key === "q"){
-            quitting
+            quitting()
         }else if(key === "p"){
             console.log(`Player: ${user}, Inventory: ${inventory}, HP Remaining: ${userHealth}`)
         }
@@ -183,19 +183,19 @@ function generateEnemy(){
             inventory.push(itemsToFind[0])
             console.log('You have found a heart container and gained health')
             userHealth = userHealth + 50
-        }else if(generateItem = 55){
+        }else if(generateItem < 25){
             inventory.push(itemsToFind[1])
             console.log('You have found a fairy and gained some health')
             userHealth = userHealth + 30
-        }else if(generateItem > 75){
+        }else if(generateItem < 50){
             inventory.push(itemsToFind[2])
             console.log('You have found a potion and gained a little health')
             userHealth = userHealth + 15
-        }else if(generateItem = 90){
+        }else if(generateItem < 75){
             inventory.push(itemsToFind[3])
             console.log('Oh no, not Dubious Food! yuck...')
             userHealth = userHealth - 100
-        }else if (generateItem = 83){
+        }else if (generateItem < 100){
             inventory.push(itemsToFind[4])
             console.log('You have found a Magic Apple and gained a tiny bit of health')
             userHealth = userHealth + 10
