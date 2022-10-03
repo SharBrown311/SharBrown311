@@ -9,42 +9,39 @@ just fix the existing ones.
 
 // Written by Kent, Clark
 
-var enemies = ["Lex" , "Batman" , "Darkseid" , "Brainiac" , "General Zod" , "Doomsday"];
+var enemies = ["Lex", "Batman", "Darkseid", "Brainiac", "General Zod", "Doomsday"];
 
-function whoWins (isThereKryptonite , enemyName);
-{
-if (!isThereKryptonite)
-{
-    return "Superman beats " + enemyName + ", of course";
+function whoWins(isThereKryptonite, enemyName) {
+    if (!isThereKryptonite) {
+        return "Superman beats " + enemyName + ", of course";
 
-} else {
-    
-    return "Depends on how quick Superman can get rid of the Kryptonite. " + enemyName + " could possibly win this one.";
-}
+    } else {
+
+        return "Depends on how quick Superman can get rid of the Kryptonite. " + enemyName + " could possibly win this one.";
     }
-
-
+}
 for (var i = 0; i < enemies.length; i++) {
-   var isThereKryptonite;
-     if (i % 2 === 0) {
-    console.log(isThereKryptonite = true);
+    var isThereKryptonite;
+    if (i % 2 === 0) {
+        console.log(isThereKryptonite = true);
 
-} else {
-    console.log(isThereKryptonite = false);
+    } else {
+        console.log(isThereKryptonite = false);
+    }
 }
-}
+
 
 console.log(whoWins(isThereKryptonite, enemies[i]));
 
 
-function howAttractedIsLoisLaneToMe (){
+function howAttractedIsLoisLaneToMe() {
     // 1 is not at all attracted, 10 is "super" attracted...
     return Math.floor((Math.random() * 10) + 1);
-}
-        console.log (howAttractedIsLoisLaneToMe());
 
-var clarkKent =true;
-var superman =false;
+    console.log(howAttractedIsLoisLaneToMe());
+}
+var clarkKent = true;
+var superman = false;
 
 while (clarkKent) {
     console.log("I'm just a nerdy columnist");
@@ -53,5 +50,7 @@ while (clarkKent) {
         clarkKent = false;
         superman = true;
         console.log("Now I'm Superman!");
-        }
+    }
 }
+
+
