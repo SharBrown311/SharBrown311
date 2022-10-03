@@ -1,4 +1,5 @@
-//Problem #1
+//Problem  
+//#1
 function largestNum(numbers){
     let largest = numbers[0];
     for(let i = 0; i < numbers.length; i ++){
@@ -15,8 +16,9 @@ function largestNum(numbers){
 
 
 
-c
-  //Problem #2
+
+//Problem 
+//#2
 
 function lettersWithStrings(letterArr , b){
     let words = letterArr[0];
@@ -33,7 +35,8 @@ function lettersWithStrings(letterArr , b){
   lettersWithStrings(["#3", "$$$", "C%4!", "Hey!"], "!")// =>"C%4!" "Hey!"
   lettersWithStrings(["yellow", "green", "^up^", "down", "dog"], "h")//=> [empty]
 
-//Problem #3
+//Problem 
+//#3
 let divisible = false;
 function isDivisible(num1 , num2){
   if(num1 % num2 === 0){
