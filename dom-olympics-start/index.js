@@ -94,13 +94,20 @@ clearButton.addEventListener('click', (e) =>{
     // //Gold 
 
     
-    const form = document.form
-    form.addEventListener('submit' , function(e){
-        e.preventDefault()
-        const input  = document.getElementById('input').value
-        const inputValue = input
+    // const form = document.form
+    
+    
+   
+    // form.addEventListener('submit' , function(e){
+    //     e.preventDefault()
+    //     let newMessages = document.createElement(div)
+    //     let main = document.getElementById('main')
+    //     main.appendChild(newMessages)
+    //     const input  = document.getElementById('input').value
+    //      inputValue = input.value
+    //      newMessages = inputValue
+         
         
      
-    })
-    console.log(inputValue)
-    console.log(messages)
+    // })
+   
