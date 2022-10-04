@@ -43,24 +43,25 @@ console.log('Go forth in your journey ' + user + ' and save us all.')
 
 while(userHealth > 0){
    if(inventory.length >= 8){
-        break;
+        continue;
    } else {
         walking()
    }
 }
-
+//shouldnt call function inside function
 function walking(){
     if(inventory.length >= 16){
         console.log('You win, ' + user + ' ! Congratulations!')
         }else{
             console.log("Press 'w' to walk")
-            key = readline.keyIn("" , {hideEchoBack: true , mask: '', limit: 'wih'})
+            key = readline.keyIn("" , {hideEchoBack: true , mask: '', limit: 'wph'})
             if(key === "w"){
                 var enemyEncounter = Math.random()
                 if(enemyEncounter < .29){
                     generateEnemy()
                 }else{
                     walking()
+                    
                 }
             }else if(key === 'p'){
                 console.log(`Player: ${user} , Inventory:  ${inventory}, HP Remaining: ${userHealth}`)
@@ -68,7 +69,7 @@ function walking(){
         quitting()
     } 
 };
-
+//instead of hardcoding use random number to get random enemy from array.
 function generateEnemy(){
     var randomEnemy = Math.floor(Math.random() * 7 - 0  + 1) + 0;
     if(randomEnemy < 0){

@@ -1,0 +1,48 @@
+<!Doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <link rel = 'stylesheet' href="travel.css">
+    <title>Travel Form</title>
+  </head>
+    <h1>Welcome to a Random Airline</h1>
+    <p>Fill out this form.</p>
+    <form id = "airline-form">
+      <input type = "text" name = "first-name">
+      <label for = "first name">First Name</label>
+      <br>
+      <input type = "text" name = "last-name">
+      <label for = "last name">Last Name</label>
+      <br>
+      <input type = "number" name = "age">
+      <label for = "age">Age</label>
+      <br>
+      <input type = "radio" name = "gender" value = "Male" id = "male">
+      <label for = "male">Male</label>
+      <br>
+      <input type = "radio" name = "gender" value = "Female" id = "female">
+      <label for = "female">Female</label>
+      <br>
+      <select name="travel-location">
+        <option value = "Somewhere-Cold">Somewhere Cold</option>
+        <option value = "Somewhere-Hot">Somewhere Hot</option>
+        <option value = "Home?">Back Home again</option>
+      </select>
+      <label for="">Where are you going?</label>
+      <br>
+      <input class = "diet" type = "checkbox" name = "vegetarian" id = "vegetarian" value = "Vegetarian">
+      <label for = "vegetarian">Vegetarian</label>
+      <br>
+        <input class = "diet" type = "checkbox" name = "kosher" id = "kosher" value = "Kosher">
+        <label for = "kosher">Kosher</label>
+        <br>
+        <input class = "diet" type = "checkbox" name = "lactose-free" id = "lactose" value = "Lactose-free">
+        <label for = "lactose-free">Lactose-Free</label>
+        <br>
+        <button type ="submit" id = "submit">Submit</button>
+    </form>
+    <script src="travel.js"></script>
+  </body>
+  
+  </html>
