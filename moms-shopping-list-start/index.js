@@ -3,7 +3,7 @@ submitItem.innerHTML = "Submit"; //submit button
 var list = document.getElementById("list"); //ul
 var form = document.getElementById("listForm");
 
-console.log("form var: ", form);
+// console.log("form var: ", form);
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   addItem();
@@ -36,8 +36,16 @@ var addItem = function () {
   buttonEdit.style.backgroundColor = "blue";
   li.appendChild(buttonDelete);
   li.appendChild(buttonEdit);
-  buttonEdit.addEventListener("click", function () {
+  buttonEdit.addEventListener("click", function() {
     li.contentEditable = true;
     li.style.backgroundColor = "blue";
+    li.onclick = function changeToSave(){
+      buttonEdit.innerHTML = 'Save'
+      buttonEdit.onsubmit = function(){
+        li.contentEditable = false;
+      }
+    }
+
+    
   });
 };
