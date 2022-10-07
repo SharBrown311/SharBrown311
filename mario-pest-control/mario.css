@@ -1,0 +1,115 @@
+h1{
+    text-align: center;
+    font-size: 55px;
+    font-style: oblique;
+    color: red;
+    text-decoration: underline;
+    text-decoration-color: lightgreen;
+}
+body{
+   overflow: hidden;
+}
+
+#goombaImg{
+    height: 100px;
+    width: 100px;
+    position: relative;
+    left: 55px;
+}
+
+#bobOmbImg{
+    height: 125px;
+    width: 205px;
+    position: relative;
+    left: 435px;
+    bottom: 258px;
+}
+#bobOmbHeading{
+    position: relative;
+    left: 485px;
+    top: -205px;
+}
+#cheepCheepHeading{
+    position: relative;
+    top: -235px;
+    left: 330px;
+}
+
+#cheepCheepImg{
+    height: 145px;
+    width: 155px;
+    position: relative;
+    left: 325px;
+    bottom: 285px;
+}
+#cheepCheepPrice{
+    position: relative;
+    left: 505px;
+    top: -165px;
+}
+#bobOmbPrice{
+    left: 665px;
+    top: -140px;
+}
+
+#goombaInput{
+    position: relative;
+    left: 105px;
+    background-color: khaki;
+    color: brown;
+}
+#bobombInput{
+    background-color: black;
+    color: white;
+    position: relative;
+    left: 415px;
+    top: -264px;
+    border-color: wheat;
+}
+#cheepCheepInput{
+    position: relative;
+    left: 310px;
+    top: -307px;
+    background-color: crimson;
+    color: yellow;
+}
+.price{
+    font-size: 15px;
+    position: relative;
+    left: 250px;
+    top: 100px;
+}
+.baddieHeading{
+    position: relative;
+    left : 55px;
+    top: 30px;
+    text-decoration: underline;
+}
+#peachImg{
+    position: relative;
+    left: 815px;
+    bottom: 705px;
+}
+.peach{
+    position: relative;
+    bottom: 930px;
+    left: 1285px;
+}
+
+footer{
+    position: relative;
+    top: -1025px;
+    text-align: center;
+}
+#result{
+    position: relative;
+    bottom: 1150px;
+    left: 1290px;
+    font-size: medium;
+    font-weight: bold;
+}
+#coinImg{
+    position: relative;
+    bottom: 1222px;
+    left: 1220px;
+}
