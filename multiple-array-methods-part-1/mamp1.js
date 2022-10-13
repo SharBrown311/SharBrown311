@@ -1,5 +1,4 @@
-
- const peopleArray = [
+var peopleArray = [
     {
         firstName: "Sarah",
         lastName: "Palin",
@@ -36,29 +35,74 @@
         age: 82
     }
 ]
+const newPeople = [
+    {firstName: 'Amelia', lastName: 'Earhart' , age: 106},
+    {firstName: 'Brian' , lastName: 'Jankovich' , age: 83},
+    {firstName: 'Emily' , lastName: 'Hudson' , age: 85}
+]
+
+const whole = newPeople.concat(peopleArray)
+console.log(whole)
+
+const sortedByAge = whole.filter(function(person){
+    if(person.age >= 18){
+        return person
+    }
+})
+console.log(sortedByAge)
+const sortedByName = sortedByAge.sort(function(a , b){
+    if(a.lastName > b.lastName){
+        return 1
+    }
+    if(a.lastName < b.lastName){
+        return -1
+    }
+})
+console.log(sortedByName)
+
+const liAdded = sortedByName.reduce(function(final , person){
+    final.push('<li>' + person.firstName + ' ' + person.lastName + ' is ' + person.age + '</li>' )
+    return final
+}, [])
+const removed = liAdded.splice(1 , 1)
+console.log(liAdded)
+console.log(removed)
+
+let matchedPersons = [];
+let searchForY = 'y'
+
+searchForY = searchForY.toLowerCase()
+    liAdded.forEach(item =>{
+        if(item.toLowerCase().indexOf(searchForY) !== -1){
+            console.log(item)
+            matchedPersons.push(item)
+        }
+        console.log(matchedPersons)
+    })
+ 
 
 
-function sortedOfAge(arr){
-     const sorted = arr.filter(arr => arr.age > 18)
-        const alphaSorted = arr.sort(function(a,b){
-            a.firstName - b.lastName
-        })
-        return sorted + alphaSorted
- }
- 
- 
- console.log(sortedOfAge(peopleArray));
- 
- /*
- Output:
- [
-     "<li>Kyle Mooney is 27</li>",
-     "<li>Sarah Palin is 47</li>",
-     "<li>Rick Sanchez is 78</li>",
-     "<li>Morty Smith is 29</li>",
-     "<li>Lev Tolstoy is 82</li>"
- ]
- */
+// function sortedOfAge(arr){
+//     Array.filter(function(person){//filter
+//         if(person.age >= 18){
+//             return person
+//         }
+//         arr.sort(function(a , b){
+//                 if(a.lastName < b.lastName)
+//                 return -1;
+//                 if(a.lastName > b.lastName)
+//                 return 1;
+//                 return 0;
+//              })
+             
+//         }
+        
+//     )}
+// console.log(peopleArray.sort(sortedOfAge))
+
+
+// console.log(sortedOfAge(peopleArray));
+
 
  
 

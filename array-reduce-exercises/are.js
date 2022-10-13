@@ -107,14 +107,14 @@ function voterResults(arr) {
     ,{numYoungVotes: 0}, {numYoungPeople: 0}, {numMidPeople: 0},
     {numMidVotes: 0}, {numOldVotes: 0}, {numOldPeople: 0})
 }
-​
+
 console.log(voterResults(voters)); // Returned value shown below:
 /*
 { numYoungVotes: 1,
   numYoungPeople: 4,
-  numMidVotesPeople: 3,
-  numMidsPeople: 4,
-  numOldVotesPeople: 3,
-  numOldsPeople: 4
+  numMidVotes: 3,
+  numMidPeople: 4,
+  numOldVotes: 3,
+  numOldPeople: 4
 }
 */
