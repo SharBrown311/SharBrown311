@@ -1,0 +1,100 @@
+.heading{
+  font-size: 65px;
+  text-align: center;
+}
+.mainContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.box {
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  border: 1px solid #333;
+  box-shadow: 10px 10px 5px 0 #999;
+  border-radius: 10%;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+
+}
+
+#boxOne{
+background-color: yellow;
+
+
+}
+
+#boxOne:hover{
+  background-color: goldenrod;
+  border: 50px dashed transparent;
+  position: relative;
+  top: -50px;
+ }
+
+ #boxTwo{
+background-color: red;
+} 
+#boxTwo:hover{
+  background-color: coral;
+  transform: rotate(180deg);
+  border-top-left-radius: 30%;
+  border-radius: 50%;
+  border-bottom-right-radius: 30%;
+}
+#boxThree{
+background-color: blue;
+
+}
+
+#boxThree:hover{
+  background: linear-gradient(blue, lightblue, aquamarine, cyan);
+  transition:
+  .4s ease-in-out transform,
+  .4s ease-in-out box-shadow;
+  transform:
+  translate3d(-16px, -105px, 0px)
+  rotateX(51deg)
+  rotateZ(43deg);
+  box-shadow:
+  1px 1px 0 1px #f9f9fb,
+  -1px 0 28px 0 rgba(34, 33, 81, 0.01),
+  54px 54px 28px -10px rgba(34, 33, 81, 0.15);
+ 
+}
+#boxFour{
+background-color: limegreen;
+
+}
+#boxFour:hover{
+  width: 0px;
+  height: 0px;
+  border-right: 100px solid transparent;
+  border-bottom: 70px solid #05ed08;
+  border-left: 100px solid transparent;
+  transform: rotate(-70deg);
+  -moz-transform: rotate(-70deg);
+  -ms-transform: rotate(-70deg);
+  -o-transform: rotate(-70deg);
+ }
+
+#boxFive{
+background-color: purple;
+}
+#boxFive:hover{
+filter: grayscale(10%);
+opacity: 50%;
+transform: rotate(360deg);
+
+}
+#boxSix{
+background-color: lightblue;
+}
+#boxSix:hover{
+  transform:  skewY(50deg);
+  background: linear-gradient(red, blue, green);
+  filter: saturate(200%);
+  filter: hue-rotate(30deg);
+}
