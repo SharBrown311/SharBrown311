@@ -15,7 +15,7 @@ for (i = 9  ; i > -1 ; i -= 1){
 
 
 //Part 3.)Write a for loop that prints these fruits to the console.
-
+1
 const fruits = ['Banana' , 'Orange' ,'Apple', 'Kiwi'];
 for (x of fruits){
     console.log(x)

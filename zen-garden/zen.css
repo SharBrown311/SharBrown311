@@ -1,0 +1,539 @@
+@import url(http://fonts.googleapis.com/css?family=Julius+Sans+One|Libre+Baskerville:400,400italic);
+@import url(https//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css);
+@import url(http://www.csszengarden.com/214/verdemoderna.woff);
+
+*{
+  box-sizing: border-box;
+}
+
+
+body{
+  margin: 0 0 0 0;
+  color: #325050;
+  font-size: 70%;
+  overflow-x: hidden;
+}
+/* .page-wrapper{
+  /* height: 2007.47;
+  width: 2904.93; */
+ .article{
+  padding-top: 2%;
+  font-weight: 400;
+  font-size: 12px;
+ }
+
+header{
+  display: grid;
+  grid-template: 60px 60px 60px / auto auto auto ;
+  grid-template-areas: 'left left left right right right right'
+                       'left left left right right right right';
+  background-color: white;
+  font-family: 'Libre Baskerville', sans-serif;
+  background-attachment: fixed, fixed, fixed, scroll;
+  background-image: url(http://www.csszengarden.com/214/contours.png), url(http://www.csszengarden.com/214/noise.png),  url(http://www.csszengarden.com/214/gridlines.png), url(http://www.csszengarden.com/214/huntington.jpg);
+  background-position: 0 0, 0 0, -5px -25px, 0 50%;
+  background-repeat: repeat, repeat, repeat, no-repeat;
+  background-size: calc(20%), auto, calc(13%), cover;
+  background-clip: border-box,border-box, border-box, border-box;
+  border: 9px outset rgba(255,255,255,0.7);
+  -webkit-box-shadow: inset 0px 1px 5px 0px rgba(0,0,0,0.63); 
+  box-shadow: inset 0px 1px 5px 0px rgba(0,0,0,0.63);
+  border-top-color: #2e484c;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  height: 200px;
+  max-width: 1388px;
+  padding: 850, 113, 144, 50;
+  text-align: left;
+}
+.header-right-side{
+  grid-area: right;
+  justify-content: center;
+  vertical-align: middle;
+  grid-row-start: 2;
+  grid-column-start: 5;
+}
+.header-left-side{
+  grid-area: left;
+
+}
+#designer-list  a{
+  text-align: center;
+  padding-top:12px;
+}
+#designer-list li {
+  line-height: 19px;
+  padding-bottom: 18px;
+  padding-top: 18px;
+  list-style: none;
+  font-size: 14px;
+  border-bottom: #809b7e solid 1px;
+  opacity: 45%;
+}
+.icon-file_download .file-names{
+  height: 10px;
+  width: 10px;
+}
+
+a{
+  transition-property: all;
+  text-decoration: none;
+  color:#0d8ba1;
+}
+.icon-file_download a:hover{
+  text-decoration: underline;
+  text-decoration-color: #0d8ba1;
+}
+
+.image{
+  text-align: center;
+  height: 90px;
+  width: 90px;
+  margin-top: 40px;
+  margin-left: 135px;
+  opacity: 74%;
+  transform: rotate(-2deg);
+}
+.overlay-encasing {
+  position: absolute;
+  opacity: 20%;
+  margin-top: -156px;
+  mix-blend-mode: darken;
+  margin: 0px 0 900px -154px;
+  padding: 0 0 0 0;
+  background-color: #2b5e54;
+  width: 460px;
+  height: 2554px;
+}
+
+
+
+
+
+h1{
+  font-family: 'Julius Sans One', sans-serif;
+  font-weight: 400;
+  font-size: 42px;
+  color: white;
+  padding-left: 290px;
+  margin-top: -81px;
+}
+
+h2{
+  font-weight: 400;
+  font-style: italic;
+  opacity: 58%;
+  font-size: 18px;
+  color: white;
+  padding-left: 297px;
+  padding-top: 0px;
+  margin-top: -28px;
+
+}
+abbr[title]{
+  font-size:  13.5px;
+}
+h3{
+  color: #2e484c;
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 23px;
+  letter-spacing: normal;
+  font-weight: 400;
+  margin-left: 167px;
+
+}
+
+#resources{
+  overflow: hidden;
+  background-color: rgba(138,188,159,0.5);
+  height: 580px;
+  width: 475px;
+  margin-right: 75px;
+  margin: -31px 0px 0px -27px;
+}
+/* .sub-article-one{
+
+} */
+  /* #white-background-bar{
+    width: 200px;
+    height: 50px;
+    background: whitesmoke;
+  } */
+/* #view-all-text-box::before{
+  content: '#view-all-text-box';
+  display: inline-block;
+  color: white;
+  position: absolute;
+  width: 320px;
+  height: 50px;
+  background-color: white;
+  opacity: 15%;
+  top: 5px;
+
+  
+} */
+.design-text{
+  position: relative;
+  margin-top: 15px;
+  font-weight: 400;
+}
+.overlay-container{
+  width: 100%;
+  background-color: #32505020;
+
+}
+.nav-bar {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 647px;
+  right: 15px;
+  position: absolute;
+  font-weight: 400;
+}
+/* .before-arrow{
+  height: 54px;
+  width: 66px;
+  background-color: rgba(255,255,255,0.1);
+  color: rgba(255, 255, 255, 0.65);
+  font-family: 'verdemoderna';
+  line-height: 0;
+  margin: 5px 24px 24px 26px;
+  
+} */
+.design-nav .after-arrow {
+  line-height: 50;
+}
+.design-nav {
+  height: 45px;
+  width: 328px;
+  background-color: rgba(255,255,255,0.1);
+  color: white;
+  text-align: center;
+  padding: 2px 9px 4px 26px;
+  margin: 5px -25px 0px -22px;
+  font-family: 'Julius Sans One', sans-serif;
+  letter-spacing: normal;
+  font-weight: 400;
+}
+#design-text{
+  padding-top: 13%;
+  text-align: center;
+  vertical-align: middle;
+  color:rgba(255, 255, 255, 0.65);
+  font-size: 18px;
+  letter-spacing: normal;
+  font-weight: 400;
+  font-family: 'Julius sans One', sans-serif;
+}
+.after-arrow{
+  height: 45px;
+  width: 49px;
+  background-color: rgba(255,255,255,0.1);
+  color: rgba(255, 255, 255, 0.65);
+  font-family: 'verdemoderna';
+  line-height: 0;
+  margin: 5px 24px 24px 26px;
+  
+}
+button{
+  position: relative;
+  margin: 5px 24px 5px 26px;
+  padding: 0 1px 8px 0;
+  font-size: 59px;
+  border: none;
+}
+#nav-about{
+  background-image: url(http://www.csszengarden.com/214/contours.png), url(http://www.csszengarden.com/214/gridlines.png), url(http://www.csszengarden.com/214/noise.png), url(http://www.csszengarden.com/214/koi.jpg);
+  background-attachment: fixed, fixed, fixed, scroll;
+  background-size: auto, auto, auto, cover;
+  background-repeat: repeat, repeat, repeat, no-repeat;
+  font-size: 19.2 px;
+  font-style: italic;
+  text-align: center;
+  height: 210px;
+  mix-blend-mode: lighten;
+  margin-top: 50px;
+  text-decoration: none;
+}
+
+
+
+#about-text{
+letter-spacing: normal;
+position: absolute;
+text-align: center;
+font-size: 25px;
+max-width:100%;
+color: rgba(255, 255, 255, 0.4);
+margin-top: 75px;
+padding-left: 25px;
+text-decoration: none;
+}
+/*  */
+/* names of the designs */
+.designs{
+  max-width: 500px;;
+  font-family: 'Julius Sans One', sans-serif;
+  text-decoration: none;
+  color: #56673e;
+  list-style: none;
+  font-weight: 400;
+  opacity: 80%;
+}
+/* ul */
+#designer-list{
+  list-style-position: outside;
+  line-height: 19px;
+ padding: 0 0 0 39px;
+  margin: 0 244px 0px 908px;
+}
+
+.designer-name{
+  max-width: 200px;
+  font-weight: 400;
+  font-size: 13px;
+  text-decoration: none;
+  color: #56673e
+}
+/*li container affects all items in the list  */
+/* igner-list-item{
+  border-bottom: solid 1px #cfd2d0;
+  padding-bottom:25px;
+  padding-top: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  list-style: none;
+  
+} */
+a.file-names{
+  color:  #809b7e;
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  border: none;
+
+}
+.icon-file-download{
+  font-family: 'verdemoderna';
+  color: #a9b995;
+  border: #d9e1cd 1px solid;
+  background-color: #d9e1cd;
+  font-size: 12px;
+  border-radius: 2px;
+  content: '';
+  line-height: 1;
+  padding-left: 2px;
+}
+a .file-names:hover{
+  background-color: #d9e1cd;
+  border: solid 2px #d9e3dc;
+}
+.icon-file-download .file-names a:visited{
+  border: #2b5e54 solid 1px;
+  background-color: #2b5e54;
+}
+.icon-file-download .file-names a:hover{
+  border: #2b5e54 solid 1px;
+  background-color: #2b5e54;
+}
+p{
+  font-weight: normal;
+  font-size: 13.6px;
+  max-width: 50%;
+
+  display: block;
+  margin-left: 150px;
+  color: #325050;
+  line-height: 1.8;
+  padding: 0 0 30px 20px;
+}
+
+
+div.sub-article-three{
+  background-attachment: scroll, scroll, fixed;
+  background-color: rgba(138,188,159,0.5);
+  background-image: url(http://www.csszengarden.com/214/contours-opaque.png), url(http://www.csszengarden.com/214/gridlines-opaque.png), url(http://www.csszengarden.com/214/bamboo.png);
+  background-repeat: repeat, repeat, no-repeat;
+  background-size: auto, auto, cover;
+}
+
+
+.resources-container{
+  vertical-align: middle;
+  position: absolute;
+  opacity: 85%;
+  font-family: "Julius Sans One", sans-serif;
+  margin-left: 878px;
+  padding-left: 55px;
+  padding-bottom: 0;
+  margin-top: -87.6%;
+ 
+
+}
+.resources-list{
+  padding-left: 100px;
+  padding-right: 119px;
+  max-width: 135%;
+  list-style: none;
+  padding-top: 150px;
+
+
+}
+
+
+.list-selection{
+  border-top: solid 1px #d9e3dc;
+  display: block;
+  font-family: 'Julius Sans One', sans-serif;
+  font-style: normal;
+  color: #134347;
+  font-size: 13px;
+  text-decoration: none;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: -31px 0px 29px -40px;
+  list-style: none;
+}
+
+#translations-list-selection{
+  border-bottom: solid 1px #d9e3dc;
+}
+
+
+.nav-designs{
+  position: absolute;
+margin: 0 0 105px 0px;
+top: 220px;
+}
+
+.by-author-mediatemple{
+  text-decoration: none;
+  color:#c0cac3;
+  font-style: normal;
+}
+#requirements{
+  padding-bottom: -320px;
+}
+
+
+a:hover {
+	text-decoration: underline;
+	color: #0d8ba1;
+	}
+.link:active{
+	text-decoration: underline;
+	color: #fff;
+	}
+.by{
+    font-size: 13px;
+    opacity: 75%;
+    font-style: italic;
+    color: #c0cac3;
+    text-decoration: none;
+  }
+
+.by-author{
+    font-family: 'Libre Baskerville', sans-serif;
+    font-style: normal;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 20px;
+  }
+
+.fa-icon-html-five{
+  height: 48px;
+  width: 48px;
+  border: rgb(255 255 255 / 0.5) solid 3px;
+  border-radius: 50%;
+  object-position: 50% 50%;
+  object-fit: fill;
+  padding:  8px 8px 8px 8px;
+}
+
+.fa-icon-css{
+    height: 48px;
+    width: 48px;
+    border: rgb(255 255 255 / 0.5) solid 3px;
+    border-radius: 50%;
+    object-position: 50% 50%;
+    object-fit: fill;
+    padding:  8px 8px 8px 8px;
+    
+}
+.fa-licensing-icon{
+    height: 48px;
+    width: 48px;
+    font-weight: 400;
+    color: rgb(255 255 255 / 0.5);
+    stroke-linecap: round;
+    stroke-width: 7px;
+    stroke-dasharray: inherit;
+    stroke-linecap: round;
+}
+  
+
+  
+  .fa-icon-accessibility{
+    position: relative;
+    height: 48px;
+    width: 48px;
+    padding-top: 3px;
+    padding-left: 3px;
+    border: rgb(255 255 255 / 0.5) solid 3px; 
+    border-radius: 50%;
+    top: 0px;
+  }
+  
+  .fa-icon-github{
+    height: 48px;
+    width: 48px;
+    border: rgb(255 255 255 / 0.5) solid 3px;
+    border-radius: 50%;
+    object-position: 50% 50%;
+    padding: 8px 8px 8px 8px;
+}
+  
+ .footer-icons{
+  position: relative;
+  padding-top: 28px;
+  display: flex;
+  overflow-y: hidden;
+  background-color: #134347;
+  width: 1440px;
+  height: 125px;
+  font-size: 43px;
+  gap: 0 55px;
+  color: rgb(255 255 255 / 0.5);
+  padding-left: -60px;
+  right: 80px;
+  align-content: flex-end;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  }
+.foot{
+  width: 1373px;
+  background-color: #134347;
+}
+  svg path{
+    fill: rgb(255 255 255 / 0.5);
+    border: rgb(255 255 255 / 0.5)  solid 1px;
+   
+  }
+  
+
+ @media only screen and (min-width: 1132px){
+body{
+font: 100%;
+}
+} 
+
+@media only screen and (max-width: 500px){
+  .page-wrapper{
+  display: grid;
+  }
+
+}

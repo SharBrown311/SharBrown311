@@ -1,0 +1,22 @@
+*{
+  box-sizing: border-box;
+}
+html, body{
+  margin: 0;
+  padding: 0;
+}
+body{
+display: block;
+}
+
+.container{
+display: grid;
+grid-template-areas:"header header header"
+                    "main main aside1" 
+                    "main main aside2"
+                    "about about about" 
+                    "foot foot foot";
+}
+header{
+  grid-area: header;
+}

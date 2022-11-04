@@ -112,16 +112,21 @@ for(let i = 0 ; i < peopleWhoWantToSeeMadMaxFuryRoad.length; i ++){
 
     //Optional Bonus
 
-    var switches = [2,1]
+    var switches = [count]
     var lights = false;
+    var count = 0
     [2, 5, 435, 4, 3]
     [1, 1, 1, 1, 3]  
     [9, 3, 4, 2]      
     
-    for(var i = 0; i < switches.length; i ++) {
-      for(var j = 0; j < switches[i]; j++) {
-            lights = !lights;
-        }
-    }
-    console.log(lights);
-
+var button = [2, 5, 435,4 , 3]
+var sum = 0 
+for ( let i = 0; i < button.length; i++){
+  sum += button[i]
+  console.log(sum)
+  if(sum %2 === 0){
+    console.log('The light is on')
+  }else{
+    console.log
+  }
+}
