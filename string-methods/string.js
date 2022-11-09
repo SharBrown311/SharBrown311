@@ -70,13 +70,14 @@ console.log(returnFirstHalf("Hello World"))
 //and second half lowercased
  
 function capitilizeAndLowercase(str){
-  if(str.length % 2 == 0 ){
-   str.split(" ")
-    return str
-  }if (str.length % 2 == 1){
+  let text = "Hello World";
+  const myArray = text.split(" ");
+  const firstHalf = myArray[0].toUpperCase()
+  const secondHalf = myArray[1].toLowerCase()
+  let joined = firstHalf + " "+ secondHalf
+  return joined
 }
-}
-console.log(capitilizeAndLowercase("Hello World"))
+console.log(capitilizeAndLowercase())
 //output: HELLO world
 
 
