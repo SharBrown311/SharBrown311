@@ -69,19 +69,14 @@ console.log(returnFirstHalf("Hello World"))
 //function returns first half Uppercased
 //and second half lowercased
  
-function capitilizeAndLowercase(str){
-  let text = "Hello World";
-  const myArray = text.split(" ");
-  const firstHalf = myArray[0].toUpperCase()
-  const secondHalf = myArray[1].toLowerCase()
-  let joined = firstHalf + " "+ secondHalf
-  return joined
+function capitilizeAndLowercase(word){
+  return word.slice(0, Math.floor(word.length/2)).toUpperCase() 
+  + word.slice(Math.floor(word.length)/2).toLowerCase()
+
 }
-console.log(capitilizeAndLowercase())
-//output: HELLO world
 
-
-
+console.log(capitilizeAndLowercase('Hello World'))
+console.log(capitilizeAndLowercase('Hello my name is Sharon'))//test
 //Optional
 
 

@@ -43,6 +43,7 @@ parseSentence({
 
 
 
+
 //4: Destructuring
 function returnFirst(items){
   const [firstItem, , ,] = items;
