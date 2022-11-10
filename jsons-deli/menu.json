@@ -1,0 +1,89 @@
+{
+  "Appetizers":[
+    {
+     "Name": "Chicken Fingers",
+     "Ingredients": ["Italian Breading","Thin-sliced chicken breast", "Olive oil", "Salt", "Pepper", "Egg", "Whole Milk" ],
+     "Description": "Golden pan fried chicken breast, comes with dipping sauce of your choice."
+    }, 
+    {
+      "Name": "Mac 'n Cheese", 
+      "Ingredients": ["Cheddar Cheese", "Colby-Jack Cheese", "Mozzarella"], 
+      "Description": "Perfectly baked and smothered mac and cheese."
+    }, 
+    {
+      "Name": "Disco Fries", 
+      "Ingredients": ["Brown Gravy", "Russet Potatoes", "Peanut Oil", "Cheddar Cheese"], 
+      "Description":"The ultimate late-night snack, it's a platter of crispy fries topped with gooey melted cheese and savory gravy."
+    }
+  ],
+  "Cold Sandwiches": [
+    {
+      "Name": "Turkey BLT Club",
+      "Ingredients": ["Oven Roasted Turkey", "Bacon", "Lettuce", "Tomato", "Wheat, whole or rye bread"], 
+      "Description":"Premium carved, oven roasted turkey breast on choice of bread with lettuce, tomato, and crispy bacon"
+    }, 
+    {
+      "Name": "Corned Beef", 
+      "Ingredients": ["Russian salad dressing", "Jewish rye bread","Sliced Corned Beef", "Coleslaw"],
+      "Description":"his cold corned beef sandwich, layered with Russian dressing and coleslaw, is a New Jersey deli classic!"
+    }, 
+    {
+      "Name": "Salami, Mozzarella, and Roasted Red Pepper Sandwich", 
+      "Ingredients":["Fresh Mozzarella", "Zesty Salami", "Sweet Roasted Red Peppers", "Basil", "Olive oil"], 
+      "Description": "Layered on a submarine roll, this hearty, satisfying sandwich is perfect for any season with any weather. "
+    }
+  ],
+  "Hot Sandwiches":
+   [
+    {
+    "Name": "Chicken Parmigiana Sandwich",
+    "Ingredients": ["Breaded Chicken Breast","Marinara Sauce", "Melted Mozzarella Cheese"] , 
+    "Description": "Pan-fried Chicken Breast layered with Fresh Marinara Sauce & Melted Mozzarella Cheese, served on an Italian Roll."
+    }, 
+    {
+      "Name": "Grilled Italian Sausage", 
+      "Ingredients": ["Italian Sausage", "Peppers", "Onions"], 
+      "Description": "Italian Sausage, Peppers, Onions, and Herbs on Lightly Toasted Torpedo Roll"
+    }, 
+    {
+      "Name": "Chicken Cordon Bleu", 
+      "Ingredients": ["Chicken", "Ham", "Swiss Cheese", "side of Ranch Dressing"], 
+      "Description": "Breaded Chicken Breast, Ham & Swiss Cheese, served with Side of Ranch Dressing"
+    }
+  ], 
+  "Desserts":[
+    {
+      "Name": "Cannoli", 
+      "Ingredients": ["Sugar", "Cinnamon", "Chocolate Chips", "Ricotta","Pastry Shell" ], 
+      "Description": "Italian pastry formed in tubes, deep-fried, and filled with sweetened ricotta cheese."
+    }, 
+    {
+      "Name": "German Black Forest Cake", 
+      "Ingredients": ["Vanilla", "sugar", "flour", "eggs", "Baking Chocolate", "Cocoa Powder"], 
+      "Description": "A traditional German multi-layered chocolate and cherry torte that was first created in the Black Forest region of Germany."
+    }, 
+    {
+      "Name": "Hot Fudge Sundae", 
+      "Ingredients": ["Vanilla Ice Cream", "Chocolate Fudge", "Whipped Cream","Almonds", "Cherries for top"], 
+      "Description": " Two big dips of vanilla ice cream covered with hot fudge topping, almonds, whipped cream and topped with two cherries."
+    }
+  ],
+  "Drinks":[
+    {
+      "Name": "Strawberry Lemonade", 
+      "Ingredients": ["Strawberries", "White Sugar", "Water", "Lemon"], 
+      "Description":"Treat yourself to this quintessential summer drink, Strawberry Lemonade, there is nothing better on a hot summer day."
+    }, 
+    {
+      "Name": "Frozen Peach Bellini Cocktail", 
+      "Ingredients": ["Procecco Wine", "Sliced Peaches", "Peach Schnapps", "Powdered Sugar", "Ice", "Peach slices for garnish"], 
+      "Description":"Made in the blender with just 4 ingredients, this easy champagne cocktail is a refreshingly boozy beverage to enjoy all summer."
+    }, 
+    {
+      "Name": "Shirley Temple", 
+      "Ingredients": ["Ginger-ale", "Grenadine", "Maraschino Cherries"], 
+      "Description": "It is a sweet non-alcoholic beverage enjoyed by many kids and adults alike."
+    }
+  ]
+
+}

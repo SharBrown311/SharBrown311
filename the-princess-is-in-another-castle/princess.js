@@ -9,7 +9,7 @@ class Player {
     this.namePicked = this.name
     this.gameActive = true;
     this.printOut()
-  } // End Initial
+  } 
 
   setName() {
     if (this.namePicked !== "Mario" || this.namePicked !== "Luigi") {
