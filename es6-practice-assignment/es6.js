@@ -28,10 +28,9 @@ runForLoop(["cat", "dog"])
 const carrots = ['bright orange', 'ripe', 'rotten']
 
 
-mapVegetables= arr => arr.map(carrot =>{
-  return {type: 'carrot', name: carrot}
+let mapVegetables = carrots.map((carrot) => { return {type: 'carrot', name: carrot}
 })
-console.log(mapVegetables(carrots))
+console.log(mapVegetables)
 
 //Rewrite filter using arrow function
 const people = [
@@ -52,7 +51,7 @@ const people = [
     friendly: false
   }
 ]
-filterForFriendly = arr =>arr.filter(person =>person.friendly)
+filterForFriendly = arr => arr.filter(person => person.friendly)
 console.log(filterForFriendly(people))
 
 //Rewrite functions to be arrow functions

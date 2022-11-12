@@ -1,12 +1,11 @@
 //1: Rest Operator-
-let array
 function collectAnimals(...animals) {
-  array = [...animals]
+  return [...animals]
 }
-
-collectAnimals("dog", "cat", "mouse", "jackolope", "platypus")
+console.log(
+collectAnimals("dog", "cat", "mouse", "jackolope", "platypus"))
 // ["dog", "cat", "mouse", "jackolope", "platypus"]
-console.log(array)
+
 
 //2:Write a function that returns a food object with the array names as properties-
 
@@ -49,9 +48,6 @@ function returnFirst(items){
   const [firstItem, , ,] = items;
   return firstItem
 }
-
-
-
 console.log(returnFirst(["apple", "pear", "cake", "pie", "carrot"]))
 //5: Destructuring
 
@@ -79,7 +75,7 @@ console.log(
   combineAnimals([...realAnimals], [...magicalAnimals], [...mysteriousAnimals]));
 
 
-//7: ES6xy
+//7: ES6
 
 // function product(a, b, c, d, e) {
 //   var numbers = [a,b,c,d,e];
@@ -89,14 +85,13 @@ console.log(
 //   }, 1)
 // }
 
-
 product = (a, b, c, d, e) => [a, b, c, d, e].reduce((acc, number) => {
   return acc * number;
 }, 1)
 
 console.log(product(1, 2, 3, 4, 5))
 
-//8: ES6xy
+//8: ES6
 
 // function unshift(array, a, b, c, d, e) {
 //   return [a, b, c, d, e].concat(array);
@@ -106,7 +101,7 @@ unshift = (arr, a, b, c, d, e) => [a, b, c, d, e, ...arr];
 let arr = ["wow" , "yes"]
 console.log(unshift(arr, 1, 23, 'no', false, 1))
 
-//9:ES6xy
+//9:ES6
 // function populatePeople(names){
 //   return names.map(function(name){
 //       name = name.split(" ");
@@ -117,6 +112,7 @@ console.log(unshift(arr, 1, 23, 'no', false, 1))
 //       }
 //   })
 // }
+
 populatePeople = (names) =>
         names.map((name)=>{
           const [firstName, lastName] = name.split(" ")
