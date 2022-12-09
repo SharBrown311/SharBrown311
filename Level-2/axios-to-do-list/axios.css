@@ -1,0 +1,45 @@
+body{
+  font-family: 'Josefin Sans', sans-serif; 
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+header{
+  border: palevioletred 10px solid;
+  text-align: center;
+}
+#header-image{
+  height: 150px;
+  width: 600px;
+}
+form{
+  display: grid;
+  color: pink;
+  height: 250px;
+}
+.inputs{
+  background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%);
+  color:white;
+}
+#list{
+  border: 10px ridge #C45388;
+  text-align: center;
+  display: grid;
+}
+
+#submit-btn{
+    color: rgb(255, 100, 179);
+     font-size: 29px; 
+     line-height: 29px; 
+     padding: 12px;
+     border-radius: 50px;
+    font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none;
+     background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%);
+      box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; border: 2px ridge rgb(196, 83, 136);
+       display: inline-block;}
+    
+#submit-btn:hover {
+    background: #dadee0; 
+  } 
+#submit-btn:active {
+    background: #818486; 
+  }

@@ -27,7 +27,7 @@ class Player {
   } // End SetName()
 
   gotHit() {
-    // const {status} = this;
+    
     if (this.status === "Powered Up" && this.hasStar === true) {
       this.hasStar = false
       console.log(`✨ Star Protected ${this.name} From Getting Hit`)

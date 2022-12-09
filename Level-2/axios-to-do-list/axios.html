@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Axios Todo Project</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&family=Ms+Madi&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="axios.css">
+</head>
+<body>
+    <header>
+    <h3><img src="https://tse1.explicit.bing.net/th?id=OIP.gwWOdccoaOgScFT0HMWRhwHaCu&pid=Api&P=0" alt="todo list heading" id = "header-image"></h3>
+    </header>
+    <form name="newTodo" id="newTodo">
+        <input type="text" name="title" placeholder="Title" id="title"class = "inputs" required>
+        <input type="text" name="description" placeholder="Description" id="description" class = "inputs">
+        <input type="text" name="imgUrl" placeholder="Image URL" id="imgUrl" class = "inputs">
+        <input type="number" name="price" placeholder="Price" id="price" class = "inputs">
+        <button type="submit" id = 'submit-btn'>Add Todo</button>
+    </form>
+
+    <div id="list">
+        
+    </div>
+    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="axios.js"></script>
+</body>
+</html>

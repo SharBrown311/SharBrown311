@@ -1,0 +1,561 @@
+@import url(http://fonts.googleapis.com/css?family=Julius+Sans+One|Libre+Baskerville:400,400italic);
+
+@import url(http://www.csszengarden.com/214/verdemoderna.woff);
+*{
+  box-sizing: border-box;
+}
+body, html{
+  margin: 0;
+  padding: 0;
+}
+
+.header-section{
+
+  text-align: center;
+  border-top: outset 7px rgba(19, 67, 71, 0.9);
+  height: 215px;
+  background-color: white;
+  font-family: 'Libre Baskerville', sans-serif;
+  background-attachment: fixed, fixed, fixed, scroll;
+  background-image: url(http://www.csszengarden.com/214/contours.png), url(http://www.csszengarden.com/214/noise.png), url(http://www.csszengarden.com/214/gridlines.png), url(http://www.csszengarden.com/214/huntington.jpg);
+  background-position: 0 0, 0 0, -5px -25px, 0 50%;
+  background-repeat: repeat, repeat, repeat, no-repeat;
+  background-size: calc(20%), auto, calc(13%), cover;
+  background-clip: border-box,border-box, border-box, border-box;
+}
+h1{
+  color: #fff;
+  font-family: "Julius Sans One", sans-serif;
+  font-weight: 400;
+  font-size: 25 px;
+}
+h2{
+  color: #fff;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 12px;
+}
+h1::before{
+  display: inline-block;
+  position: relative;
+  top: 20px;
+  content: "";
+  width: 80px;
+  height: 80px;
+  background: url(enso.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  opacity: 0.6;
+  }
+  h3{
+    font-family: "Julius Sans One", sans-serif;
+    font-weight: 400;
+    padding-left: 55px;
+  }
+  p{
+    padding-left: 55px;
+    padding-right: 55px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    font-size: 16px;
+    margin: 0.75em 0;
+    line-height: 2;
+    text-align: left;
+  }
+  .authors-designs-1, .authors-designs-2{
+    list-style: none;
+  }
+  .download-icon{
+    height: 12px;
+    width: 12px;
+    border: #7ca776 1px solid;
+    border-radius: 1px;
+    background-color: #7ca776;
+  }
+  .sub-header{
+  width: 100%;
+  display: flex;
+  height: 45px;
+  column-span: all;
+  background: transparent;
+  justify-content: center;
+  margin: -46px 0 0 0;
+  font-family: "Julius Sans One", sans sans-serif;
+
+  }
+  .indicator-2{
+    height: 45px;
+    width: 70px;
+    font-size: 30px;
+    border: transparent;
+    background: transparent;
+    color: #fff;
+    margin: -8px 0 0 -58px;
+  }
+  .view-all{
+    border: transparent;
+    background: rgb(229 214 214 / 20%);
+    height: 45px;
+    width: 60%;
+    color: #fff;
+}
+  
+  a{
+    color: #0d8ba1;
+    text-decoration: none;
+  }
+  a:hover{
+    color: #456b83
+  }
+  .intro a::before{
+    color: #a9b995;
+    background: #d9e1cd;
+  }
+  .aside-1{
+    background: #edf4f0;
+    list-style: none;
+  }
+
+  .resource-list-items{
+    text-decoration: none;
+    list-style: none;
+    padding: 53px 5% 0px 0;
+    border-top: solid 1px #d9e3dc;
+    text-align: left;
+  }
+  .section-2{
+    background-attachment: scroll, scroll, fixed;
+    background-color: rgba(138,188,159,0.5);
+    background-image: url(contours-opaque.png), url(gridlines-opaque.png), url(bamboo.png);
+    background-repeat: repeat, repeat, no-repeat;
+    background-size: auto, auto, cover;
+  }
+ .design-name{
+  font-family: "Julius Sans One", sans-serif;
+  font-size: 15px;
+ }
+ .designer-name{
+  font-size: 16px;
+
+ }
+ .by{
+  font-style: italic;
+  font-size: 16px;
+  color: #c0cac3;
+ }
+    .about-section{
+      background-image: url(contours.png), url(gridlines.png), url(noise.jpg), url(koi.jpg);
+      background-attachment: fixed, fixed, fixed, scroll;
+    
+      padding: 96px;
+      }
+      .about-text{
+        font-family: "Libre Baskerville", sans-serif;
+        font-size: 20px;
+        font-style: oblique;
+        color: #fff;
+        opacity: 55%;  
+      }
+      #mediatemple{
+        font-size: 20px;
+        color: #fff;
+        font-family: "Libre Baskerville", sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        opacity: 80%;
+      }
+      #about-author{
+        font-family: "Libre Baskerville", sans-serif;
+        color: white;
+        font-weight: 400;
+        font-size: 20px;
+        opacity: 80%;
+        
+      }
+      #zen-garden-book{
+        font-family: "Libre Baskerville", sans-serif;
+        color: white;
+        font-weight: 400;
+        font-size: 22px;
+        opacity: 80%;
+      }
+
+      .about-section-text{
+        text-align: center;
+      }
+      ul{
+        -webkit-columns: 2;
+        -moz-columns: 2;
+        columns:2;
+     
+      }
+
+      .authors-designs-1, .authors-designs-2{
+        padding: 53px 5% 0px 0;
+        border-top: solid 1px #d9e3dc;
+        color: #616857;
+       
+      }
+      .aside-2{
+        background-color: rgba(138,188,159,0.5);
+        background-image: url(bamboo.png);
+      }
+
+
+      .icon-section{
+        display: flex;
+        justify-content: space-evenly;
+        overflow: hidden;
+        background: #134347;
+        padding: 46px;
+      }
+    
+    .fa-icon-html-five{
+      height: 48px;
+      width: 48px;
+      border: rgb(255 255 255 / 0.5) solid 3px;
+      border-radius: 50%;
+      object-position: 50% 50%; 
+      object-fit: fill;
+    
+    }
+    
+    .fa-icon-css{
+        height: 48px;
+        width: 48px;
+        border: rgb(255 255 255 / 0.5) solid 3px;
+        border-radius: 50%;
+        object-position: 50% 50%;
+        object-fit: fill;
+        padding:  8px 8px 8px 8px;
+        
+    }
+    .fa-licensing-icon{
+      height: 48px;
+      width: 48px;
+      font-weight: 400;
+      color: rgb(255 255 255 / 0.5);
+      stroke-linecap: round;
+      stroke-width: 7px;
+      stroke-dasharray: inherit;
+      stroke-linecap: round;
+    }
+      
+    
+      
+      .fa-icon-accessibility{
+        height: 48px;
+        width: 48px;
+        padding-top: 3px;
+        padding-left: 3px;
+        border: rgb(255 255 255 / 0.5) solid 3px; 
+        border-radius: 50%;
+        top: 0px;
+      }
+      
+      .fa-icon-github{
+        height: 48px;
+        width: 48px;
+        border-radius: 50%;
+        object-position: 50% 50%;
+      }
+
+input[value]{
+  font-family: "Julius Sans One", sans sans-serif;
+  font-size: 16px;
+}
+input.indicator-2[value]{
+  font-size: 60px; 
+}
+
+/* PHONE TO TABLET */
+@media screen and (max-width: 750px){
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+
+  }
+  
+  .grid-container > div {
+    overflow: hidden;
+    text-align: center;
+  }
+  .header-section{
+  grid-column-start: 1;
+  grid-column-end:  2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  
+  
+  }
+  
+  .sub-header{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    width: 100%;
+    display: flex;
+    height: 45px;
+    column-span: all;
+    background: transparent;
+    justify-content: center;
+    margin: -46px 0 0 0;
+    font-family: "Julius Sans One", sans sans-serif;
+    }
+    .view-all{
+      border: transparent;
+      background: rgb(229 214 214 / 20%);
+      height: 45px;
+      width: 60%;
+      font-family: "Julius Sans One", sans sans-serif;
+  }
+  .section-1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  .section-2{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start:3;
+    grid-row-end: 4;
+  }
+  .section-3{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start:4;
+    grid-row-end: 5;
+  }
+  .aside-1{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start:6;
+    grid-row-end: 7;
+  }
+
+.authors-designs-1, .authors-designs-2{
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+  .aside-2{
+    grid-column-start: 1;
+    grid-column-end:2;
+    grid-row-start:7;
+    grid-row-end: 8;
+  }
+  
+  .colored-block{
+    display: none;
+  }
+
+  
+    .footer{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    }
+  }
+  /* PHONE TO TABLET END */
+
+/* TABLET TO SMALL LAPTOP */
+@media screen and(min-width: 751px
+) and (max-width: 1031px){
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.grid-container > div {
+  overflow: hidden;
+  text-align: center;
+}
+.header-section{
+grid-column-start: 1;
+grid-column-end:  2;
+grid-row-start: 1;
+grid-row-end: 2;
+column-span: all;
+
+}
+
+
+
+  .sub-header{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    width: 100%;
+    display: flex;
+    height: 45px;
+    column-span: all;
+    background: transparent;
+    justify-content: center;
+    margin: -46px 0 0 0;
+    background-color: #fff;
+    border: transparent;
+    font-family: "Julius Sans One", sans sans-serif;
+    }
+    .view-all{
+      border: transparent;
+      background: rgb(229 214 214 / 20%);
+      height: 45px;
+      width: 60%;
+      font-family: "Julius Sans One", sans sans-serif;
+  }
+.section-1 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.section-2{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start:3;
+  grid-row-end: 4;
+}
+.section-3{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start:4;
+  grid-row-end: 5;
+}
+.aside-1{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start:6;
+  grid-row-end: 7;
+}
+
+.design-list ul{
+
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+  }
+
+
+
+.aside-2{
+  grid-column-start: 1;
+  grid-column-end:2;
+  grid-row-start:7;
+  grid-row-end: 8;
+}
+
+.colored-block{
+  display: none;
+}
+
+
+  .footer{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 5;
+  grid-row-end: 6;
+  }
+}
+
+/* TABLET TO SMALL LAPTOP END */
+
+
+/* BIGGER THAN Large Laptop */
+@media screen and (min-width: 1132px) {
+  
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    min-width: 1132px;
+  }
+.grid-container > div {
+    overflow: hidden;
+    text-align: center;
+  }
+  .header-section{
+  grid-column-start: 1;
+  grid-column-end:  3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  
+  }
+  .sub-header{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+      .image{
+        height: 90px;
+        float: left;
+      }
+      .section-1{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        
+      }
+      .section-2{
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 3;
+      grid-row-end: 4;
+      }
+      .section-3{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 4;
+        grid-row-end: 5;
+    
+      }
+      .aside-1{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        column-count: 1;
+      }
+  
+ 
+      .aside-2{
+        grid-column-start: 2;
+        grid-column-end:3;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        flex-grow: inherit;
+      }
+      .resources-list{
+        flex-direction: column;
+        
+      }
+      .colored-block{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 4;
+        grid-row-end: 5;
+        /* margin: 0;
+        padding: 0; */
+        background: #edf4f0;
+        border: 1px solid#edf4f0;
+      }
+      
+      .footer{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start:5;
+        grid-row-start: 6;
+      }
+      p{
+        font-size: 12px;
+      }
+      h3{
+        font-size: 15px;
+      }
+    }
