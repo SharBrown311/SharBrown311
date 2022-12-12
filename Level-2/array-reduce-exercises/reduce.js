@@ -84,31 +84,35 @@ function total(arr) {
 ];
 
 function voterResults(arr) {
-    return arr.reduce(function(final, voter) {
+    return arr.reduce(function(tally, voter) {
         if(voter.age < 30 && voter.voted === true) {
-            final.numYoungVotes++
+            tally.numYoungVotes++
         }
         else if (voter.age < 30) {
-            final.numYoungPeople++
+            tally.numYoungPeople++
         }
-        else if (voter.age > 30 && voter.voted === true) {
-            final.numMidVotes++
+        else if (voter.age > 30 && voter.age < 50 && voter.voted === true) {
+            tally.numMidVotes++
         }
-        else if (voter.age > 30) {
-            final.numMidPeople++
+        else if (voter.age > 30 && voter.age < 50) {
+           tally.numMidsPeople++
         }
         else if (voter.age > 50 && voter.voted) {
-            final.numOldVotes++
+            tally.numOldVotesPeople++
         }
         else if (voter.age > 50) {
-            final.numOldPeople++
+            tally.numOldsPeople++
         }
     }
-    ,{numYoungVotes: 0}, {numYoungPeople: 0}, {numMidPeople: 0},
-    {numMidVotes: 0}, {numOldVotes: 0}, {numOldPeople: 0})
+    ,{numYoungVotes: 0}, 
+    {numYoungPeople: 0},
+    {numMidsPeople: 0},
+    {numMidVotes: 0}, 
+    {numOldVotesPeople: 0}, 
+    {numOldsPeople: 0})
 }
 
-console.log(voterResults(voters)); // Returned value shown below:
+console.log(voterResults(voters));
 /*
 { numYoungVotes: 1,
   numYoungPeople: 4,
