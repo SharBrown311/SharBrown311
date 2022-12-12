@@ -1,6 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Julius+Sans+One|Libre+Baskerville:400,400italic);
 
-@import url(http://www.csszengarden.com/214/verdemoderna.woff);
 *{
   box-sizing: border-box;
 }
@@ -206,12 +205,11 @@ color:rgb(221, 214, 214);
 
 
       .authors-designs-1, .authors-designs-2{
-        padding: 53px 5% 0px 0;
+        padding: 53px 0px 0px 0;
         border-top: solid 1px #d9e3dc;
         color: #616857;
         text-align: left;
-       
-      }
+       }
       .aside-2{
         background-color: rgba(138,188,159,0.5);
         background-image: url(bamboo.png);
@@ -292,6 +290,8 @@ color:rgb(221, 214, 214);
         -webkit-columns: 2;
         -moz-columns: 2;
         columns:2;
+        margin: 0;
+        padding-left: 200px;
      
       }
 .authors-designs-1:hover{
@@ -600,8 +600,7 @@ ul{
         grid-column-end: 3;
         grid-row-start: 4;
         grid-row-end: 5;
-        /* margin: 0;
-        padding: 0; */
+ 
         background: #edf4f0;
         border: 1px solid#edf4f0;
       }

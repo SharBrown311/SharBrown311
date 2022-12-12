@@ -58,4 +58,4 @@ function fiveAndGreaterOnly(arr) {
   ]));
   // =>
   //[ { name: 'Angelina Jolie', age: 80 },
-  //  { name: 'Bob Ziroll', age: 100 } ]
+  //  { name: 'Bob Ziroll', age: 100 } ]    
