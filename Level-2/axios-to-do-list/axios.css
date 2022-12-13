@@ -1,45 +1,65 @@
 body{
-  font-family: 'Josefin Sans', sans-serif; 
-  background-repeat: no-repeat;
-  background-size: contain;
+  font-family: 'Ubuntu Condensed', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 header{
-  border: palevioletred 10px solid;
+  border: red 10px solid;
   text-align: center;
 }
-#header-image{
-  height: 150px;
-  width: 600px;
-}
+#header-text{
+   color: white;
+ }
+ #checkmark{
+  color:#ff0000;
+ }
+ header{
+  height:auto;
+  width: auto;
+  background: url(https://tse2.mm.bing.net/th?id=OIP.Io4KCA2pGmWVr0gvxpsb-QHaEK&pid=Api&P=0) no-repeat local 50% 50%;
+  text-align: center;
+ }
+ header:hover{
+  -moz-transform: scale(1) rotate(360deg) skew(-6deg, 0deg);
+-webkit-transform: scale(1) rotate(360deg) skew(-6deg, 0deg);
+-o-transform: scale(1) rotate(360deg) skew(-6deg, 0deg);
+-ms-transform: scale(1.2) rotate(360deg) skew(-6deg, 0deg);
+transform: scale(1.2) rotate(360deg) skew(-6deg, 0deg);
+border: black;
+ }
+
 form{
   display: grid;
-  color: pink;
   height: 250px;
 }
-.inputs{
-  background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%);
-  color:white;
-}
 #list{
-  border: 10px ridge #C45388;
+  border: 10px ridge #c45353;
+  background-color: #ff0000;
   text-align: center;
   display: grid;
 }
-
-#submit-btn{
-    color: rgb(255, 100, 179);
+.inputs{
+  color: white;
+  background-color: red;
+  text-align: center;
+}
+button{
+    color: rgb(243, 239, 239);
      font-size: 29px; 
      line-height: 29px; 
      padding: 12px;
-     border-radius: 50px;
     font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none;
-     background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%);
-      box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; border: 2px ridge rgb(196, 83, 136);
+     background-image: linear-gradient(to right, rgb(72, 72, 72) 0%, rgb(0, 0, 0) 50%, rgb(117, 20, 20) 100%);
+      box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; border: 2px ridge rgb(12, 1, 1);
        display: inline-block;}
     
-#submit-btn:hover {
-    background: #dadee0; 
+button:hover {
+    background: #fff;
   } 
-#submit-btn:active {
-    background: #818486; 
+#button:active {
+    background: #000c15; 
   }
+  .fa-pen:before {
+    color: red;
+    background-color: black;
+}

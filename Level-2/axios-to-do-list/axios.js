@@ -29,8 +29,8 @@ function makeTodo(todo){
     h2.textContent = todo.price
     check.type = 'checkbox'
     button.type = 'submit'
-    button.textContent = 'X'
-    button2.textContent = 'Edit'
+    button.innerHTML="<i class = 'fas fa-trash-can'>"
+    button2.innerHTML = "<i class = 'fas fa-pen'></i>"
     editForm.id = 'editForm'
     input1.type = 'text'
     input1.value = todo.title
@@ -45,7 +45,7 @@ function makeTodo(todo){
     input4.value = todo.price
     input4.id = 'price'
     button3.type = 'submit'
-    button3.textContent= 'Save'
+    button3.innerHTML= "<i class = 'fas fa-check'>"
     container.style.display = 'inline-block'
     container.appendChild(h1)
     container.appendChild(p)
