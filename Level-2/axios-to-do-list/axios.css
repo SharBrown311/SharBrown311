@@ -2,30 +2,51 @@ body{
   font-family: 'Ubuntu Condensed', sans-serif;
   margin: 0;
   padding: 0;
+
 }
-header{
-  border: red 10px solid;
-  text-align: center;
+#axios{
+  transform: rotate(270deg);
+  color: #208912;
+  font-size: 65px;
+  position: relative;
+  left: 50px;
+
 }
 #header-text{
-   color: white;
+   color: rgb(17, 31, 131);
+   font-size: 65px;
+   text-align: center;
  }
- #checkmark{
-  color:#ff0000;
- }
- header{
-  height:auto;
-  width: auto;
-  background: url(https://tse2.mm.bing.net/th?id=OIP.Io4KCA2pGmWVr0gvxpsb-QHaEK&pid=Api&P=0) no-repeat local 50% 50%;
+ #header-text-2{
+  color: rgb(17, 31, 131);
+  font-size: 65px;
   text-align: center;
  }
- header:hover{
-  -moz-transform: scale(1) rotate(360deg) skew(-6deg, 0deg);
--webkit-transform: scale(1) rotate(360deg) skew(-6deg, 0deg);
--o-transform: scale(1) rotate(360deg) skew(-6deg, 0deg);
--ms-transform: scale(1.2) rotate(360deg) skew(-6deg, 0deg);
-transform: scale(1.2) rotate(360deg) skew(-6deg, 0deg);
-border: black;
+ #checkmark{
+  color: #208912;
+  margin: 0 0 0 18px;
+  position: relative;
+  left: -7px;
+  bottom: 21px;
+  font-size: 42px;
+}
+ 
+ header{
+  height: auto;
+  width: auto;
+  text-align: justify;
+  display: flex;
+  justify-content: center;
+  background-image: url(https://tse4.mm.bing.net/th?id=OIP.7y-tnaJZlorCEZXAIee_ewHaEo&pid=Api&P=0);
+  
+ }
+ #submit-btn{
+  background-color: #4CAF50;
+  color: #111F83;
+ }
+ #submit-btn:hover{
+  background-color: #111F83;
+  color: #4CAF50;
  }
 
 form{
@@ -33,33 +54,74 @@ form{
   height: 250px;
 }
 #list{
-  border: 10px ridge #c45353;
-  background-color: #ff0000;
-  text-align: center;
+ text-align: center;
   display: grid;
 }
 .inputs{
-  color: white;
-  background-color: red;
+  background-color: rgb(252, 251, 251);
   text-align: center;
+  border-color: #4CAF50;
 }
-button{
-    color: rgb(243, 239, 239);
-     font-size: 29px; 
-     line-height: 29px; 
-     padding: 12px;
-    font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none;
-     background-image: linear-gradient(to right, rgb(72, 72, 72) 0%, rgb(0, 0, 0) 50%, rgb(117, 20, 20) 100%);
-      box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; border: 2px ridge rgb(12, 1, 1);
-       display: inline-block;}
+#buttonBox{
+  border: #111F83 solid 1px;
+  position: relative;
+  display: flex;
+  text-align: center;
+  border-radius: 15px;
+  background-color: #4CAF50;
+  padding: 0 0 0 0;
+  justify-content: space-evenly;
+}
+
+.fa-pen{
+    color: #4CAF50;
+}   
     
-button:hover {
-    background: #fff;
-  } 
-#button:active {
-    background: #000c15; 
-  }
-  .fa-pen:before {
-    color: red;
-    background-color: black;
+.fa-trash-can{
+  color: #4CAF50;
+} 
+
+.fa-pen:hover{
+  color: #111F83;
+
 }
+.fa-trash-can:hover{
+  color: #111F83;
+}
+
+input::placeholder{
+  color: #111F83;
+}
+
+
+img{
+  height: 50px;
+  width: 50px;
+}
+
+
+.container{
+  border: 12px ridge rgb(17, 31, 131);
+
+  text-align: center;
+
+}
+
+input[type="checkbox"]{
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+}
+#edit{
+  background-color: #111F83;
+  border: none;
+  cursor: pointer;
+}
+#delete{
+background-color: #111F83;
+border: none;
+cursor: pointer;
+}
+
+/* document.getElementById("myForm").reset();
+ */

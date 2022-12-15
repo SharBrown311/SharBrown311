@@ -10,10 +10,12 @@ axios.get('https://api.vschool.io/sharonbrown/todo/').then((response)=>{
 
 function makeTodo(todo){
     const container = document.createElement('div')
+    container.className = "container"
     const h1 = document.createElement('h1')
     const p = document.createElement('p')
     const img = document.createElement('img')
     const h2 = document.createElement('h2')
+    const buttonBox = document.createElement("div")
     const check = document.createElement('input')
     const button = document.createElement('button')
     const button2 = document.createElement('button')
@@ -28,9 +30,12 @@ function makeTodo(todo){
     img.src = todo.imgUrl
     h2.textContent = todo.price
     check.type = 'checkbox'
+    buttonBox.id = "buttonBox"
     button.type = 'submit'
     button.innerHTML="<i class = 'fas fa-trash-can'>"
+    button.id = "delete"
     button2.innerHTML = "<i class = 'fas fa-pen'></i>"
+    button2.id = "edit"
     editForm.id = 'editForm'
     input1.type = 'text'
     input1.value = todo.title
@@ -45,32 +50,38 @@ function makeTodo(todo){
     input4.value = todo.price
     input4.id = 'price'
     button3.type = 'submit'
-    button3.innerHTML= "<i class = 'fas fa-check'>"
+    button3.innerHTML= "<i class = 'fas fa-check'></i>"
+    button3.id = "save"
     container.style.display = 'inline-block'
     container.appendChild(h1)
     container.appendChild(p)
     container.appendChild(img)
     container.appendChild(h2)
-    container.appendChild(check)
-    container.appendChild(button)
-    container.appendChild(button2)
+    container.appendChild(buttonBox)
+    buttonBox.appendChild(check)
+    buttonBox.appendChild(button)
+    buttonBox.appendChild(button2)
     editForm.style.display = 'none'
     editForm.appendChild(input1)
     editForm.appendChild(input2)
     editForm.appendChild(input3)
     editForm.appendChild(input4)
     editForm.appendChild(button3)
+
+   
     container.addEventListener('change', (e)=> {
         e.preventDefault()
         if(check.checked === true){
             axios.put(`https://api.vschool.io/sharonbrown/todo/${todo._id}`, {completed: true}).then( response =>{   
                 response.data
                 h1.style.textDecoration = 'line-through'
+                p.style.textDecoration = "line-through"
             })
         }else if(check.checked === false) {
             axios.put(`https://api.vschool.io/sharonbrown/todo/${todo._id}`, {completed: false}).then( response =>{   
                 response.data
                 h1.style.textDecoration = 'none'
+                p.style.textDecoration = "none"
             })
         }
     })
@@ -89,7 +100,7 @@ function makeTodo(todo){
     editForm.addEventListener('submit', (e)=>{
         e.preventDefault()
         const edit = {
-            title: editForm.title.value,
+            title: editForm.title.valueOf,
             description: editForm.description.value,
             imgUrl: editForm.imgUrl.value,
             price: editForm.price.value
@@ -97,15 +108,16 @@ function makeTodo(todo){
         axios.put(`https://api.vschool.io/sharonbrown/todo/${todo._id}`, edit).then( response =>{
             response.data
             editForm.style.display = 'none'
-            container.style.display = 'inline-block'
+            container.style.display = 'block'
             document.location.reload(true)
         })
     })
     list.appendChild(container)
     list.appendChild(editForm)
 }
-
-newTodo.addEventListener('submit', (e)=> {
+const form = document.getElementById("newTodo")
+form.id = "newTodo";
+form.addEventListener('submit', (e)=> {
     e.preventDefault()
     const another = {
         title: newTodo.title.value,
@@ -113,7 +125,10 @@ newTodo.addEventListener('submit', (e)=> {
         imgUrl: newTodo.imgUrl.value,
         price: newTodo.price.value
     }
+    
     axios.post('https://api.vschool.io/sharonbrown/todo/', another).then( response =>{
         makeTodo(response.data)
     })
+    form.reset()
 })
+

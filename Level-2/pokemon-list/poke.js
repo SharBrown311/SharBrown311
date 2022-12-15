@@ -19,7 +19,7 @@ myFunct = pokemon => {
   for (let i = 0; i < pokemon.length; i++) {
     let newH3 = document.createElement("h3")
     newH3.innerHTML += pokemon[i].name.toUpperCase()
-    document.body.append(newH3)
+    document.body.append(newH3);
   }
 }
 
