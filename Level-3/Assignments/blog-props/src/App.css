@@ -1,41 +1,186 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+
+
+body{
+  font-size: 1.2rem;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.main-background{
+  position: relative;
+  background-image: url('src/images/home-bg.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 8rem;
+  margin-bottom: 3rem;
+  height: 400px;
+  width: auto;
+  background-position: center;
+  background-color: #212529;
+
+  
+}
+header{
+  background-color: #6c757d;
+}
+#mainNav{
+  position: absolute;
+  border-bottom: 1px solid #dee2e6;
+  background-color: #fff;
+  z-index: 1030;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-family: 'Open Sans';
+}
+.mainNav, .navbar
+.navbar-brand{
+  color: black;
+  font-family: 'Lora', sans-serif ;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  font-weight:900 ;
+}
+.navbar-toggler{
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: none;
+  line-height: 1;
+  background-color: transparent;
+  transition: box-shadow 0.15s ease-in-out;
+}
+#mainNav .navbar-nav > li.nav-item > a.nav-link {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.0625em;
+  text-transform: uppercase;
+}
+a{
+  text-decoration: none;
+}
+
+.nav-container{
+  display: flex;
+  flex-direction: row;
+  background-color: darkgray;
+}
+.header-title{
+  position: relative;
+  font-size: 48px;
+  color: #fff;
+  top: 189px;
+  font-family: 'Open Sans';
+  font-weight: 900;
   text-align: center;
 }
+header.main-background::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #212529;
+}
+.header-p{
+  color: #fff;
+  position: relative;
+  top:189px;
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.1;
+  display: block;
+  margin-top: 0.625rem;
+  font-family: "Open Sans", -apple-system;
+  text-align: center;
+}
+li.nav-item{
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.0625em;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.nav-link{
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
+
+
+
+.border-top {
+  border-top: 1px solid #dee2e6 !important;
+  padding-top: 55px;
+  padding-bottom: 55px;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.fa-lg {
+  font-size: 1.25em;
+  line-height: .05em;
+  vertical-align: -0.075em;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.fab{
+  font-size: 28px;
+  padding-top: 9px;
+
+  color: white;
+}
+.blogpost{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding-left: 125px;
+  padding-right: 125px;
+}
+.blogTitle{
+  font-weight: 900;
+}
+.blogsubTitle-date{
+  font-style: italic;
+}
+.blogAuthor{
+  font-weight: 400;
+  color: #212529;
+}
+.blogAuthor > a {
+  color: #212529;
+}
+.blogsubTitle{
+  font-size: 25px;
+  font-weight: 300;
+}
+.blogpost >a >.blogsubTitle-date{
+  font-weight: 300;
+  margin-bottom: 0.625rem;
+}
+.blogTitle:hover{
+  color: #0085A1;
+}
+.blogsubTitle:hover{
+color: #0085A1;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.list-inline{
+  display: flex;
+  justify-content: center;
+}
+.fa-stack{
+  color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.postedBy{
+  font-style: italic;
 }
-
-.card {
-  padding: 2em;
+.postedBy-text{
+  color: darkgrey;
+  font-family: "Lora", sans-serif;
+  font-size: 18px;
 }
-
-.read-the-docs {
-  color: #888;
+.postedBy-date{
+  color: darkgrey;
+  font-family: 'Lora', sans-serif;
+  font-size: 18px;
+}
+.blogAuthor:hover{
+  color: #0085A1;
 }
