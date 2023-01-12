@@ -1,0 +1,11 @@
+.heading-title{
+  font-size: 65px;
+  text-align: center;
+  font-family: 'Cedarville Cursive', sans-serif;
+}
+.author {
+  text-align: center;
+  font-family: 'Cedarville Cursive', sans-serif;
+  margin: -70px 3px 0 -39px;
+  padding-bottom: 64px;
+}
