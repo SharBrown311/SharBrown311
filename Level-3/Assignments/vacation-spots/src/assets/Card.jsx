@@ -31,7 +31,8 @@ function Card(props){
       </div>
       <div className="card-text">
           <h3>{props.spot.place} ({props.spot.price})</h3>
-          <div className='price'>Price: ${props.spot.price}</div>
+          <div className='price'>Price: {dollar}
+          {props.spot.price}</div>
           <div className='statement'>Best the best time of year to visit {props.spot.name} is in {props.spot.timeToGo}!</div>
       </div>
       </div>
