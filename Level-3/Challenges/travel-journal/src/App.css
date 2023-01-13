@@ -1,0 +1,109 @@
+body{
+  height: 837px;
+  border: 2px solid rgba(255, 255, 255, 1);
+
+}
+.navbar{
+  background-color:#F55A5A;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  font-family: 'Inter';
+  color: rgba(255, 255, 255, 1);
+  ;
+  font-weight: 500;
+  font-size: 14.46px;
+  line-height: 17.5px;
+
+}
+.navbar--globe{
+  padding-top: 20px;
+  padding-right: 10px;
+  height:24px;
+  width: 24px;
+}
+.card{
+  width: 550px;
+  height: 220px;
+  display: flex;
+  padding-top: 55px;
+  border-bottom: 1px solid gray;
+}
+
+.img-url-src{
+  height: 168px;
+  width: 126px;
+  border: 1px solid transparent;
+  border-radius: 10%; 
+  margin: 40px;
+}
+
+.card:hover{
+  border: 1px solid black;
+}
+.top-container {
+  width: 100%;
+  position: relative;
+  top: -229px;
+  bottom: 0;
+  right: 0;
+  left: 239px;
+  display: flex;
+  justify-content: start;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: baseline;
+}
+.map-pointer{
+  padding-right: 15px;
+}
+.country-name{
+  padding-right: 15px;
+}
+.card--title{
+  display: flex;
+ 
+  position: absolute;
+  width: 326px;
+  height: 33px;
+  margin: -247px 0 0 241px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  color: #2B283A;
+}
+.card--description {
+  margin: -157px 0 0 0;
+  font-size: 10.24px;
+  font-family: 'Inter';
+  line-height: 150%;
+  padding-right: 85px;
+  padding-left: 218px;
+  font-weight: 600;
+  position: relative;
+  bottom: 85px;
+}
+.start-end-date {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 11.24px;
+  line-height: 12px;
+  color: #2B283A;
+  width: 319px;
+  position: relative;
+  bottom: 242px;
+  left: 240px;
+}
+
+hr{
+  position: absolute;
+}
+div.location-img-container{
+  border-bottom: 1px solid gray;
+}
