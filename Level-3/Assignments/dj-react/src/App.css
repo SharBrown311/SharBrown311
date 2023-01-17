@@ -1,0 +1,46 @@
+.square-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 10px;
+  column-gap: 10px;
+
+}
+.square-1{
+  height: 250px;
+  width: 250px;
+  border: 1px solid black;
+}
+.square-2{
+  height: 250px;
+  width: 250px;
+  border: 1px solid black;
+}
+.square-3{
+  height: 250px;
+  width: 250px;
+  border: 1px solid black;
+
+}
+.square-4{
+  height: 250px;
+  width: 250px;
+  border: 1px solid black;
+}
+.button-container{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: center;
+padding-left: 125px;
+padding-right: 125px ;
+column-gap: 10px;
+row-gap: 10px;
+
+  }
+button{
+  height: 65px;
+  width: 95px;
+}
+
