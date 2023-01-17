@@ -1,136 +1,99 @@
-import React from "react"
-import Square from "./assets/Square"
-import './App.css'
-import Header from "./assets/Header"
-import Honk from './sounds/honk.mp3'
+import React from "react";
+import Square from "./assets/Square";
+import "./App.css";
+import Header from "./assets/Header";
+import Buttons from "./assets/Buttons";
+import Growl from "./sounds/stomachgrowl.mp3"
+import Zombie from "./sounds/zombie.mp3"
+import ToySquek from "./sounds/toysquek.mp3"
+import Wii from "./sounds/wii.mp3"
+import NoiseMaker from "./sounds/noisemaker.mp3"
+import Sponge from "./sounds/spongebob.mp3"
+import Scream from "./sounds/scream.mp3"
+import Xbox from "./sounds/xbox.mp3"
+import Mario from "./sounds/mario.mp3"
 
+function App() {
+  const [color, setColor] = React.useState([
+    "white",
+    "white",
+    "white",
+    "white",
+  ]);
 
-class App extends React.Component{
-  constructor(){
-  super()
-  this.state = {
-    colors: ["white", 'white', "white", "white"]
-  }
-  }
-   // function djSmall(){
-      //You will have one button that will change all four squares either black or white. White if the first one is white. Black if the first square is white.
-
-    // }
-  smallDJ = () =>{
-    this.honk()
-    if(this.state.colors[1] !== "white")
-    this.setState({
-      colors:["white", 'white', "white", "white"]
-    })
-    else{
-      this.setState({
-        colors: ['black', 'black', 'black', 'black']
-      })
+  function smallDJ() {
+    new Audio(Growl).play()
+    if (color[0] !== "white") {
+      setColor(["white", "white", "white", "white"]);
+    } else {
+      setColor(["black", "black", "black", "black"]);
     }
   }
-      // function partyDJ(){
-      //Add a second button. The second will turn the top half (both squares) of the grid purple.
-  partyDJ= () =>{
-    this.honk()
-    this.setState(prevState =>{
-      return{
-        colors: ['purple', 'purple', prevState, prevState]
-      }
-    })
+
+  function partyDJ() {
+    new Audio(Zombie).play()
+    setColor(["purple", "purple", color, color])
   }
 
-// -----------------------------------------------------------
-  //Left Blue and Right Blue will change the colors of the bottoms squares blue but not individually. One will be linked to the bottom left and the other to the bottom right.
-  leftDJ = () =>{
-    this.honk()
-    this.setState(prevState =>{
-      return{
-        colors: [prevState, prevState, "blue", prevState]
-      }
-    })
+  // -----------------------------------------------------------
+
+  function leftDJ() {
+    new Audio(ToySquek).play()
+    setColor([color, "blue", color, color]);
   }
-  rightDJ = () =>{
-    this.honk()
-    this.setState(prevState =>{
-      return{
-        colors: [prevState, prevState, prevState, "blue"]
-      }
-    })
+  function rightDJ() {
+    new Audio(Xbox).play()
+    setColor([color, color, color, "blue"]);
   }
+
   // ---------------------------------------------------------
 
-      //Each of the Big DJ buttons will be linked to one of the squares and they can have any effect we want.
-
-  bigDJOne = () =>{
-    this.honk()
-    this.setState(prevState =>{
-      return{
-        colors: [prevState, 'red', prevState, prevState]
-    
-    } 
-   })
+  function bigDJOne() {
+    new Audio(Wii).play()
+    setColor(["darkgoldenrod", color, color, color]);
   }
-  bigDJTwo = () =>{
-    this.honk()
-    this.setState(prevState =>{
-      return{
-        colors: ['cyan', prevState, prevState, prevState]
-      }
-    })
+  function bigDJTwo() {
+    new Audio(NoiseMaker).play()
+    setColor([color, "orange", color, color]);
   }
 
-bigDJThree = () =>{
-  this.honk()
-  this.setState(prevState =>{
-    return{
-      colors: [prevState, prevState, 'magenta', prevState]
+  function bigDJThree() {
+    new Audio(Sponge).play()
+    setColor([color, color, "magenta", color]);
+  }
+  function bigDJFour() {
+    new Audio(Scream).play()
+    setColor([color, color, color, "red"]);
+  }
+
+  function makeSound() {
+    new Audio(Mario).play()
+   
+  }
+
+
+ return (
+        <div>
+          <Header />
+          <Square 
+            style0={{backgroundColor: color[0]}} 
+            style1 = {{backgroundColor:color[1]}}
+            style2={{backgroundColor: color[2]}}
+            style3 = {{backgroundColor: color[3]}}
+          />
+            <Buttons 
+              smallDJ = {smallDJ}
+              partyDJ = {partyDJ}
+              leftDJ = {leftDJ}
+              rightDJ = {rightDJ}
+              bigDJOne = {bigDJOne}
+              bigDJTwo = {bigDJTwo}
+              bigDJThree = {bigDJThree}
+              bigDJFour = {bigDJFour}
+              makeSound = {makeSound}
+            />
+          </div>
+      );
     }
-  })
-}
-bigDJFour = () =>{
-  this.honk()
-  this.setState(prevState =>{
-    return{
-      colors: [prevState, prevState, prevState, 'darkgoldenrod']
-    }
-  })
-}
-isSound = false;
 
-honk = () =>{
-  new Audio(Honk).play()
-  if(this.isSound === true){
-    this.isSound = false
-  }else if(this.isSound === false){
-    this.isSound = true
-  }
-}
-
-render = () =>{
-  const squares = this.state.colors.map((item, index) => {
-    <Square key = {index} 
-    color = {item} />
-    return(
-      <div>
-      <Header />
-      <div className="container">
-            {squares}
-         <div className='button-container'>
-   <button className='dj-small' onClick = {this.smallDJ}>DJ Small</button>
-  <button className='party-dj'  onClick = {this.partyDJ}>Party DJ</button>
-  <button className='left-dj'  onClick = {this.leftDJ}>Left DJ</button>
-   <button className='right-dj'  onClick = {this.rightDJ}>Right Blue</button>
-   <button className='bigDJOne'  onClick = {this.bigDJOne}>Big DJ One</button>
-   <button className='bigDJTwo'  onClick = {this.bigDJTwo}>Big DJ Two</button>
-   <button className='bigDJThree'  onClick = {this.bigDJThree}>Big DJ Three</button>
-   <button className='bigDJFour'  onClick = {this.bigDJFour}>Big DJ Four</button>
-   <button onClick={this.noise}>Noise Toggle</button>
-   </div>
-   </div>
-   </div>
-    )
-  })
-}
-}
-
-export default App
+export default App;

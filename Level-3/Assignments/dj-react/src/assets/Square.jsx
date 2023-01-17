@@ -1,14 +1,17 @@
 import React from 'react'
 
-function Square(props){
+export default function Square(props){
   return(
-    <section>
-    <div className='square' style = {{backgroundColor: props.color}}></div>
-    </section>
+   <div className='square-container'>
+    <div className='square-1' style = {props.style0}></div>
+    <div className='square-2' style = {props.style1}></div>
+    <div className='square-3' style = {props.style2}></div>
+    <div className='square-4' style = {props.style3}></div>
+    </div>
   )
 }
 
-export default Square
+
 
 
 
