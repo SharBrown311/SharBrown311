@@ -1,0 +1,18 @@
+body{
+  background-image: url(https://www.sss-solutions.org/wp-content/uploads/2018/01/1116146294-login-page-background-image-112.jpg);
+}
+input{
+  text-align: center;
+}
+
+.form-section{
+  border: 2px solid white;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+ol{
+  text-align: center;
+  font-family: 'Henny Penny', cursive;
+  margin: 28px 61px 34px 14px;
+}
