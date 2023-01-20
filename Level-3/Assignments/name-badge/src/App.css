@@ -1,0 +1,126 @@
+.flip-card{
+  text-align: center;
+  color: #778899;
+  margin-top: 105px;
+  margin-left:105px;
+  background-color: transparent;
+  width: 400px;
+  height: 500px;
+  border: 1px outset #d95f5ff1;
+  perspective: 1000px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.flip-card-inner{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner{
+  transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.flip-card-front{
+  background-color: #bbb;
+  color: black;
+  border: black solid 1px;
+  border-radius: 10px;
+  background-image: url(https://tse4.mm.bing.net/th?id=OIP.L-Igs3hu6kZxGbDQnUA4-wHaGb&pid=Api&P=0);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Fredoka', sans-serif;
+}
+.flip-card-back{
+  background-color: #dbdfe1;
+  color: black;
+  
+  transform: rotateY(180deg);
+  border: black solid 1px;
+  border-radius: 10px;
+  min-height: 100px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: rotateY(180deg);
+  font-family: 'Fredoka', sans-serif;
+
+  
+}
+.user-image{
+  height: 120px;
+  width: 120px;
+  border-width: 5px;
+  background-color: rgb(228, 228, 228);
+  border-style: outset;
+  border-radius: 50%;
+  margin: 10px 10px 10px 10px;
+  background-image: url(./images/user4.jpeg);
+  background-size: contain;
+}
+.comments, .number, .birth-place, .fav-food{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 60px;
+  padding-left: 60px;
+}
+.name{
+  
+  font-size: 35px;
+}
+.jobTitle{
+  font-size: 20px;
+  position: relative;
+  bottom: 31px;
+}
+.email{
+  font-size: 15px;
+  position: relative;
+  bottom: 42px;
+}
+.barcode-img{
+  height: 200px;
+  position: relative;
+  width: 376px;
+  margin: 70px 0 0 -47px;
+  overflow: hidden;
+}
+.comments{
+  font-size: 10px;
+}
+
+.form-container{
+  background-color :#f1f1f1f1 ;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: row;
+  overflow: hidden;
+}
+.input {
+  position: relative;
+  margin-left: 25px;
+  margin-bottom: 25px;
+  padding: 5px  5px 5px 5px;
+  top: 25px;
+}
+.input::placeholder{
+  color: black;
+  font-weight: 700;
+}
+.company-logo{
+  background-image: url(/src/images/company.jpeg);
+  background-size: contain;
+  height: 85px;
+  width: 85px;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 300px;
+  top: 428px;
+}
