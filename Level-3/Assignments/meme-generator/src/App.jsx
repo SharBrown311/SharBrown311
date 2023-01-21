@@ -16,13 +16,3 @@ export default function App() {
   )
 }
 
-// function handleClick(){
-//   console.log('i was clicked')
-// }
-// function handleOnMouseOver(){
-//   console.log('mouseover')
-//<img 
-// src = "https://picsum.photos/640/360" 
-// onMouseOver={handleOnMouseOver} />
-//   <button onClick={handleClick}>Click me</button>
-// }
