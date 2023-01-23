@@ -93,7 +93,9 @@
   overflow: hidden;
 }
 .comments{
-  font-size: 10px;
+display: block;
+font-size: 14px;
+word-wrap: break-word;
 }
 
 .form-container{
