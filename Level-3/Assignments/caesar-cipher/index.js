@@ -15,7 +15,7 @@ const inputToAscii = inputSplit.map((item) =>(
 // //if value passed "z" the alphabet resets, all other chars remain the same
 
 const shiftAscii = inputToAscii.map((item) =>{
-  if(item >= 97 && item <= 122) {
+  if(item >= 97 && item <= 122 && (item + shift > 122)){
     return (item - 26) + shift
   }else if(item >= 97 && item <= 122){
     return item + shift
