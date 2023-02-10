@@ -5,7 +5,10 @@ import './App.css'
 function App() {
   const [flashcards, setFlashcards] = useState(REACT_FLASHCARDS)
   return(
+    <div>
+    <h1 className='main-heading'>React Flash-Cards</h1>
     <FlashcardList  flashcards= {flashcards}/>
+    </div>
   )
 }
 const REACT_FLASHCARDS = [
@@ -14,10 +17,10 @@ const REACT_FLASHCARDS = [
     question: 'JSX stands for what?', 
     answer: 'JavaScript XML',
     options: [
-      'A. ', 
-      'B. ', 
-      'C. ', 
-      'D. '
+      'A. json', 
+      'B. JavaScript XML', 
+      'C. JSON Syntax', 
+      'D. JavaScript Syntax Extension'
     ]
   }, 
   {
@@ -272,6 +275,26 @@ options: [
     'B. inherits()', 
     'C. this()', 
     'D. super()'
+  ]
+}, {
+  id: 26, 
+  question: 'What are the two main ways of creating a component in React?', 
+  answer: 'C. Class-based and Functional', 
+  options: [
+    'A. Function Extends and Function ', 
+    'B. Just Functional', 
+    'C. Class-based and Functional', 
+    'D. None of these'
+  ]
+}, 
+{
+  id: 27, 
+  question: 'What is the definition of a Function Component?', 
+  answer: 'B. A JavaScript function that takes a props argument and returns a React element.', 
+  options:[ 
+    'A testing component that tests the internal functions of a library.',
+    'B. A JavaScript function that takes a props argument and returns a React element.' , 
+    'C. A function that can extend to another component'
   ]
 }
 

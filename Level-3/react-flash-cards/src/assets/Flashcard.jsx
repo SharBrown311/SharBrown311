@@ -19,7 +19,9 @@ export default function Flashcard({ flashcard }) {
               })}
               </div>
        </div>
+       <div className='flashcard-answer'>
       {flip ? flashcard.answer : ''}
+      </div>
     </div>
   )
 }

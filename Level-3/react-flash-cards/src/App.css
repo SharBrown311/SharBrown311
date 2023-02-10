@@ -1,18 +1,21 @@
 body{
   background-color: #C8D0D2;
+  font-family: 'Itim', cursive;
 }
 .card{
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   position: relative;
-  border-radius: .25rem;
-  box-shadow: 0 0 5px 2px rgba(0, 0, 0, .3);  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 5px 2px rgb(0 0 0 / 30%);
+  background-color: white;
   transform-style: preserve-3d;
-  height: 250px;
+  height: 409px;
   width: 250px;
+  font-size: 19px;
   transition: 150ms;
   transform: perspective(1000px) rotateY(var(--rotate-y, 0));
 }
@@ -24,10 +27,33 @@ body{
 }
 
 .card .back{
-  transform: rotateY(180deg);
+ 
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: rotateY( 180deg);
+ 
 }
 
 
 .card.flip{
   --rotate-y: 180deg;
+}
+.flashcard-answer{
+  transform: rotateY(180deg);
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.card-grid{
+  
+  display: flex;  
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 205px;
+}
+.main-heading{
+  text-align: center;
+  font-style: oblique;
+  font-size: xxx-large;
+  text-transform: lowercase;
+
 }
