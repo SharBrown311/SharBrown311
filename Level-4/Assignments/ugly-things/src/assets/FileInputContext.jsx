@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-function FileInput(){
+function FileInputContext(){
   const [file, setFile] = useState()
     function handleChange(e){
       console.log(e.target.files)
@@ -16,11 +16,11 @@ function FileInput(){
       onChange={handleChange}
       />
       <img src = {file} />
-           
+           {/*image file*/}
       </div>
 )
 
 
 
 }
-export default FileInput
+export default FileInputContext

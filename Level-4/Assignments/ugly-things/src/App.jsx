@@ -1,12 +1,11 @@
 import React from 'react'
-import Form from './assets/Form'
+
 import Header from './assets/Header'
 
 export default function App() {
   return (
     <div>
     <Header />
-      <Form />
     </div>
   )
 }
