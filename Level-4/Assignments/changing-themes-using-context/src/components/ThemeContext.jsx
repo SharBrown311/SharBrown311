@@ -10,7 +10,7 @@ function ThemeContextProvider(props){
     
     const toggleTheme = () => {
         setColor(prevColor => prevColor === "dark" ? "light" : "dark")
-        setImage(prevImage =>prevImage === lightbulbOff ? lightbulbOn : lightbulbOf)
+        setImage(prevImage =>prevImage === lightbulbOff ? lightbulbOn : lightbulbOff)
     }
     console.log(props.children)
     return(

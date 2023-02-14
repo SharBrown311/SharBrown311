@@ -1,24 +1,28 @@
-import React from 'react'
+import React from "react";
+import React, { useState } from "react";
 
-import Header from './assets/Header'
-
-export default function App() {
+const App = () => {
+  const [name, setName] = useState("");
+  const [selectedFile, setSelectedFile] = useState(null);
   return (
-    <div>
-    <Header />
+    <div className="App">
+      <form>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+
+        <input
+          type="file"
+          value={selectedFile}
+          onChange={(e) => setSelectedFile(e.target.files[0])}
+        />
+      </form>
     </div>
-  )
-}
-
-
-
-
-
-
-
-
-
-
+  );
+};
+export default App
 
 
 
