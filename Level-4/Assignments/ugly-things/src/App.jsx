@@ -1,24 +1,20 @@
 import React from "react";
-import React, { useState } from "react";
 
-const App = () => {
-  const [name, setName] = useState("");
-  const [selectedFile, setSelectedFile] = useState(null);
-  return (
+import './App.css'
+import Form from "./assets/Form";
+import { FormContextProvider } from "./assets/formContext";
+import ListContextProvider from "./assets/listContext";
+import UglyArray from "./assets/UglyArray";
+//root component has access to the global state
+function App(){
+return (
     <div className="App">
-      <form>
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-
-        <input
-          type="file"
-          value={selectedFile}
-          onChange={(e) => setSelectedFile(e.target.files[0])}
-        />
-      </form>
+      <ListContextProvider>
+        <FormContextProvider>
+        <Form />
+        </FormContextProvider>
+        <UglyArray />
+        </ListContextProvider>
     </div>
   );
 };
