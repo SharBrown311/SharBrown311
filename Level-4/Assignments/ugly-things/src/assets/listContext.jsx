@@ -1,151 +1,138 @@
-import React , {useState , useEffect} from 'react'
-import axios from 'axios'
-import Comment from './Comment'
-
-
-
+import React, { useState, useEffect } from "react"
+import axios from "axios"
+import Comment from "./Comment"
 const ListContext = React.createContext()
 
-export default function ListContextProvider(props) {
-  const [userArray , setUserArray] = useState([])
-  const [userInput, setUserInput] = useState([])
-  const [submitted , setSubmitted] = useState(true)
-  const [commentBox , setCommentBox] = useState([])
+function ListContextProvider(props) {
+  const [userArray, setArray] = useState([])
+  const [userInput, setInput] = useState([])
+  const [didSubmit, setDidSubmit] = useState(true)
+  const [commentsBox, setCommentsBox] = useState([])
 
+  // ACTS AS COMPONENTDIDUPDATE
+  useEffect(() => {
+    axios.get("https://api.vschool.io/sharonbrown/thing")
+      .then(result => {
+        addFunctions(result.data)
+      })
+  }, [didSubmit])
 
-
-  //component did update equivalent
-  const addFunctionsData = async () => {
-    const {data} = await axios.get(`https://api.vschool.io/sharonbrown/thing`)
-    addFunctions(data)
-  }
-  useEffect(() =>{
-    addFunctionsData(addFunctions)
-  }, [submitted])
-
-
-  //disables the inputs after axios.get
-  function addFunctions(data){
-    const updatedArray = data.map(item =>{
+  // DISABLES INPUTS AFTER MOUNT/AXIOS.GET()
+  function addFunctions(data) {
+    const updatedArray = data.map(item => {
       item.inputDisabled = "disabled"
-      item.editButtonText = "Edit"
+      item.editBtnText = "Edit"
       return item
     })
-    setUserArray(updatedArray)
+    setArray(updatedArray)
   }
 
-  const handleChange = (id , e) =>{
+  const handleChange = (id, event) => {
     const updatedArray = userArray.map(item => {
-      if(id === item._id){
-        const updatedItem = {...item , [e.target.name]: e.target.value }
-        setUserInput(updatedItem)
+      if (id === item._id) {
+        const updatedItem = { ...item, [event.target.name]: event.target.value }
+        setInput(updatedItem)
         return updatedItem
       }
       return item
     })
-    setUserArray(updatedArray)
+    setArray(updatedArray)
   }
 
   const addComment = (item) => {
-    setCommentBox([
-      ...commentBox, 
-      <Comment 
-        key = {item._id}
-        id = {item._id}
-        //makes unique number so comments are unique
-        index = {commentBox.length}
-        idIndex = {item._id + commentBox.length + Math.floor(Math.random() * 100)}
-        />
+    setCommentsBox([
+      ...commentsBox,
+      <Comment
+        key={item._id}
+        id={item._id}
+        // MAKES UNIQUE NUMBER SO COMMENTS ARE UNIQUE
+        index={commentsBox.length}
+        idIndex={item._id + commentsBox.length + Math.floor(Math.random() * 100)}
+      />
     ])
   }
 
-  const handleChangeComment = (id, idIndex, e) =>{
-    const updatedComment = commentBox.map(item =>{
-      const {name, value } = e.target
-      if(idIndex === item.props.idIndex){
-        return {...item, [name]: value}
+  // COMMENT TEXT CHANGE
+  const handleChangeComments = (id, idIndex, event) => {
+    const updatedComment = commentsBox.map(item => {
+      const { name, value } = event.target
+      if (idIndex === item.props.idIndex) {
+        return { ...item, [name]: value }
       }
       else return item
     })
     console.log(updatedComment)
-    setCommentBox(updatedComment)
+    setCommentsBox(updatedComment)
   }
 
-  const deleteComment = (idIndex) =>{
-    const updatedCommentBox = commentBox.filter(item =>{
-      if(idIndex !== item.props.idIndex){
+  const deleteComment = (idIndex) => {
+    const updatedCommentBox = commentsBox.filter(item => {
+      if (idIndex !== item.props.idIndex) {
         return (item)
       }
     })
-    setCommentBox(updatedCommentBox)
+    setCommentsBox(updatedCommentBox)
   }
 
-  //edit button function
-  const handleEdit = (id) =>{
-    const updatedArray = userArray.map(item =>{
-      if(id === item._id && item.inputDisabled === ""){
+
+  // EDIT BUTTON FUNCTION
+  const handleEdit = (id) => {
+    const updatedArray = userArray.map(item => {
+      if (id === item._id && item.inputDisabled === "disabled") {
         item.inputDisabled = ""
-        item.editButtonText = "Save"
+        item.editBtnText = "Save"
+      } else if (id === item._id && item.inputDisabled === "") {
+        item.inputDisabled = "disabled"
+        item.editBtnText = "Edit"
+        handleSave(id)
+      } else if (id !== item._id) {
+        item.editBtnDisable = "disable"
       }
-      else if (id === item._id && item.inputDisabled === ""){
-        item.inputDisabled = 'disabled'
-        item.editButtonText = 'Edit'
-      } 
-      else if(id !== item._id){
-        item.editButtonDisable = "disable"
-      } 
       return item
     })
-    setUserArray(updatedArray)
+    setArray(updatedArray)
   }
 
-  //save button and axios put
-  const handleSave = (id) =>{
-    axios.put('https://api.vschool.io/sharonbrown/thing/' + id , userInput)
-    .then(function(res)  {
-      console.log(`Updated Successfully ${JSON.stringify(res.data)}`)
-      setSubmitted(!submitted)
-    }).catch(err =>{
-      console.log(err)
-    })
+  // SAVE BUTTON & AXIOS PUT 
+  const handleSave = (id) => {
+    axios.put("https://api.vschool.io/sharonbrown/thing/" + id, userInput)
+      .then(function (response) {
+        console.log(`Update Success ${JSON.stringify(response.data)}`)
+        setDidSubmit(!didSubmit)
+      }).catch(error => {
+        console.log(error)
+      })
   }
 
-  //delete item button
-  const handleDelete = async (id) =>{
-    const res = await axios.delete('https://api.vschool.io/sharonbrown/thing/', {id}).then(res =>{
-      res.data
-      .remove()
-    })
-    
-    
-    
-    
-    // axios.delete('https://api.vschool.io.sharonbrown/thing/' + id)
-    // .then(res =>{
-    //   console.log(res.data.msg)
-    // })
-    // .catch(err => {console.log(err) })
-    // const updatedArray = userArray.filter(item => (id !== item._id))
-    // return setUserArray(updatedArray)
+  // DELETE ITEM BUTTON
+  const handleDelete = (id) => {
+    axios.delete("https://api.vschool.io/sharonbrown/thing/" + id)
+      .then(response => {
+        console.log(response.data.msg)
+      })
+      .catch(error => { console.log(error) })
+    const updatedArray = userArray.filter(item => (id !== item._id))
+    return setArray(updatedArray)
   }
 
   return (
-    <ListContext.Provider value = {{
-      userArray, 
-      handleDelete, 
-      submitted, 
-      setSubmitted, 
-      handleChange, 
-      handleEdit, 
-      handleSave, 
-      commentBox, 
-      setCommentBox, 
-      handleChangeComment, 
-      deleteComment, 
+    <ListContext.Provider value={{
+      userArray,
+      handleDelete,
+      didSubmit,
+      setDidSubmit,
+      handleChange,
+      handleEdit,
+      commentsBox,
+      setCommentsBox,
+      handleChangeComments,
+      deleteComment,
       addComment
+
     }}>
-    {props.children}
+      {props.children}
     </ListContext.Provider>
   )
 }
+
 export { ListContextProvider, ListContext }

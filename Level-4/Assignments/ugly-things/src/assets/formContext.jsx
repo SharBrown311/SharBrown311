@@ -1,35 +1,37 @@
-import React, {useState , useContext} from 'react'
-import axios from 'axios'
-import { ListContext } from './listContext' 
-
+import React, { useState, useContext } from "react"
+import axios from "axios"
+import { ListContext } from "./listContext"
 const FormContext = React.createContext()
 
+// PROPS NEEDED FOR {PROPS.CHILDREN} BELOW
+// useCONTEXT TRIGGERS LISTCONTEXT OF SUBMIT CLICK
+function FormContextProvider(props) {
+  const [userInput, setInput] = useState({})
+  const { didSubmit, setDidSubmit } = useContext(ListContext)
 
-
-function FormContextProvider(props){
-  const [userInput , setUserInput] = useState({})
-  const {submitted, setSubmitted} = useContext(ListContext)
-
-  const onChange = (e) =>{
-    const { name , value} = e.target
-    setUserInput(prevInput => 
-      ({...prevInput, [name]: value })
-      )
+  const onChange = (event) => {
+    const { name, value } = event.target
+    setInput(prevInput =>
+      ({ ...prevInput, [name]: value })
+    )
   }
-  const onSubmit = (e) =>{
-    e.preventDefault()
-    axios.post('https://api.vschool.io/sharonbrown/thing', userInput)
-    .then(function(res){
-      console.log(`Successfully Added ${JSON.stringify(res.data)}`)
-      setSubmitted(!submitted)
-    }).catch(err =>{
-      console.log(err)
-    })
+
+  const onSubmit = (event) => {
+    event.preventDefault()
+    axios.post("https://api.vschool.io/sharonbrown/thing", userInput)
+      .then(function (response) {
+        console.log(`Add Success ${JSON.stringify(response.data)}`)
+        setDidSubmit(!didSubmit)
+      }).catch(error => {
+        console.log(error)
+      })
   }
-  return(
-    <FormContext.Provider value = {{onChange , onSubmit}}>
+
+  return (
+    <FormContext.Provider value={{ onSubmit, onChange }}>
       {props.children}
     </FormContext.Provider>
   )
 }
-export {FormContextProvider , FormContext}
+
+export { FormContextProvider, FormContext }

@@ -1,178 +1,117 @@
-var readline = require('readline-sync');
-//Narration 
-isAlive = true;
-hasWon = false;
-///GREETING
-console.log("Welcome to Zombie land")
-var playerName = readline.question('What is your name? ')
-console.log(playerName)
-var greeting = readline.keyIn("Hello " + playerName + "! Do you want to [w]alk , [p]rint your status, or [q]uit? ", {limit: "wqp"})
- console.log(greeting)
+var read = require('readline-sync')
 
 
+const zombieSlayer = {
+  name: '',
+  inventory: [], 
+  health: 10, 
 
- while(isAlive && !hasWon) {
-  const choice1 = readline.keyIn(
-    "Would you like to walk [w] , show your stats [p] , or quit [q]",  {limit: 'wpq'})
-    if(choice1 === 'w'){
-      walking()
-    }else if (choice1 === 'p'){
-      print()
-    }else if (choice1 === 'q'){
+}
+
+const zombie = {
+  zombieName: ['ripper', 'cruncher', 'mangler', 'shredder'], 
+  health: 10, 
+  specialItems: ['stop sign', 'fire-hydrant', 'brass-knuckles', 'granny']
+}
+
+currentZombie = zombie.zombieName[0]
+
+function gameStart(){
+  let name = read.question('Welcome to Zombie Land, whats your name?')
+  zombieSlayer.name = name.toUpperCase()
+  let gameYN = read.keyInYN('Hello ' + name, " are you gonna rid us of this zombie mayhem?")
+    if(gameYN === true){
+      walk()
+    }else{
       quit()
     }
-  }
-
-
-
-  var choice2 = readline.keyIn( playerName + " Do you want to [a]ttack , [r]un , [p]rint your status , or [q]uit? ", {limit: "arpq"})
-
-
-
-
-
-
-
-
-// FUNCTIONS
-
-//PLAYER FUNCTION
-
-function ZombieSlayer (playerName, healthStat, attackPower){
-  this.playerName = playerName, 
-  this.healthStat = healthStat, 
-  this.attackPower = attackPower
-  this.inventory = {
-    specialItems: []
-  }
-  this.enemiesFought = 0
-  this.showStats = () => console.clear()
-  readline.keyInPause(
-    `Your current stats are: name: ${playerName} | healthStat: ${this.healthStat} | inventory: ${this.inventory.specialItems}`
-  )
- 
 }
-
- const player = new ZombieSlayer(playerName, 150 , 20)
-
+gameStart()
 
 
- ///ENEMY FUNCTION
 
-
-function Enemy(name , healthStat, enemyAttackPower, enemyItem){
-  this.name = name
-  this.healthStat = healthStat
-  this.enemyAttackPower = enemyAttackPower
-  this.enemyItem = enemyItem
-}
-
-let arrayOfEnemies = [
-new Enemy('Lurker' , 40, 'stop sign'),
-new Enemy('Biter' ,40 , 'brass knuckles' ),
-new Enemy('Empty' , 40 , 'telekinesis'),
-new Enemy('Ravager' , 45 , 'fire hydrants'),
-]
-
-
-///WALKING FUNCTION
-function walking() {
-function generateZombie() {
-  var randomZombie = Math.floor(Math.random() * 3)
-  if(randomZombie == 0 || randomZombie == 2) {
-    console.log("No enemies have appeared")
-  }else if(arrayOfEnemies.length <= 0) {
-    console.log("There are no more zombies left. ")
-    isHuman = false
-  }else if(randomZombie == 1){
-    zombieAppears()
-}
-console.log("A" + `${Enemy.name}` + " has appeared" )
- var randomZombie = arrayOfEnemies[Math.floor(Math.random() * arrayOfEnemies.length)]
-
-}
-}
-
-
-///RUN FUNCTION
-function run(){
-if(arrayOfEnemies.length === 3){
-  player.healthStat -= 5
-  console.log(`You run away as fast as  you can from the ${Enemy.name} but could not seem to run fast enough without getting hit.`)
-}else{
-  console.log(`You got really lucky and escaped the ${Enemy.name}`)
-}
-}
-
-//PRINT FUNCTION 
-function print(){
-  showStats()
-}
-
-//ATTACK FUNCTION
-function attack(enemy){
-  while(player.healthStat > 0 && enemy.healthStat > 0){
-    let zombieSlayerAttack = Math.floor(Math.random() * player.healthStat)
-    let enemyAttack = Math.floor(Math.random() * enemy. healthStat)
-    player.healthStat -= enemyAttack
-    enemy.healthStat -= zombieSlayerAttack
-
-    console.clear()
-    readline.keyInPause(
-      ``
-    )
-  }
-}
-
-
-//WON FUNCTION
-function won(){
-  if(enemyArr.length <= 0){
-    console.log('There are no more Zombies, you have beaten the apocalypse')
-  }else{
-    walking()
-  }
-}
-
-//QUIT FUNCTION 
 function quit(){
-  hasWon = true
-  console.log('See ya next time')
+  console.log('Take care zombie slayer')
+  process.exit()
 }
 
-
-//RANDOM ENEMY FUNCTION
-function randomEnemy(){
-  let randomChance = Math.floor(Math.random() * arrayOfEnemies.length)
-  return arrayOfEnemies[randomChance]
+function run(){
+  console.log('You ran away')
+  walk()
 }
+function walk(){
+  pressedKey = read.keyIn('Would you like to continue ' + zombieSlayer.name + '? : [w]alk / [p]layer', {limit: ["w", "p"]})
+  if(pressedKey === 'p'){
+    console.log(zombieSlayer)
 
-
-//RANDOM ENEMY ENCOUNTER FUNCTION
-
-function enemyEncounter(){
-  let enemy = enemySelect()
-  console.clear()
-  readline.keyInPause(`You have encountered an ${enemy.name}`)
-  let choice2 = readline.keyIn('Would you like to [a]ttack, [r]un, or [q]uit')  
-  if(choice2 === 'r'){
-    if(Math.random() > .5){
-      run()
-    }else{
-      console.log('The ${enemy.name} attacks.')
-      player.healthStat -= 15
-      console.log(`Your health is now ${player.healthStat}`  )
-        attack(enemy)
-    }
-  }else if(choice1 === 'a'){
-      attack(enemy)
+  }else if (pressedKey === 'w'){
+    walkPrompt()
   }
+}
+
+
+
+function walkPrompt() {
+  // Allows Random Attack 1/4
+  let attackProb = Math.floor((Math.random() * 4) + 1)
+  promptProb = Math.floor((Math.random() * 4) + 1)
+
+  while (attackProb <= 3) {
+    if (promptProb === 1) {
+      pressedKey = read.keyIn("Hey " + zombieSlayer.name + " be careful watch the side streets!: [w/p] ", { limit: ["w", "p"] })
+    } else if (promptProb === 2) {
+      pressedKey = read.keyIn("Hey " + zombieSlayer.name + " Shh...stay low! : [w/p] ", { limit: ["w", "p"] })
+    } else if (promptProb === 3) {
+      pressedKey = read.keyIn(" After this I will need like twelve vacations " + zombieSlayer.name + " : [w/p] ", { limit: ["w", "p"] })
+    } else if (promptProb === 4) {
+      pressedKey = read.keyIn("Oh look another burning car... : [w/p] ", { limit: ["w", "p"] })
     }
+    if (pressedKey === "p") {
+      console.log(zombieSlayer.name)
+      return walk()
+    } else if (pressedKey === "w") {
+      walkPrompt()
+    }
+  }
+  zombieAppears()
+}
+n
 
+function zombieAppears(){
+  let zombieProbability = Math.floor((Math.random() * 10) + 1)
+    if(zombieProbability <= 3){
+      console.log(zombie.zombieName[0] + `${zombie.zombieName} appears in front of you.`)
+      return currentZombie = zombie.zombieName[0], firstStrike()
+    }else if (zombieProbability >3 && zombieProbability < 5){
+    console.log(zombie.zombieName[1] + `${zombie.zombieName} appears in front of you.`)
+    return currentZombie = zombie.zombieName[1], firstStrike()
+    }else if(zombieProbability >=5 && zombieProbability < 8){
+      console.log(zombie.zombieName[2] + `${zombie.zombieName} appears in front of you.`)
+      return currentZombie = zombie.zombieName[2], firstStrike()
+    }else if(zombieProbability >= 8){
+      console.log(zombie.zombieName[3] + `${zombie.zombieName} appears in front of you.`)
+      return currentZombie = zombie.zombieName[3], firstStrike()
+    }
+  }
 
+  function firstStrike(){
+    zombieSlayer.health = 10
+    zombie.health = 10
+    console.log(zombie.zombieName + " : " + zombie.health )
+    console.log(zombieSlayer.name + " : " + zombieSlayer.health)
 
+    let turn = Math.floor((Math.random() * 2 ) + 1)
+      if(turn <= 1){
+        console.log(zombieSlayer.name + "strikes first!")
+        playerStrike()
+      }else{
+        return zombieStrike()
+      }
+  }
 
-
-
-
-// ----------------------------------------------
+  function playerStrike(){
+    let moves = ['Attack' , 'Run away', 'Show Inventory']
+    moves[-1] = quit
+    let index = read.keyInSelect(movies, "Whats your move?", {cancel: 'Quit'})
+    if(moves[index] === 'Attack')
+  }

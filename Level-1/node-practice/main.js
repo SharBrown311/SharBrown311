@@ -18,7 +18,7 @@ function Enemies(zombieName, hp, specialItem){
 let enemyArr = []
 let zombie1 = new Enemies('joe', 40, 'axe')
 let zombie2 = new Enemies('frank', 40, 'bat')
-let zombie3 = new Enemies('sue', 40, 'nailfile')
+let zombie3 = new Enemies('sue', 40, 'nail-file')
 let zombie4 = new Enemies('beth', 40, 'bottle')
 enemyArr.push(zombie1, zombie2, zombie3, zombie4)
 let isHuman = true
@@ -42,6 +42,7 @@ function walking() {
         isHuman = false
     }else if(randomAppearance == 1){
             zombieAppear()
+}
 }
  //generate enemy function
 function zombieAppear() {

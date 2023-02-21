@@ -1,34 +1,39 @@
-import React from 'react'
-import {useContext} from 'react'
-import { ListContext } from './listContext'
+import React from "react"
+import { useContext } from "react"
+import { ListContext } from "./listContext"
 
-
-export default function Comment(props) {
+function Comment(props) {
   const {
-    handleChangeComments, 
-    commentBox, 
-    deleteComment, 
-    // commentsDisabled
+    handleChangeComments,
+    commentsBox,
+    deleteComment,
+    commentsDisable
+
   } = useContext(ListContext)
 
-    const disableButton = () =>{
-      while(props.commentIndex === commentBox.length -1){
-        return ""
-      } 
-      return(props.itemIsDisabled)
+  const disableBtn = () => {
+    while (props.commentIndex === commentsBox.length - 1) {
+      return ""
     }
+    return (props.itemIsDisabled)
+  }
+
   return (
-    <div className='commentSection'>
-      <textarea 
-        className='text-comment'
-        placeholder='Enter Your Comment here'
-        onChange = {(e) =>handleChangeComments(props.item.props.id, props.item.props.idIndex, e)}
-        disabled = {disableButton()}
-        name = "comments"
-        value = {props.item.comments}
-      ></textarea>
-      <button className='deleteComment'
-      onClick = {() => deleteComment(props.item.props.idIndex)}>Delete Comment</button>
+    <div className="commentSection">
+      <textarea
+        className="textComment"
+        placeholder="Enter Comment Here"
+        onChange={(event) => handleChangeComments(props.item.props.id, props.item.props.idIndex, event)}
+        disabled={disableBtn()}
+        name="comments"
+        value={props.item.comments}
+      >
+      </textarea>
+      <button
+        className="deleteComment"
+        onClick={() => deleteComment(props.item.props.idIndex)}>
+        Delete Comment</button>
     </div>
   )
 }
+export default Comment
