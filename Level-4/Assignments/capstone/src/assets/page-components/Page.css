@@ -1,0 +1,91 @@
+*{
+  margin: 0;
+  padding: 0;
+
+}
+/* HEADER CSS */
+.head{
+  padding-top: 35px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 4px solid #9dffb0;
+  height: 175px;
+  margin: 0;
+  overflow: initial;
+}
+.title-image{
+  background-image: url(../Images/animalCrossingHeaderTitle.png);
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 973px;
+}
+.left-header-image{
+  height: 250px;
+  width: 250px;
+  background-image: url(../Images/headerImageLeft.jpeg);
+  background-repeat: no-repeat;
+}
+.right-header-image{
+  height: 250px;
+  width: 250px;
+  background-image: url(../Images/headerImageRight.jpeg);
+  background-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+
+/* FOOTER CSS */
+.foot{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 5px solid rgba(156, 29, 29, 0.266);
+  height: 92px;
+  background-color: white;
+  margin: 0;
+}
+
+.left-column{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 22px;
+  font-family: animalCrossingFont;
+}
+.right-column{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 25px;
+  padding-right: 25px;
+}
+.image-container{
+  height: 85px;
+  width: 85px;
+  padding-top: 15px;
+}
+.leaf-image{
+  height: 45px;
+  width: 45px;
+  border: 3px outset limegreen;
+}
+.leaf-image:hover{
+  rotate: 90deg;
+}
+.linkedIn-link{
+  text-decoration: none;
+}
+.github-link{
+  text-decoration: none ;
+}
+.thank-you-link{
+  display: flex;
+  flex-direction: row;
+}

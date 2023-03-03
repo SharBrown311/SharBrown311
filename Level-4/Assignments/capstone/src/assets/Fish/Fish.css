@@ -1,0 +1,154 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  overflow: hidden;
+  background-color: #81f1f7;
+}
+.main-fish-div img{
+  display: flex;
+}
+.main-fish-div{
+  display: flex;
+  direction: ltr;
+  border: 3px solid black;
+  text-align: left;
+  cursor: pointer;
+  background-color: white;
+}
+.checkbox-container{
+  padding-left: 10px;
+  padding-right: 15px;
+  margin-top: -2px;
+  border: 1px solid black;
+  border-right: 7px solid black;
+}
+.fish-name{
+  position: relative;
+  font-size: 15px;
+  text-align: center;
+  text-transform: capitalize;
+}
+.name-image-container{
+display: flex;
+flex-direction: column;
+border: 1px solid black;
+border-right: 2px solid black;
+}
+.left-content-list{
+  overflow:scroll;
+  overflow-x:hidden;
+  direction: rtl;
+  word-wrap: break-word;
+  grid-area: left;
+  border: 3px solid black;
+}
+.fish-listed-details{
+  scroll-behavior: none;
+  margin-top: 20px;
+  font-size: 20px;
+  padding: 20px 20px;
+}
+
+::-webkit-scrollbar{
+background: aquamarine;
+}
+::-webkit-scrollbar-thumb{
+  background: cornflowerblue;
+}
+
+.right-content-list{
+  display: grid;
+  grid-area: right;
+}
+.page-content-list{
+  overflow: hidden;
+  display: grid; 
+  grid-template-areas: 'left left left image right right right right';
+  column-gap: 15px;
+  height: 73vh;
+  width: 100%;
+  background-color:#81f1f7;
+  grid-template-columns: 200px/1fr 50px/1fr 200px/1;
+}
+.cj-image{
+  overflow: initial;
+  --b: 9px; /* border thickness */
+  --c: #0000 90deg, darkblue 0; /* define the color here */
+  width: 300px;
+  padding-bottom: 45px;
+  padding-top: 45px;
+  margin-top: 85px;
+  margin-left: 95px;
+  background:
+    conic-gradient(from 90deg  at top    var(--b) left  var(--b), var(--c)) 0 0,
+    conic-gradient(from 180deg at top    var(--b) right var(--b), var(--c)) 100% 0,
+    conic-gradient(from 0deg   at bottom var(--b) left  var(--b), var(--c)) 0 100%,
+    conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--c)) 100% 100%;
+  background-size: 20px 20px; /* adjust border length here */
+  background-repeat: no-repeat;
+}
+.cj-image-container{
+  overflow: hidden;
+  grid-area: image;
+}
+.main-fish-div-2{
+  border: 1px solid #c48d3f;
+  border-radius: 10%;
+  display: flex;
+  overflow: initial;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  text-align: center;
+  min-width: auto;
+  max-width: 110%;
+}
+.name-image-container-2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.selectedFish-image{
+  width: 239px;
+}
+.selectedFish-details{
+  position: absolute;
+  overflow: initial;
+  font-size: 21px;
+  top: 325px;
+}
+.selectedFish-name{
+  position: absolute;
+  text-transform: capitalize;
+  text-decoration: underline;
+  font-size: 38px;
+  font-family: 'Comic Sans', sans-serif;
+}
+.fa-camera-retro{
+  position: absolute;
+  color: #66DDAA;
+  font-size: 83px;
+  overflow: initial;
+  margin-left: 204px;
+  margin-top: 70px;
+}
+.currentFish-container{
+height : 100px;
+width: 125px;
+
+}
+
+.fa-camera-retro:hover{
+rotate: 25deg;
+}
+
+.details{
+  padding-bottom: 7px;
+  padding-top: 7px;
+}
+
+span{
+  font-weight: bold;
+  text-decoration: underline;
+}
