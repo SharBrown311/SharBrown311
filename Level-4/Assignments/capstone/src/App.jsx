@@ -1,21 +1,26 @@
 import React from "react"
+import {Route, Routes} from 'react-router-dom'
 import FishList from "./assets/Fish/FishList"
-import Footer from "./assets/page-components/Footer"
-import Header from "./assets/page-components/Header"
+import BugList from "./assets/Bugs/BugList"
+import SeaCreaturesList from "./assets/SeaCreatures/SeaCreaturesList"
 import "./App.css"
+import Home from "./assets/page-components/Home"
+import Footer from './assets/page-components/Footer'
+import Header from "./assets/page-components/Header"
 function App(){
 
 return(
+  <div className="App">
   <div>
-  <Header />
-  <div className="fish-section">
-  <FishList />
-  </div>
-  <div className="bug-section">
-  </div>
-  <div className="seaCreature-section">
-  </div>
+  <Header/>
+  <Routes>
+    <Route index path="/" element = {<Home />} />
+    <Route path="/fish" element = {<FishList />} />
+    <Route path="/bugs" element = {<BugList />} />
+    <Route path="/seaCreatures" element = {<SeaCreaturesList />}/>
+  </Routes>
   <Footer />
+  </div>
   </div>
 )
 

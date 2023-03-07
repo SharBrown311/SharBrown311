@@ -1,11 +1,13 @@
 *{
-  margin: 0;
-  padding: 0;
+box-sizing: border-box;
 
+}
+body{
+  overflow-x: hidden;
 }
 /* HEADER CSS */
 .head{
-  padding-top: 35px;
+  padding: 15px;
   background-color: white;
   display: flex;
   flex-direction: row;
@@ -13,14 +15,12 @@
   border: 4px solid #9dffb0;
   height: 175px;
   margin: 0;
-  overflow: initial;
 }
-.title-image{
-  background-image: url(../Images/animalCrossingHeaderTitle.png);
-  background-repeat: no-repeat;
-  height: 100px;
-  width: 973px;
+h1{
+  text-align: center;
+  color:navy
 }
+
 .left-header-image{
   height: 250px;
   width: 250px;
@@ -34,22 +34,22 @@
   background-repeat: no-repeat;
 }
 
+footer{
+  bottom: 0px;
+  width:100%;
+  height:100px;   
 
+}
 
-
-
-
-
-
-/* FOOTER CSS */
 .foot{
+  /* negative value of footer height */
   display: flex;
   flex-direction: row;
+  position: sticky;
   justify-content: space-between;
   border: 5px solid rgba(156, 29, 29, 0.266);
-  height: 92px;
   background-color: white;
-  margin: 0;
+
 }
 
 .left-column{
@@ -57,7 +57,6 @@
   flex-direction: column;
   justify-content: space-between;
   font-size: 22px;
-  font-family: animalCrossingFont;
 }
 .right-column{
   display: flex;
@@ -89,3 +88,46 @@
   display: flex;
   flex-direction: row;
 }
+
+.header-nav{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+}
+.navLink{
+  text-decoration: none;
+  color: black;
+  padding-right: 15px;
+}
+
+@media only screen and (max-width: 750px) {
+  /* For mobile phones: */
+  .right-header-image{
+    background-image: url(/src/assets/Images/rod.jpeg);
+    margin-left: 85px;
+  }
+  .left-header-image{
+    display: none;
+  }
+  .foot{
+    position: sticky;
+    overflow-x: hidden;
+  }
+}
+@media only screen and (max-width: 1100px){
+  .foot{
+    position: sticky;
+    overflow-x: hidden;
+  }
+}
+@media only screen and (max-width: 2000px){
+  .foot{
+    position: sticky;
+    overflow-x: hidden;
+  }
+}
+  
