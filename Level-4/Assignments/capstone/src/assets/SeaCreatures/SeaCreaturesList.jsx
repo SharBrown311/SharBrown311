@@ -68,7 +68,6 @@ return (
           </div>
           <div className='selectedSea-details'>
           <p className='details'><span>Price:</span> ${selectedSea.price}</p>
-          <p className='details'><span>Location: </span> {selectedSea.availability.location}</p>
           <p className='details'><span>Time:</span> {selectedSea.availability.time ? selectedSea.availability.time : 'Available all day'}</p>
           <p className='details'><span>Months Available:</span>  {selectedSea.availability['month-array-northern'].join(', ')}</p>
           <p className='details'><span>Shadow Size:</span>  {selectedSea.shadow}</p>

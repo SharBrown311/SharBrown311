@@ -9,7 +9,7 @@ function Footer() {
         </div>
         <div className='image-container'>
         <div className='thank-you-link'>
-        <p className='thanks'>Thank you</p> <img src='https://tse1.mm.bing.net/th?id=OIP.c2eA4JPxeSunFx8P2bF90wHaHa&pid=Api&P=0' alt = "animal-crossing-logo" className='leaf-image' /><a href = "https://acnhapi.com/doc"><p className='api-name'>anch api</p></a>
+        <p className='thanks'>Thank you <a href = "https://acnhapi.com/doc" className='api-link'>ANCH API</a></p> <img src='https://tse1.mm.bing.net/th?id=OIP.c2eA4JPxeSunFx8P2bF90wHaHa&pid=Api&P=0' alt = "animal-crossing-logo" className='leaf-image' />
         </div>
       </div>
         <div className='right-column'>

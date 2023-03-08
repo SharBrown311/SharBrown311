@@ -52,6 +52,7 @@ footer{
 
 }
 
+
 .left-column{
   display: flex;
   flex-direction: column;
@@ -74,6 +75,8 @@ footer{
   height: 45px;
   width: 45px;
   border: 3px outset limegreen;
+  margin-left: 55px;
+  margin-top: -10px;
 }
 .leaf-image:hover{
   rotate: 90deg;
@@ -84,9 +87,19 @@ footer{
 .github-link{
   text-decoration: none ;
 }
+.api-link{
+  text-decoration: none;
+  color: black;
+}
 .thank-you-link{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  max-width: 100%;
+  white-space: nowrap;
+  font-family: 'Itim', cursive;
+  font-style: italic;
+  margin-top: -24px;
+  text-decoration: none;
 }
 
 .header-nav{
