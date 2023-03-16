@@ -22,7 +22,7 @@ function SeaCreaturesList() {
   }
 
   useEffect(() => {
-    sessionStorage.setItem('checkedSea', JSON.stringify(checkedSea))
+    localStorage.setItem('checkedSea', JSON.stringify(checkedSea))
   }, [checkedSea])
 
   const handleSeaClick = (seaId) =>{

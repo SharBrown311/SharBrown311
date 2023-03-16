@@ -27,7 +27,7 @@ function BugList(){
   }
 
   useEffect(() =>{
-    sessionStorage.setItem('checkedBugs', JSON.stringify(checkedBugs));
+   localStorage.setItem('checkedBugs', JSON.stringify(checkedBugs));
   }, [checkedBugs]);
 
   const handleBugClick = (bugId) =>{
