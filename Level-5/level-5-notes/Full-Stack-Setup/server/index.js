@@ -4,7 +4,7 @@ const index = express()
 // const morgan = require("morgan")
 require('dotenv').config()
 const mongoose = require("mongoose")
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 5150
 
 mongoose.set('strictQuery', true)//suppresses deprecation warning
 //Middleware (for every request) //
@@ -40,5 +40,5 @@ index.use((err, req, res, next) => {
 
 
 index.listen(port, () => {
-  console.log("The server is listening on port 8080")
+  console.log("The server is listening on port 5150")
 })
