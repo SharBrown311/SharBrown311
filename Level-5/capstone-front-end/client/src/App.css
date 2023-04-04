@@ -1,0 +1,11 @@
+
+.nav-links{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+.routes{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

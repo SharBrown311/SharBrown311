@@ -1,4 +1,5 @@
 const mongoose = require("mongoose")
+const inventoryRouter = require("../routes/inventoryRouter")
 const Schema = mongoose.Schema
 
 //fruit blueprint
@@ -24,5 +25,9 @@ const inventorySchema = new mongoose.Schema({
       type: String
     }
 })
+
+
+
+
 
 module.exports = mongoose.model("Inventory", inventorySchema)
