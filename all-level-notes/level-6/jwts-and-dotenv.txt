@@ -1,0 +1,16 @@
+download the package: JSON webtoken
+  -npm install jsonwebtoken
+
+download the package: dotenv 
+  -npm install dotenv
+
+put .env inside of .gitignore file
+  /node_modules
+.DS_Store
+.env
+
+-check all packages are installed inside the package.json file under the dependencies section.
+
+inside of .env file create secret like this: 
+  SECRET = "FOUR WORDS FOR SECRET"
+  ex: SECRET = "patamime dog cat ferrett"

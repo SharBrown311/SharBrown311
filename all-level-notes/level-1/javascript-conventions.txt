@@ -1,0 +1,29 @@
+JavaScript: 
+  The following are some important conventions and best practices to follow with the JavaScript language, some of which apply to programming in general.
+
+
+  camelCase: 
+  JavaScript uses a variable - and function-naming convention called camelCase. This means that anytime you are naming a variable or function in your code, you seperate the "words" of your variable or function name by capitalizing the first letter of each new "word". But the initial word of the variable or function is lowercased. 
+
+  example: 
+    var thisIsHowYouDoCamelCasing = true;
+
+    function hereIsAFunction() {
+    ...
+    }
+
+
+Naming Based on DataTypes: 
+  When choosing a name, consider the following:
+
+- What data type is this variable?
+- `Number` - name it based on the value it represents (e.g: `var age = 10;`).
+- `String` - same as above (e.g: `var location = "Salt Lake City";`).
+- `Boolean` - asks a yes/no question (e.g: `var isTheRealSlimShady = true;`).
+- `Function` - verb or action word/phrase describing its job (e.g: `var capitalize = function(str){ return str.toUppercase()};`).
+- `Array` - *Plural* word describing its contents (e.g: `var instruments = ["guitar", "drums", "bass", "keyboard"];`).
+- `Object` - *Singular* word describing what it represents (e.g: `var animal = {type: "cow"}`).
+
+
+Making a comment: 
+  There are line comments (as you've seen in all the examples above, beginning with //), and there are block comments:

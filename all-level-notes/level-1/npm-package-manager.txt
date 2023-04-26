@@ -1,0 +1,7 @@
+NPM or Node Package Manager: 
+  -helps us utilize 3rd party packages
+  -npm init -y will create a package.json file for us. This file officially makes the project a node module, and will contain meta information about our project, including what packages we used.
+
+  - we can use npm install [package-name] any time to install packages locally, and to the specific project that we are working on. 
+
+  

@@ -1,0 +1,24 @@
+- **`pwd`** tells you what directory you are currently in.
+- **`ls`** lists the files and folders in the current directory.
+- **`cd`** changes what directory you're in. You can use **/** to get to the root directory quickly.
+
+-mkdir : makes a new folder in the current directory
+
+-touch: creates a new file with the name and extension given.
+
+-rm : deletes a file or folder. Use it with -r to force it to delete a folder even if there are still objects in the folder you are trying to delete.
+
+-mv : to rename a file, you would do 
+  # mv oldFileName.js newFileName.js
+
+  or 
+
+  # mv fileToMove.txt ../../my-folder/things-i-save/notes/
+
+-cp : [file to be copied] [where to put copy] copies the files that you name. 
+
+-cp -r : [new directory name] will copy a directory.
+
+nano will open a text editor, if we say nano [file that already exists] we will be editing that file , but if we say nano [new file that doesnt exist yet] we will create a new file and start editing it. 
+
+
