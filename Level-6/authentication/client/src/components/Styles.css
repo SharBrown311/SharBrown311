@@ -1,24 +1,10 @@
 html, body{
   margin: 0;
   padding: 0;
-  height: 100vh;
-  width: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 }
-.entire-profile{
-  display: flex;
-  flex-direction: column;
-}
-.profile{
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  position: absolute;
-  margin-left: 40%;
-  text-align: center;
-  border: 2px solid black;
 
-}
 .navbar{
   margin: 0 auto;
   top: 0;
@@ -26,4 +12,58 @@ html, body{
   flex-direction: row;
   justify-content: space-around;
 
+}
+.auth-container{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  text-align: center;
+  align-content: center;
+  border: 4px ridge black;
+
+}
+
+.nav-link{
+  padding-left: 15px;
+  padding-right: 35px;
+}
+
+/* issues section */
+.issue-form{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 35px;
+}
+.issue-container{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap; 
+   align-content: center;
+  padding-top: 25px;
+
+
+}
+.issue-title{
+  font-size: 35px;
+}
+.issue-description{
+  font-size: 15px;
+}
+.issue-card{
+  border: 5px ridge black;
+  width: 100%;
+  padding-right: 35px;
+  padding-left: 35px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+}
+
+
+
+
+/* COMMENT SECTION */
+
+.comment-list{
+  border: 1px solid black;
 }

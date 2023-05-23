@@ -1,0 +1,13 @@
+
+.button-routes{
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-family: 'Alkatra', cursive;
+  font-family: 'Noto Sans Mono', monospace;
+}
+.button-routes:hover{
+  color: #00A86B;
+  background-color: darkmagenta;
+  border-color: black;
+}
+/*  */

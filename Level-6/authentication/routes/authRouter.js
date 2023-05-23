@@ -6,6 +6,7 @@ const jwt = require("jsonwebtoken");
 //Sign up
 authRouter.post("/signup", (req, res, next) => {
   //Check if the username exists
+  console.log(req.body)
   User.findOne({ username: req.body.username.toLowerCase() }, (err, user) => {
     //if there's an error
     if (err) {

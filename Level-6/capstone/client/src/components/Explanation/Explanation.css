@@ -1,0 +1,125 @@
+.explanation-container{
+  height: 1600px;
+  width: 2500px;
+  max-width: 100%;
+  }
+  .container-image-1{
+    margin-top: 35px;
+    height: 400px;
+    width: 570px;
+    background-image: url("./images/indexcards.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+  }
+  .section-1{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width:100% ;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    background-color: #31deee;
+    justify-content: space-around;
+}
+  .section-1-text{
+    word-wrap: normal;
+    font-size: 23px;
+    font-style: oblique;
+    padding-top: 155px;
+    padding-right: 45px;
+    color: #0000;
+  }
+
+  
+  
+  
+  .container-image-2{
+    height: 400px;
+    width: 570px;
+    color: rgb(160, 215, 217);
+    background-image: url("./images/navigation.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 35px;
+  }
+  .section-2{
+
+    display: flex;
+    flex-direction: row-reverse;
+    max-width: 100%;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    background-color: #31deee;
+  }
+  .section-2-text{
+    margin-top: 135px;
+    color: #000;
+    padding-left: 55px;
+    font-size: 23px;
+    font-style: oblique;
+  }
+  
+  
+    hr{
+    background-color: #e411ac;
+    height: 2px;
+    border: none;
+  }
+  
+  
+  .section-3{
+    margin-top: 35px;
+    margin-bottom: 35px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width:100% ;
+    background-color: #31deee;
+    justify-content: space-around;
+  }
+  .section-3-text{
+    word-wrap: normal;
+    font-size: 23px;
+    font-style: oblique;
+    padding-top: 155px;
+    color: #000;
+    padding-right: 45px;
+  }
+  .container-image-3{
+    background-image: url("./images/edit&delete.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 400px;
+    width: 600px;
+  }
+
+
+  
+  .section-4{
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    max-width:100% ;
+    justify-content: space-around;
+    max-width: 100%;
+    background-color:#31deee;
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
+  .section-4-text{
+    margin-top: 155px;
+    word-wrap: normal;
+    padding-left: 55px;
+    font-size: 23px;
+    font-style: oblique;
+    color: #000;
+  }
+  .container-image-4{
+    background-image: url("../../images/newTimer.png"); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 400px;
+    width: 600px;
+  }

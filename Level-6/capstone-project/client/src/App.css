@@ -1,0 +1,29 @@
+.routes{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+body{
+  background-color: #ffffff;
+}
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.nav-links-container{
+  display: flex;
+  flex-direction: row;
+}
+.main-header-image{
+  height: 300px;
+  width: 500px;
+  background-image: url("./assets/images/Buddy.png");
+}
+.auth-container{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}

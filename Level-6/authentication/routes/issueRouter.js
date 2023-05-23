@@ -1,67 +1,243 @@
-const express = require("express");
-const authRouter = express.Router();
-const User = require("../models/user");
-const jwt = require("jsonwebtoken");
+const express = require("express")
+const issueRouter = express.Router()
+const Issue = require('../models/issue')
 
-//Sign up
-authRouter.post("/signup", (req, res, next) => {
-  //Check if the username exists
-  User.findOne({ username: req.body.username.toLowerCase() }, (err, user) => {
-    //if there's an error
-    if (err) {
-      req.status(500);
-      return next(err);
-    }
-    //if the user already exists
-    if (user) {
-      res.status(403);
-      return next(new Error("That username is already taken"));
-    }
-    //if the user does not exist then we can create a new user
-    const newUser = new User(req.body);
-    newUser.save((err, savedUser) => {
-      //check for errors
-      if (err) {
-        res.status(500);
-        return next(err);
-      }
-      //if no errors, return a new username and a token
-      // .sign() takes a payload -in this case the new User and the SECRET
-      const token = jwt.sign(savedUser.withoutPassword(), process.env.SECRET);
-      return res.status(201).send({ token, user: savedUser.withoutPassword() });
-    });
-  });
-});
 
-//Login
-authRouter.post("/login", (req, res, next) => {
-  //Check if the user exists
-  User.findOne({ username: req.body.username.toLowerCase() }, (err, user) => {
-    if (err) {
-      res.status(500);
-      return next(err);
-    }
-    //if user does not exist
-    if (!user) {
-      res.status(403);
-      return next(new Error("Username or Password are incorrect"));
-    }
-    //check the password
-    user.checkPassword(req.body.password, (err, isMatch) => {
-      //if the password does not match
-      if (err) {
-        res.status(403);
-        return next(new Error("Username or Password are incorrect"));
-      }
-      if (!isMatch) {
-        res.status(403);
-        return next(new Error("Username or Password are incorrect"));
-      }
-      //if username exists and password matches create a token
-      const token = jwt.sign(user.withoutPassword(), process.env.SECRET);
-      return res.status(200).send({ token, user: user.withoutPassword() });
-    });
-  });
-});
 
-module.exports = authRouter;
+
+//get all issues//getpublicIssues
+//works
+issueRouter.get('/', (req, res, next) => {
+  Issue.find((err, issues) => {
+    if(err){
+      res.status(500)
+      return next(err)
+    }
+    return res.status(200).send(issues)
+  })
+})
+//getting a comment on a specific post
+//api/issue/:issueId/comment
+
+
+
+
+
+
+
+//get the issues by userid
+//works - getUserIssues
+issueRouter.get("/user", (req, res, next) => {
+  Issue.find({user: req.auth._id}, (err, issues) => {
+    if(err){
+      res.status(500)
+      return next(err)
+    }
+    return res.status(200).send(issues)
+  })
+})
+//get issues by user Id with comments
+// issueRouter.get("/user", (req, res, next) => {
+//   Issue.find({user: req.auth._id})
+//   .populate('comments')
+//   .exec(function(err, issues) {
+//     if(err){
+//       res.status(500)
+//       return next(err)
+//     }
+//     return res.status(200).send(issues.map(transformVotes))
+//   })
+// })
+//add new issue
+issueRouter.post("/", (req, res, next) => {
+  req.body.user = req.auth._id
+  const newIssue = new Issue(req.body)
+  newIssue.save((err, savedIssue) => {
+    if(err){
+      res.status(500)
+      return next(err)
+    }
+    return res.status(201).send(savedIssue)
+  })
+})
+//get one issue
+issueRouter.get("/:issueId", (req, res, next) => {
+  Issue.find({_id: req.params.issueId},
+    (err, issue) => {
+      if(err){
+        res.status(500)
+        return next(err)
+      }
+      return res.status(200).send(issue)
+    }
+    )
+})
+
+//deleteIssue
+//works
+issueRouter.delete("/:issueId", (req, res, next) => {
+  Issue.findOneAndDelete(
+    { _id: req.params.issueId, user: req.auth._id },
+    (err, deletedIssue) => {
+      if(err){
+        res.status(500)
+        return next(err)
+      }
+      return res.status(200).send(`Successfully delete issue: ${deletedIssue.title}`)
+    }
+  )
+})
+//add Comment to Issue
+//works
+issueRouter.post("/comment/:issueId", (req, res, next) => {
+  req.body.user = req.auth._id
+  req.body.issue = req.params.issueId
+  const newComment = new Comment(req.body)
+  newComment.save((err, savedComment) => {
+    if(err){
+      res.status(500)
+      return next(err)
+    }
+    Issue.updateOne({_id: req.params.issueId}, 
+      {$push: {comments: savedComment._id}}, (err, savedComment) => {
+        if(err){
+          res.status(500)
+          return next(err)
+        }
+        return res.status(201).send(savedComment)
+      })
+  })
+})
+
+
+
+
+
+
+
+
+//edit / update issue
+issueRouter.put("/:issueId", (req, res, next) => {
+  Issue.findOneAndUpdate(
+    { _id: req.params.issueId, user: req.auth._id},
+    req.body, 
+    { new: true },
+    (err, updatedIssue) => {
+      if(err){
+        res.status(500)
+        return next(err)
+      }
+      return res.status(201).send(updatedIssue)
+    }
+  )
+})
+
+
+
+// //upvote
+issueRouter.put("/upvotes/:issueId", (req, res, next) => {
+  Issue.findOne(
+    { _id: req.params.issueId},
+    (err, issue) => {
+      if(err){
+        res.status(500)
+        return next(err)
+      }
+      if(issue.voters.includes(req.user._id)){
+        res.status(403)
+        return next(new Error("You already voted on this issue"))
+      } else {
+        Issue.findOneAndUpdate(
+          { _id: req.params.issueId },
+          { 
+            $inc: { upVotes: 1 }, 
+            $push: { voters: req.user._id}
+          },
+          { new: true },
+          (err, issue) => {
+            if (err) {
+              res.status(500)
+              return next(err)
+            }
+            return res.status(201).send(issue)
+          })
+      }
+    })
+  })
+
+// //downvote
+issueRouter.put("/downvotes/:issueId", (req, res, next) => {
+  Issue.findOne(
+    { _id: req.params.issueId},
+    (err, issue) => {
+      if(err){
+        res.status(500)
+        return next(err)
+      }
+      if(issue.voters.includes(req.user._id)){
+        res.status(403)
+        return next(new Error("You already voted on this issue"))
+      } else {
+        Issue.findOneAndUpdate(
+          { _id: req.params.issueId },
+          { 
+            $inc: { downVotes: 1 }, 
+            $push: { voters: req.user._id}
+          },
+          { new: true },
+          (err, issue) => {
+            if (err) {
+              res.status(500)
+              return next(err)
+            }
+            return res.status(201).send(issue)
+          })
+      }
+    })
+  })
+
+
+
+
+
+
+
+
+
+//upvote or downvote an issue
+// issueRouter.put("/vote/:issueId/:type", (req, res, next) => {
+//   Issue.findOneAndUpdate(
+//     {_id: req.params.issueId, 'votes.userId': {$ne : req.auth._id}},
+//     {$push: {votes: {userId: req.auth._id, voteType: req.params.type === 'increment' ? 1 : -1}}},
+//     {new: true},
+//     (err, updatedIssue) => {
+//       if(err){
+//         res.status(500)
+//         return next(err)
+//       }
+//       console.log(updatedIssue)
+//       return res.status(201).send(updatedIssue ? transformVotes(updatedIssue) : null)
+//     }
+//   )
+// })
+
+
+
+
+
+// //tranform votes
+// function transformVotes(issue){
+//   if(!issue.votes){
+//     issue.votes = []
+//   }
+//   const tally = issue.votes.reduce((total, vote) => {
+//     return total += vote.voteType
+//   }, 0)
+//   issue.votes = tally
+//   return issue
+// }
+
+
+module.exports = issueRouter
+
+

@@ -1,18 +1,17 @@
-import React from "react";
-import Comment from "./Comment";
-import './Styles.css'
-export default function CommentList(props) {
-  const { comments, deleteComment } = props;
+import React, { useContext } from 'react'
+import Comment from './Comment'
+import { UserContext } from '../context/UserProvider';
 
+export default function CommentList() {
+  const {comments} = useContext(UserContext)
+  console.log(comments)
   return (
-    <div>
-      {comments.map((comment) => (
-        <Comment
-          key={comment.id}
+    <div className='comment-list'>
+      {comments.map(comment =>
+        <Comment key={comment._id}
           comment={comment}
-          deleteComment={deleteComment}
         />
-      ))}
+  )}
     </div>
   );
 }

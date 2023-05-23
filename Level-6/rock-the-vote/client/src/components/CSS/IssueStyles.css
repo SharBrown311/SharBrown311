@@ -1,0 +1,29 @@
+.issue-form{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 35px;
+}
+.issue-container{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap; 
+   align-content: center;
+  padding-top: 25px;
+
+
+}
+.issue-title{
+  font-size: 35px;
+}
+.issue-description{
+  font-size: 15px;
+}
+.issue-card{
+  border: 5px ridge black;
+  width: 100%;
+  padding-right: 35px;
+  padding-left: 35px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+}

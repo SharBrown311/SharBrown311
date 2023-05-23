@@ -1,15 +1,22 @@
 import React from "react";
+import "./Styles.css"
 import Comment from "./Comment";
-import './Styles.css'
-export default function Issue(props) {
-  const { title, description, imgUrl, _id } = props;
 
+export default function Issue(props) {
+  const {issue} = props;
+  
   return (
-    <div className="issue">
-      <h1>Title: {title}</h1>
-      <h3>Description: {description}</h3>
-      <img src={imgUrl} alt={imgUrl} width={300} />
-      <Comment _id={_id} />
+    <div className="issue-container">
+    <div className="issue-card">
+    <img className = "issue-image" src = {issue.imgUrl} alt = {issue.title} />
+      <h3 className="issue-title">{issue.title}</h3>
+      <p className="issue-description">{issue.description}</p>
+      <div className="comment-component-container">
+      <Comment/>
+      </div>
+      </div>
+
+
     </div>
   );
 }

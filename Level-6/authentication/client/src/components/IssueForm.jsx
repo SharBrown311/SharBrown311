@@ -1,20 +1,24 @@
-import React, { useState } from "react";
-import Form from "react-bootstrap/Form"
-import Button from "react-bootstrap/Button"
-import './Styles.css'
-const initInputs = {
-  title: "",
-  description: "",
-  imgUrl: "",
-};
+import React, { useState, useContext } from "react";
+import { UserContext } from "../context/UserProvider";
 
-export default function IssueForm(props) {
+
+export default function IssueForm() {
+
+  const initInputs = {
+    title: "",
+    description: "",
+    imgUrl: ""
+  };
+
+
   const [inputs, setInputs] = useState(initInputs);
-  const { addIssue } = props;
+  const { addIssue } = useContext(UserContext);
+
+
 
   function handleChange(e) {
     const { name, value } = e.target;
-    setInputs((prevInputs) => ({
+    setInputs(prevInputs => ({
       ...prevInputs,
       [name]: value,
     }));
@@ -26,39 +30,36 @@ export default function IssueForm(props) {
     setInputs(initInputs);
   }
 
-  const { title, description, imgUrl } = inputs;
+  const { title, description, imgUrl} = inputs;
 
   return (
-    <Form onSubmit={handleSubmit} className="w-25p">
-    <Form.Group>
-      <Form.Control
-        type="text"
-        name="title"
+    <form onSubmit={handleSubmit} className="issue-form">
+      <input
+        type = "text"
+        name = "title"
         placeholder="Title"
-        value={title}
-        onChange={handleChange}
+        onChange = {handleChange}   
+        value = {title}
+        className="issue-inputs"
       />
-      </Form.Group>
-      <Form.Group>
-      <Form.Control
-        name="description"
-        placeholder="Description"
-        value={description}
-        onChange={handleChange}
-        cols="30"
-        rows="10"
+      <input 
+      type = "text"
+      name = "description"
+      placeholder="Description"
+      onChange = {handleChange}
+      value = {description}
+      className="issue-inputs"
       />
-      </Form.Group>
-      <Form.Group>
-      <Form.Control
-        type="text"
-        name="imgUrl"
-        placeholder="Image URL"
-        value={imgUrl}
-        onChange={handleChange}
+      <input 
+      type = "text"
+      name = "imgUrl"
+      placeholder="Image Address"
+      onChange = {handleChange}
+      value = {imgUrl}
+      className="issue-inputs"
       />
-      </Form.Group>
-      <Button>Add Issue</Button>
-    </Form>
-  );
+      <button type = "submit">Submit</button>
+    </form>
+
+  )
 }

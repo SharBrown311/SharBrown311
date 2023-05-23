@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 const bcrypt = require("bcrypt"); //encrypts data
 
 const userSchema = new Schema({
-  username: {
+    username: {
     type: String,
     required: true,
     lowercase: true,
@@ -21,6 +21,14 @@ const userSchema = new Schema({
     type: Boolean,
     default: false,
   },
+  issues: {
+    type: Array,
+    default: []
+  }, 
+  comments: {
+    type: Array, 
+    default: []
+  }
 });
 
 //pre-save hook to encrypt user passwords on signup

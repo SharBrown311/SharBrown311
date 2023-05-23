@@ -1,44 +1,47 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../context/UserProvider";
-import Form from "react-bootstrap/Form"
-import Button from "react-bootstrap/esm/Button";
-import './Styles.css'
-export default function CommentForm({ _id }) {
-  const { user, addComment } = useContext(UserContext);
-  const [input, setInput] = useState({ text: "" });
-  //const [comment, setComment] = useState("")
-  console.log(_id);
 
-  const handleChange = (e) => {
+
+
+export default function CommentForm(){ 
+  
+  const initComment={
+    text: ""
+  }
+      const [commentText, setCommentText] = useState(initComment);
+  
+      const { addComment } = useContext(UserContext);
+
+  function handleChange(e) {
     const { name, value } = e.target;
-    setInput((prevComment) => ({
-      ...prevComment,
+    setCommentText(prevState  => ({
+      ...prevState,
       [name]: value,
     }));
-  };
+  }
 
-  const handleSubmit = (e) => {
+  function handleSubmit(e) {
     e.preventDefault();
-    console.log(_id);
-    //alert("Submit")
-    addComment(_id, input);
-    setInput(input);
-  };
+    addComment(commentText);
+    setCommentText(initComment);
+  }
+
+  const comment = input;
+  console.log(comment)
+
 
   return (
-    <div>
-      <Form onSubmit={handleSubmit}>
-      <Form.Group>
-        <h3>Author: {user.username}</h3>
-        <Form.Control
-          name="text"
-          value={input.text}
-          onChange={handleChange}
-          placeholder="Add a comment"
-        />
-        </Form.Group>
-        <Button type = "submit">Submit</Button>
-      </Form>
-    </div>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="comment"
+            value={text}
+            placeholder="Comment"
+            onChange={handleChange}
+          />
+          <button type="submit" >
+            Save Comment
+          </button>
+        </form>
   );
 }

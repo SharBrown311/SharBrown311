@@ -1,13 +1,19 @@
-import React from "react";
-import Issue from "./Issue";
-import './Styles.css'
-export default function IssueList(props) {
-  const { issues } = props;
-  return (
-    <div className="issue-list">
-      {issues.map((issue) => (
-        <Issue {...issue} key={issue._id} />
-      ))}
-    </div>
-  );
+import React, {useContext } from 'react'
+//import axios from 'axios'
+import { UserContext } from '../context/UserProvider'
+import Issue from './Issue'
+
+export default function IssueList(){
+  const {issues} = useContext(UserContext)
+  console.log(issues)
+
+    return (
+      <div>
+          {issues.map(issue => 
+            <Issue key = {issue._id}
+              issue = {issue}
+            />
+          )}
+      </div>
+    )
 }

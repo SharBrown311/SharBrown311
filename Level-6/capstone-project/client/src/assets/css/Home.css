@@ -1,0 +1,78 @@
+
+
+
+.head-container{
+  background-image: url("../images//Buddy.png");
+  margin-top: 50px;
+  height: 400px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position:top;
+  max-width: 100%;
+  border-bottom: 10px double #2b8cb3;
+  outline:10px double #00A86B;
+}
+
+.home-header{
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-size: 35px;
+  margin-top: 95px;
+  color: #000000;
+}
+
+.about-us-text{
+  font-family: "Segoue UI", sans-serif;
+  text-align: center;
+  padding-left: 95px;
+  padding-right: 95px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  color: #20517e;
+
+}
+
+.study-habits-image{
+  border-right: 1px solid black;
+  height: 100px;
+  width: 300px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-bottom: 300px;
+  margin-left: 15px;
+}
+.links-outside-image{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 3px outset  rgb(138, 36, 141); 
+}
+a{
+  color : black;
+}
+a:hover{
+  color: rgb(138, 36, 141);
+}
+
+.list{
+  font-size: 22px;
+  margin-top: 30px;
+  color: rgb(41,80,109);
+  font-family: 'Montserrat', sans-serif;
+}
+.listItem{
+  padding-bottom: 15px;
+  font-size: 18px;
+  font-family:'Montserrat', sans-serif;
+  text-decoration: none;
+  text-align: left;
+  list-style-type:"📘";
+}
+.user-review-carousel{
+  height: 300px;
+}
+.study-habits-text{
+  position: relative;
+  top: 125px;
+  font-size: 30px;
+}

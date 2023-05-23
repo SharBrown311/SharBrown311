@@ -18,13 +18,18 @@ export default function UserProvider(props) {
     user: JSON.parse(localStorage.getItem("user")) || {},
     token: localStorage.getItem("token") || "",
     issues: [],
+    comments: [],
     errMsg: ""
   };
+
+
 
   const [userState, setUserState] = useState(initState);
 
 
+  
 //axios functions
+//works
 function signup(credentials){
   axios.post("/auth/signup", credentials)
   .then(res => {
@@ -42,6 +47,7 @@ function signup(credentials){
 }
 
   //Login
+  //works
   function login(credentials) {
     axios
       .post("/auth/login", credentials)
@@ -49,7 +55,6 @@ function signup(credentials){
         const { user, token } = res.data;
         localStorage.setItem("token", token);
         localStorage.setItem("user", JSON.stringify(user));
-        getUserIssues();
         setUserState((prevUserState) => ({
           ...prevUserState,
           user,
@@ -60,28 +65,44 @@ function signup(credentials){
   }
 
   //Logout -Resets the state
+  //works
   function logout() {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     setUserState({
       user: {},
-      token: "",
-      issues: [],
+      token: ""
     });
   }
 
   //Get User's Issues
-  function getUserIssues(){
-    userAxios.get("/api/issue/user")
-      .then(res => {
-        setUserState(prevState => ({
-          ...prevState, 
-          issues: res.data
-        }))
-      })
-      .catch(err => console.log(err))
-      }
+  //works
+  function getUserIssues() {
+     userAxios.get("/api/issue/user")
+        .then(res => {
+            //console.log(userState)
+            setUserState(prevState => ({
+                    ...prevState,
+                    issues: res.data,
+                    // comments: res.data
+            }))
+        })
+        .catch(err => console.log(err))
+}
 
+//get all issues
+//works
+function getPublicIssues(){
+  userAxios.get("/api/issue")
+  .then(res => {
+      setUserState(prevState => ({
+          ...prevState,
+          issues: res.data, 
+          comments: res.data
+    }))
+})
+.catch(err => console.log(err.response.data.errMsg))
+}
   //Display Error Message to the User
   function handleAuthErr(errMsg) {
     setUserState((prevState) => ({
@@ -99,29 +120,54 @@ function signup(credentials){
   }
 
   //Add Issue
+  //works
   function addIssue(newIssue) {
-    userAxios
-      .post("/api/issue", newIssue)
-      .then((res) => {
-        setUserState((prevState) => ({
-          ...prevState,
-          issues: [...prevState.issues, res.data],
-        }));
-        const newIssue = res.data;
-        setPublicIssues((prevState) => [...prevState, newIssue]);
-      })
-      .catch((err) => console.log(err.response.data.errMsg));
-  }
+    userAxios.post("/api/issue", newIssue)
+        .then(res => {
+            setUserState(prevState => ({
+                ...prevState,
+                issues: [...prevState.issues, res.data]
+            }))
+        })
+        .catch(err => console.log(err.response.data.errMsg))
+}
+
 
   //Add Comment
   function addComment(issueId, newComment) {
     userAxios
-      .put(`/api/issue/comment/${issueId}`, newComment)
-      .then((res) => console.log(res.data));
-    console.log(issueId);
-
+      .post(`/api/issue/comment/${issueId}`, newComment)
+      .then(res => {
+        setUserState(prevState => ({
+          ...prevState, 
+          comments: [...prevState.comments, res.data]
+        }))
+      })
+      .catch(err => console.log)
+  }
+//upvote
+  function upVotes(issueId){
+    userAxios.put(`/api/issue/upvote/${issueId}`)
+    .then(res => console.log(res.data))
+    .catch(err => console.log(err))
+    navigate("/public")
+    getAllIssues()
   }
 
+  //downvote
+  function downVotes(issueId){
+  userAxios.put(`/api/issue/downvote/${issueId}`)
+    .then(res => console.log(res.data))
+    .catch(err => console.log(err))
+    navigate("/public")
+    getAllIssues()
+}
+
+function deleteIssue(issueId){
+  userAxios.delete(`/api/issue/${issueId}`)
+  .then(res => console.log(res.data))
+  .catch(err => console.log(err.response.data.errMsg))
+}
   return (
     <UserContext.Provider
       value={{
@@ -130,8 +176,13 @@ function signup(credentials){
         login,
         logout,
         addIssue,
+        deleteIssue,
         resetAuthError,
         addComment,
+        getUserIssues,
+        getPublicIssues,
+        upVotes,
+        downVotes
       }}
     >
       {props.children}

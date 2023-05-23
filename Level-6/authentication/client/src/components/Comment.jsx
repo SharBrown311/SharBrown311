@@ -1,17 +1,21 @@
-import React, { useState } from "react";
-import CommentForm from "./CommentForm";
+import React, { useContext } from 'react'
+import CommentForm from './CommentForm'
 import './Styles.css'
-export default function Comment({ _id }) {
-  const [displayForm, setDisplayForm] = useState(false);
 
-  function toggleDisplayForm() {
-    setDisplayForm(!displayForm);
-  }
+
+function Comment(props) {
+  const {comment} = props
+
 
   return (
-    <div>
-      <button onClick={toggleDisplayForm}>Leave a Comment</button>
-      {displayForm && <CommentForm _id={_id} />}
+    <div className='comment-container'>
+      <p>{comment}</p>
+      <button className='edit-comment'>Edit</button>
+      <button className='delete-comment'>Delete</button>
+      <CommentForm />
     </div>
-  );
+  )
 }
+
+export default Comment
+
