@@ -11,6 +11,10 @@ const flashcardSchema = new Schema({
         type: String,
         required: true,
     },
+    created: {
+        type: Date, 
+        required: true
+    },
     deckId: {
         type: String,
         required: true

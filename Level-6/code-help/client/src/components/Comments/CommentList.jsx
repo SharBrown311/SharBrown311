@@ -1,9 +1,8 @@
-import React, { useContext } from 'react'
-import Comment from './Comment'
-import { UserContext } from '../context/UserProvider';
-
+import React, {useContext} from 'react'
+import Comment from './Comment';
 export default function CommentList() {
   const {comments} = useContext(UserContext)
+  console.log(comments)
   return (
     <div className='comment-list'>
       {comments?.map(comment =>

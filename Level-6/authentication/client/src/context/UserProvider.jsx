@@ -27,7 +27,7 @@ export default function UserProvider(props) {
   const [userState, setUserState] = useState(initState);
 
 
-  
+  const userId = user._id
 //axios functions
 //works
 function signup(credentials){
@@ -78,13 +78,12 @@ function signup(credentials){
   //Get User's Issues
   //works
   function getUserIssues() {
-     userAxios.get("/api/issue/user")
+     userAxios.get(`/api/issue/user`)
         .then(res => {
-            //console.log(userState)
             setUserState(prevState => ({
                     ...prevState,
-                    issues: res.data,
-                    // comments: res.data
+                    issues: res.data, 
+                
             }))
         })
         .catch(err => console.log(err))

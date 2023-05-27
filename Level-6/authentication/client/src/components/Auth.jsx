@@ -29,7 +29,7 @@ export default function Auth() {
   }
 
   function toggleForm() {
-    setToggle((prev) => !prev);
+    setToggle(prev => !prev);
     resetAuthError();
   }
 

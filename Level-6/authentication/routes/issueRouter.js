@@ -49,6 +49,7 @@ issueRouter.get("/user", (req, res, next) => {
 //   })
 // })
 //add new issue
+//works
 issueRouter.post("/", (req, res, next) => {
   req.body.user = req.auth._id
   const newIssue = new Issue(req.body)
@@ -61,6 +62,7 @@ issueRouter.post("/", (req, res, next) => {
   })
 })
 //get one issue
+//works
 issueRouter.get("/:issueId", (req, res, next) => {
   Issue.find({_id: req.params.issueId},
     (err, issue) => {
@@ -239,5 +241,3 @@ issueRouter.put("/downvotes/:issueId", (req, res, next) => {
 
 
 module.exports = issueRouter
-
-

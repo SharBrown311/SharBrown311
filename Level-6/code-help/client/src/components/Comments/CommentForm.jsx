@@ -1,8 +1,5 @@
-import React, { useState, useContext } from "react";
-import { UserContext } from "../context/UserProvider";
-
-
-
+import React, {useState, useContext} from 'react'
+import { CommentContext } from '../../context/CommentProvider';
 export default function CommentForm(){ 
   
   const initComment={
@@ -10,7 +7,7 @@ export default function CommentForm(){
   }
       const [input, setInput] = useState(initComment);
 
-      const { addComment } = useContext(UserContext);
+      const { addComment } = useContext(CommentContext);
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -38,7 +35,7 @@ export default function CommentForm(){
             placeholder="Comment"
             onChange={handleChange}
           />
-          <button type="submit" onClick={handleSubmit}>
+          <button type="submit" >
             Save Comment
           </button>
         </form>

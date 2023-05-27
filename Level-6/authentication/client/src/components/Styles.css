@@ -31,6 +31,7 @@ html, body{
 /* issues section */
 .issue-form{
   display: flex;
+  background-color: green;
   flex-direction: column;
   margin-bottom: 35px;
 }

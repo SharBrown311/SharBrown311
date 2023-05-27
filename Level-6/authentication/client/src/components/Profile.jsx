@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import IssueForm from './IssueForm'
 import IssueList from './IssueList'
-
+import CommentList from './CommentList'
 import { UserContext } from '../context/UserProvider.jsx'
 
 
@@ -17,7 +17,8 @@ export default function Profile() {
         deleteIssue, 
         addVote, 
         removeVote,
-        addComment
+        addComment,
+        comments,
     } = useContext(UserContext)
 
     useEffect(() => {
@@ -39,6 +40,9 @@ export default function Profile() {
             removeVote = {removeVote}
 
             
+            />
+            <CommentList comments = {comments}
+            addComment = {addComment}
             />
         </div>
     )

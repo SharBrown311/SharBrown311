@@ -17,9 +17,8 @@ app.use(morgan('dev'))
 // //CONNECTION TO MONGODB
 mongoose.set('strictQuery', true);
 mongoose.connect(
-  `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.pv3uzqt.mongodb.net/`
+  `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.ngdhmss.mongodb.net/rockthevotedb`
   ,() => console.log("Mongoose Connected to DB"))
-
 
 app.use('/auth', require('./routes/authRouter'))
 app.use('/api', expressjwt({ secret: process.env.SECRET, algorithms: ['HS256'] }))
