@@ -1,12 +1,14 @@
 
 import React from 'react';
 import Card from './Card';
+import "./css/Study.css"
+import "../App.css"
 
 function Study(props) {
   const { cards, data } = props;
 
   return (
-    <div>
+    <div className = "Study">
       <div className='list'></div>
       <ul className='study-list'>
 

@@ -137,7 +137,7 @@ issueRouter.put("/:issueId", (req, res, next) => {
 
 
 // //upvote
-issueRouter.put("/upvotes/:issueId", (req, res, next) => {
+issueRouter.put("/upvote/:issueId", (req, res, next) => {
   Issue.findOne(
     { _id: req.params.issueId},
     (err, issue) => {

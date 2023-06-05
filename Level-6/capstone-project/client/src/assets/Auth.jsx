@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import AuthForm from "./AuthForm";
 import { UserContext } from "../context/UserProvider.jsx";
+import "../App.css"
 const initInputs = { username: "", password: "" };
 
 export default function Auth() {
@@ -33,7 +34,7 @@ export default function Auth() {
   }
 
   return (
-    <div className="auth-container">
+    <div className="Auth">
       <div className="main-header-image"></div>
       {!toggle ? (
         <>

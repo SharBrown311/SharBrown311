@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import './css/Card.css'
+import "../App.css"
 
 function Card(props) {
 
@@ -32,7 +33,7 @@ userAxios.interceptors.request.use(config => {
 
   const upDateCard = (updates, cardId) => {
     console.log(updates)
-    userAxios.put(`/api/card/${cardId}`, updates)
+    userAxios.put(`/api/cards/${cardId}`, updates)
         .then(res => {
           setUserState(prev => ({
             ...prev,
@@ -47,7 +48,7 @@ userAxios.interceptors.request.use(config => {
 
   const delCard = (cardId) => {
     console.log(`ID of card DELETED:`, cardId)
-      userAxios.delete(`/api/card/${cardId}`)
+      userAxios.delete(`/api/cards/${cardId}`)
         .then(res => {
             setCards(prev => prev.filter(card =>  card._id !== cardId))
             console.log('cards filter', cards.filter(card => card._id !== cardId))
@@ -60,7 +61,7 @@ userAxios.interceptors.request.use(config => {
   
   console.log(data)
   return (
-    <div className='flashcard'>
+    <div className='Card'>
       {EditCard?
         <div>
           <button onClick={() => upDateCard(userState, data._id)}>Save</button>
@@ -93,9 +94,9 @@ userAxios.interceptors.request.use(config => {
               </div>
             </div>
             <h2>Q:{userState.question}</h2>
-            {deckVisible?<h2>A:{userState.answer}</h2>:''}
-            {isQuizComp && showAnswer?<h2>A:{data.answer}</h2>:''}
-            {!isQuizComp && showAnswer?<h2>A:{data.answer}</h2>:''}
+            {deckVisible?<h2 className = "answer">A: {userState.answer}</h2>:''}
+            {isQuizComp && showAnswer?<h2 className ="answer">A: {data.answer}</h2>:''}
+            {!isQuizComp && showAnswer?<h2 className = "answer">A: {data.answer}</h2>:''}
           </div>
         </div>
       }

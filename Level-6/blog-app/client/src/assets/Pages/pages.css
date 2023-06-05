@@ -1,0 +1,16 @@
+.username-profile{
+  text-transform: capitalize;
+
+}
+.username-whole{
+  margin-top: 8rem;
+  text-align: center;
+  font-size: 2rem;
+  border: 1px solid black;
+}
+.profile{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+}

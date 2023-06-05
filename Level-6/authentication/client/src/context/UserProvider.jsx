@@ -27,7 +27,7 @@ export default function UserProvider(props) {
   const [userState, setUserState] = useState(initState);
 
 
-  const userId = user._id
+  // const userId = user._id
 //axios functions
 //works
 function signup(credentials){
@@ -128,7 +128,7 @@ function getPublicIssues(){
                 issues: [...prevState.issues, res.data]
             }))
         })
-        .catch(err => console.log(err.response.data.errMsg))
+        .catch(err => console.log(err))
 }
 
 
@@ -162,11 +162,17 @@ function getPublicIssues(){
     getAllIssues()
 }
 
-function deleteIssue(issueId){
+
+const deleteIssue = (issueId) => {
   userAxios.delete(`/api/issue/${issueId}`)
-  .then(res => console.log(res.data))
-  .catch(err => console.log(err.response.data.errMsg))
+  .then(res => {
+    setUserState(prev => prev.filter(issue => issue._id !== issueId))
+  })
+  .catch(err => console.log(err))
 }
+
+
+
   return (
     <UserContext.Provider
       value={{

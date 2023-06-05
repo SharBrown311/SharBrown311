@@ -1,8 +1,10 @@
 import React from 'react'
 import AuthForm from './AuthForm'
+import "../App.css"
+
 function LoginPage() {
   return (
-    <div>
+    <div className = "LoginPage">
       <AuthForm />
     </div>
   )

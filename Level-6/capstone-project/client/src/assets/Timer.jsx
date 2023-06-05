@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
-
+import "./css/Study.css"
+import "../App.css"
 
 function Timer() {
   const [timerOn, setTimerOn] = useState(false);
@@ -50,7 +51,7 @@ function Timer() {
   let hours = ("0" + Math.floor((timerTime / 3600000) % 60)).slice(-2);
 
   return (
-    <div className='timer'>
+    <div className='Timer'>
       <div className='timer-header'>Count Down</div>
       <div className='timer-time'>
         {hours} : {minutes} : {seconds}

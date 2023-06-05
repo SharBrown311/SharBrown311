@@ -6,6 +6,7 @@
 
 body{
   background-color: #ffffff;
+  max-width: 100%;
 }
 #root {
   margin: 0 auto;
@@ -26,4 +27,59 @@ body{
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+}
+
+
+.Timer{
+  max-width:64% ;
+}
+
+.Study-Container{
+  max-width: 100%;
+}
+.Study{
+  max-width: 100%;
+}
+.Stopwatch{
+  padding-top: 25px;
+  max-width: 100%;
+}
+
+.Quiz{
+  max-width: 100%;
+}
+
+.Profile{
+  max-width: 100%;
+}
+.Navbar{
+  max-width: 100%;
+}
+.LoginPage{
+  max-width: 100%;
+}
+.Home{
+  max-width: 100%;
+}
+.Footer{
+  max-width: 100%;
+}
+.Explanation{
+  max-width: 100%;
+}
+.Decks{
+  max-width: 100%;
+}
+.Deck{
+  max-width: 100%;
+
+}
+.Card{
+  max-width: 100%;
+}
+.AuthForm{
+  max-width: 100%;
+}
+.Auth{
+  max-width: 100%;
 }

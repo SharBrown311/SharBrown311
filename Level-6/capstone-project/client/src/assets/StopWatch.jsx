@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import "./css/Study.css"
+import "../App.css"
+
+
 function StopWatch() {
   const [timerOn, setTimerOn] = useState(false);
   const [timerStart, setTimerStart] = useState(0);
@@ -37,7 +40,7 @@ function StopWatch() {
   const hours = ('0' + Math.floor(timerTime / 3600000)).slice(-2);
 
   return (
-    <div className='stopwatch'>
+    <div className='Stopwatch'>
       <div className='stopwatch-header'>Count Up</div>
       <div className='stopwatch-display'>
         {hours} : {minutes} : {seconds} : {centiseconds}

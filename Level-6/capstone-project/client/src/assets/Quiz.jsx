@@ -1,7 +1,8 @@
 
 import React, { useState } from 'react';
 import Card from './Card';
-
+import "./css/Study.css"
+import "../App.css"
 function Quiz(props) {
   const { cards, data } = props;
   const [cardIndex, setCardIndex] = useState(0);
@@ -20,7 +21,7 @@ function Quiz(props) {
   };
 
   return (
-    <div className='quiz-component'>
+    <div className='Quiz'>
       {cardIndex + 1 <= cards.length ? (
         <div>
           <h3>Card {cardIndex + 1} of {cards.length}</h3>

@@ -1,15 +1,22 @@
-
-//Home page
-import React from 'react'
+import React, {useContext} from 'react'
 import UserReview from "./UserReview"
 import Explanation from './Explanation'
 import "./css/Home.css"
-function Home() {
+import "../App.css"
+import { UserContext } from '../context/UserProvider'
 
+
+function Home() {
+  const {user: {username}} = useContext(UserContext)
   return (
-    <>
+    <div className = "Home">
     <header className='head-container'>
+ 
+    
     </header>
+    <br />
+    <br />
+    <h3>Welcome {username.toUpperCase()}!</h3>
     <main>
     <br/>
     <br/>
@@ -48,7 +55,7 @@ function Home() {
    
       <UserReview />
     </div>
-      </>
+      </div>
   )
 }
 

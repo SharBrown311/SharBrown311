@@ -1,8 +1,8 @@
-.flashcard{
+.Card{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #FFD1B3;
+  background-color: #f5f558;
   width: 500px;
   height: 160px;
   border: solid black 1px;
@@ -17,4 +17,11 @@
 .card-buttons{
   display: flex;
   justify-content: flex-end;
+}
+
+
+.answer{
+  font-style: italic;
+  color: blue;
+  font-size: 19px;
 }

@@ -1,41 +1,44 @@
-//related to the user who created it
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
-
-const IssueSchema = new Schema({
+const issueSchema = new Schema({
   title: {
-    type: String,
-    required: true,
-  },
-  description: {
     type: String,
     required: true
   },
+  description: {
+    type: String
+  },
   imgUrl: {
+    type: String
+  }, 
+  createdOn: {
+    type: Date, 
+    default: Date.now
+  },
+  username: {
     type: String,
-    required: true,
+    required: true
+  },
+  upVotes: {
+    type: Number, 
+    default: 0
+  },
+  downVotes: {
+    type: Number, 
+    default: 0
   },
   user: {
     type: Schema.Types.ObjectId,
     ref: "User",
-    required: true,
+    required: true
   },
-  comments: [{
-    type: Schema.Types.ObjectId, 
-    ref: 'Comment'
-  }],
-  votes: [{
-    userId: {
-      type: String, 
-      required: true
-    }, 
-    voteType: {
-      type: Number, 
-      default: 0,
-      required: true
-    }
-  }] | Number
-});
+  usersWhoHaveVoted: {
+    type: [String]
+  },
+  comments: {
+    type: [Object]
+  }
+})
 
-module.exports = mongoose.model("Issue", IssueSchema);
+module.exports = mongoose.model('Issue', issueSchema)

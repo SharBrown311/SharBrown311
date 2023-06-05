@@ -8,6 +8,7 @@ const deckSchema = new Schema({
     },
     flashcards: {
         type: Number,
+        default: 0
     },
 })
 

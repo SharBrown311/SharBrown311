@@ -1,10 +1,11 @@
 import React from 'react'
 import "./css/Explanation.css"
-
+import "../App.css"
 
 
 function Explanation() {
   return (
+    <div className = "Explanation">
     <div className='explanation-container'>
     <hr className='spacer'/>
     <div className='section-1'>
@@ -41,6 +42,7 @@ function Explanation() {
           <div>
         
         </div>
+    </div>
     </div>
   )
 }

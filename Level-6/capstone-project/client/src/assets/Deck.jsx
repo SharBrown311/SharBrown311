@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
 import axios from 'axios';
 import Card from './Card'
-
+import "../App.css"
 
 export default function Deck(props){
 
@@ -23,7 +23,7 @@ userAxios.interceptors.request.use(config => {
 
     const anyCards = (cards) => {
         console.log(`inside any cards compontent:`, cards)
-        if(cards === []){
+        if(cards == []){
             setNoCards(false)
         }
     }
@@ -31,7 +31,7 @@ userAxios.interceptors.request.use(config => {
     const delDeck = (deckId) => {
         if(cards.length === 0){
             console.log('deleted:', deckId)
-            userAxios.delete(`/api/deck/${deckId}`)
+            userAxios.delete(`/api/decks/${deckId}`)
             .then(res => {
                 setDecks(prev => prev.filter(deck => deck._id !== deckId))
             })
@@ -43,7 +43,7 @@ userAxios.interceptors.request.use(config => {
     const popCards = (deckId) => {
         setClicked(true)
         
-        userAxios.get(`/api/card/${deckId}`)
+        userAxios.get(`/api/cards/${deckId}`)
             .then(res => {
                 console.log(`popcards func onclick deck:`, res.data)
                 setCards(res.data)
@@ -57,7 +57,7 @@ userAxios.interceptors.request.use(config => {
 
 //deck
     return (
-        <div>
+        <div className  = "Deck">
             {showCard? <button onClick={()=>{setShowCard(!showCard)}}>Close Deck</button> : ''}
             {showCard?
             cards.map((card, index) => <Card key={index} data={card} index={index} cards={cards} setCards={setCards} showCard={showCard} setShowCard={setShowCard} deckVisible={true}/>)
@@ -70,7 +70,7 @@ userAxios.interceptors.request.use(config => {
                     <h2 className='card-length'>{cards.length === 0? '': `Cards:${cards.length}`}</h2>
                     {cards.length === 0 && clicked ?
                         <div>
-                            <button className='deckbutt' onClick={() => delDeck(data._id)}>Delete Deck</button>
+                            <button className='deleteDeck' onClick={() => delDeck(data._id)}>Delete Deck</button>
                         </div>
                     :
                     ''

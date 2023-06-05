@@ -4,15 +4,14 @@ const User = require("../models/User")
 const jwt = require("jsonwebtoken");
 
 
-//Signup
-
+//Sign up
 authRouter.post("/signup", (req, res, next) => {
   //Check if the username exists
   console.log(req.body)
   User.findOne({ username: req.body.username.toLowerCase() }, (err, user) => {
     //if there's an error
     if (err) {
-      res.status(500);
+      req.status(500);
       return next(err);
     }
     //if the user already exists
@@ -50,7 +49,7 @@ authRouter.post("/login", (req, res, next) => {
       return next(new Error("Username or Password are incorrect"));
     }
     //check the password
-    User.checkPassword(req.body.password, (err, isMatch) => {
+    user.checkPassword(req.body.password, (err, isMatch) => {
       //if the password does not match
       if (err) {
         res.status(403);
@@ -61,9 +60,10 @@ authRouter.post("/login", (req, res, next) => {
         return next(new Error("Username or Password are incorrect"));
       }
       //if username exists and password matches create a token
-      const token = jwt.sign(User.withoutPassword(), process.env.SECRET);
-      return res.status(200).send({ token, user: User.withoutPassword() });
+      const token = jwt.sign(user.withoutPassword(), process.env.SECRET);
+      return res.status(200).send({ token, user: user.withoutPassword() });
     });
   });
 });
+
 module.exports = authRouter;

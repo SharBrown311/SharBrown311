@@ -5,6 +5,7 @@ import Timer from "./Timer"
 import StopWatch from "./StopWatch"
 import Quiz from "./Quiz"
 import "./css/Study.css"
+import "../App.css"
 
 function StudyContainer() {
   const userAxios = axios.create();
@@ -20,14 +21,14 @@ function StudyContainer() {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    userAxios.get('/api/deck')
+    userAxios.get('/api/decks')
       .then(response => setDecks(response.data))
       .catch(error => console.log(error));
   }, []);
   
   useEffect(() => {
     if (selectedDeck) {
-      userAxios.get(`/api/card/${selectedDeck._id}`)
+      userAxios.get(`/api/cards/${selectedDeck._id}`)
         .then(response => setCards(response.data))
         .catch(error => console.log(error));
     } else {
@@ -51,7 +52,7 @@ function StudyContainer() {
   }
 
   return (
-    <div className='study-container'>
+    <div className='Study-Container'>
     <div className='timers-and-list-container'>
     <div className='timers-section'>
       <Timer />

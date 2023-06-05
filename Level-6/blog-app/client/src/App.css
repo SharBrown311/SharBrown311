@@ -1,72 +1,11 @@
-*{
-  box-sizing: border-box;
-}
-
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+html,
+body, 
+h1, 
+h2, 
+h3, 
+h4, 
+h5 {
+  font-family: "Open Sans", sans-serif;
 }
 
 
-.card {
-  padding: 2em;
-}
-
-
-/* Login signup Page & Form styling */
-
-form{
-  display: flex;
-  flex-direction: column;
-  padding-top: 15px
-}
-.auth-input{
-  margin-top: 10px;
-}
-.auth-button{
-  margin-top: 10px;
-}
-.authForm-text{
-  color: blue;
-  text-decoration: underline;
-}
-.authForm-text:hover{
-  color: cornflowerblue;
-  text-decoration: none;
-  cursor: pointer;
-}
-.issue-card{
-  border: 5px ridge black;
-  height: auto;
-  width: 600px; 
-  background-color: #f0f0f0;
-  display: flex;
-  flex-direction: column;
-
-}
-.input-value{
-  text-align: center;
-  width: 600px;
-  word-wrap: break-word;
-  padding-left: 10px;
-  padding-right: 20px;
-}
-
-.nav-links {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}

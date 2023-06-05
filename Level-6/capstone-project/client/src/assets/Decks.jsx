@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react"
 import "./css/Decks.css"
+import "../App.css"
 import Deck from "./Deck"
 import axios from "axios"
 import AddDeck from "./AddDeck"
@@ -31,7 +32,7 @@ userAxios.interceptors.request.use(config => {
   })
 
   const getDecks = () =>{
-      userAxios.get('/api/deck')
+      userAxios.get('/api/decks')
         .then(res => setDecks(res.data))
         .catch(err => console.log(err.response.data.errMsg))
     }
@@ -41,8 +42,8 @@ userAxios.interceptors.request.use(config => {
   }, [])
 
   return (
-    <div className="page">
-      <button onClick={()=>{setAddDeckMode(!addDeckMode)}}>{addDeckMode? 'Back 2 Decks' : 'Add Deck'}</button>
+    <div className="Decks">
+      <button onClick={()=>{setAddDeckMode(!addDeckMode)}}>{addDeckMode? 'Back To All Decks' : 'Add Deck'}</button>
       {addDeckMode  ?
           <AddDeck addDeckMode={addDeckMode} 
             setAddDeckMode={setAddDeckMode} 

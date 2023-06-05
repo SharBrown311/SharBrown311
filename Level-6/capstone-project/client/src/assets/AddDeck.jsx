@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import axios from "axios"
 //import EditCard from "../EditCard/EditCard"
 import "./css/AddDeck.css"
+import "../App.css"
 
 
 
@@ -24,14 +25,6 @@ userAxios.interceptors.request.use(config => {
 
 
   const backOut = (arr) => {
-    //POST CARDS BY ARRAY - NOT WORKING
-    // axios.post('/api/card', arr)
-    //     .then(res => {
-    //       console.log(`inside create card result:`, res)
-    //     })
-    //     .catch(err => {
-    //       console.log(err)
-    //     })
     getDecks()
     console.log(`create card func cards state:`, cards)
     setAddCardMode(!addCardMode)
@@ -59,7 +52,7 @@ userAxios.interceptors.request.use(config => {
   const createDeck = (newDeck) => {
     console.log(newDeck)
     if(newDeck.title){
-      userAxios.post('/api/deck', newDeck)
+      userAxios.post('/api/decks', newDeck)
         .then(res => {
           console.log(`looking for result to be an ID:`, res.data)
           setNewDeckId(res.data)
@@ -91,7 +84,7 @@ userAxios.interceptors.request.use(config => {
       }
     ]))
     //add newCard
-    userAxios.post('/api/card', card)
+    userAxios.post('/api/cards', card)
         .then(res => {
           console.log(`inside create card result:`, res)
         })
@@ -113,42 +106,36 @@ userAxios.interceptors.request.use(config => {
   console.log(newDeckId)
   return (
     <div>
-      <div className="page2-body">
+      <div className="AddDeck">
         <div className='buttons'>
-        {/* {addCardMode?<button onClick={()=>{createDeck(userDeck)}}>Prev</button>:''} */}
         {addDeckMode && !addCardMode?<button onClick={()=>{createDeck(userDeck)}}>Next</button>:''}
         {addCardMode?<button onClick={()=>{createCard(userCard)}}>Create Card</button>:''}
       </div>
       <div className='deck-component'>
-        {/* {addCardMode?
-        <button>backarrow</button>
-        :
-        ''
-        } */}
         <div className={addCardMode? 'databox2': 'databox'}>
           {addCardMode?
           <div className='new-deck-info'>
-          <div>
+          <div className="card-builder">
           <h2>Build your card!</h2>
-          <h2>Question</h2>
             <input type='text' 
-              placeholder='...' 
+              placeholder='What is the Question?' 
               onChange={handleCardChange}
               name="question"
               value={userCard.question}
-              maxLength="55"
+              className="card-builder-question"
             >
             </input>
-          <h2>Answer</h2>
+  
             <input type='text' 
-              placeholder='...' 
+              placeholder='What is the Answer?' 
               onChange={handleCardChange}
               name="answer"
               value={userCard.answer}
-              maxLength="55"
+              className="card-builder-answer"
             >
             </input>
-            <button onClick={()=>{backOut(cards)}} className="new-deck-info finish-butt">Finish & Exit</button>
+            <button onClick={()=>{backOut(cards)}} className="new-deck-info finish-butt">   
+            Exit Card Builder and Go Back</button>
             </div>
         </div>
         :
@@ -156,7 +143,7 @@ userAxios.interceptors.request.use(config => {
             <div>
             <h2>Deck Title Name</h2>
               <input type='text' 
-                placeholder='...' 
+                placeholder='Deck Title' 
                 onChange={handleDeckChange}
                 name="title"
               >
@@ -165,11 +152,6 @@ userAxios.interceptors.request.use(config => {
           </div>
           }
         </div>
-        {/* {addCardMode?
-        <button>forwardarrow</button>
-        :
-        ''
-        } */}
       </div>
       </div>
     </div>

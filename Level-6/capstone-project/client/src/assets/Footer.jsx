@@ -1,11 +1,20 @@
 import React from "react";
 import "./css/Footer.css"
+import "../App.css"
 function Footer() {
   return (
-    <footer>
-
+    <footer className = "Footer">
+    <div className="footer-contributions">
+    <h5>Built and Designed By: <span className="conrad"><a className = 'author-link'  href = "github.com">Conrad Rhoades</a></span>, 
+    <span className="kyle">
+    <a className = 'author-link' href = "github.com">  Kyle Shutt </a></span>, 
+    & <span className="sharon"><a className = 'author-link'  href = "github.com"> Sharon Brown </a> </span>
+    <br/>
+    @
+    2023</h5>
+    </div>
     <div className = "logo-image-container">
-              </div>
+    </div>
               <div className="footer-links">
   <div className='footer-links-left'>
     <div className="bar"></div>  

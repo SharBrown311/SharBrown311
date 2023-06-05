@@ -1,6 +1,7 @@
 import React from 'react'
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import "./css/Review.css"
+import "../App.css"
 import 'pure-react-carousel/dist/react-carousel.es.css'
 import { FaStar } from 'react-icons/fa'
 function UserReview({name, picture, review, stars}) {
