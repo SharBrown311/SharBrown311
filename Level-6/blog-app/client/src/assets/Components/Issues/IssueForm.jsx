@@ -1,16 +1,16 @@
 import React, { useState, useContext } from "react"
 import { UserContext } from "../../../Context/UserProvider"
-import "./issue.css"
+
 
 export default function IssueForm(props) {
   const { addIssue } = props
-  const { user: {username} } = useContext(UserContext)
+  const { user } = useContext(UserContext)
 
   const initInputs = {
     title: "",
     description: "",
     imgUrl: "",
-    username: username
+    username: user.username
   }
 
   const [inputs, setInputs] = useState(initInputs)
@@ -32,9 +32,8 @@ export default function IssueForm(props) {
   const { title, description, imgUrl } = inputs
 
   return (
-    <form className="issue-form" onSubmit={handleSubmit}>
+    <form className="issueForm" onSubmit={handleSubmit}>
       <input
-      className="form-control"
         type="text"
         name="title"
         placeholder="Title"
@@ -42,7 +41,6 @@ export default function IssueForm(props) {
         onChange={handleChange}
       ></input>
       <input
-      className="form-control"
         type="text"
         name="imgUrl"
         placeholder="Image URL"
@@ -50,14 +48,13 @@ export default function IssueForm(props) {
         onChange={handleChange}
       ></input>
       <textarea
-      className="form-control"
         type="text"
         name="description"
         placeholder="Description"
         value={description}
         onChange={handleChange}
       ></textarea>
-      <button className="btn btn-outline-warning">Add Issue</button>
+      <button>Add Issue</button>
     </form>
   )
 }

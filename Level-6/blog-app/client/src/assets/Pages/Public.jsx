@@ -4,7 +4,7 @@ import { UserContext } from "../../Context/UserProvider"
 
 export default function Public() {
   const {
-    issueList,
+    issues,
     upVote,
     downVote,
     deleteIssue,
@@ -22,7 +22,7 @@ export default function Public() {
     <div className="public">
       <h1>Issues</h1>
       <IssueList
-        issues={issueList}
+        issues={issues}
         upVote={upVote}
         downVote={downVote}
         deleteIssue={deleteIssue}

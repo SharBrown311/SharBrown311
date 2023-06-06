@@ -6,6 +6,13 @@ const morgan = require('morgan')
 const {expressjwt} = require('express-jwt')
 const PORT = process.env.PORT || 5000;
 
+
+const authRouter = require('./routes/authRouter.js');
+const issueRouter = require('./routes/issueRouter.js');
+const commentRouter = require('./routes/commentRouter.js');
+
+
+
 //middleware
 app.use(express.json())
 app.use(morgan('dev'))
@@ -19,11 +26,10 @@ mongoose.connect(
   ,() => console.log("Mongoose Connected to DB"))
 
 
-app.use("/auth", require("./routes/authRouter.js"))
-app.use("/api", expressjwt({secret: process.env.SECRET, algorithms: ['HS256']}))
-app.use("/api/issue", require('./routes/issueRouter.js'))
-
-
+// Define routes
+app.use('/auth', authRouter);
+app.use('/api/issue', issueRouter);
+app.use('/api/comment', commentRouter);
 
 
 

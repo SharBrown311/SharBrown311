@@ -21,23 +21,20 @@ export default function UserProvider(props) {
   }
 
   const [userState, setUserState] = useState(initState)
-  const [issueList, setIssueList] = useState()
+  const [issues, setIssues] = useState([])
   const [page, setPage] = useState("")
   const [userErr, setUserErr] = useState("")
 
-  // useEffect(() => {
-  //   sortByVotes()
-  // }, [issueList])
 
   function sortByVotes() {
-    issueList && issueList.sort((a, b) => {
+    issues && issues.sort((a, b) => {
       return b.votes - a.votes
     })
   }
 
   function getAllIssues() {
     userAxios.get("/api/issue")
-      .then(res => setIssueList(res.data))
+      .then(res => setIssues(res.data))
       .then(sortByVotes())
       .catch(err => console.log(err))
 
@@ -125,19 +122,19 @@ export default function UserProvider(props) {
 
   function deleteIssue(issueId) {
     userAxios.delete(`/api/issue/${issueId}`)
-    const filteredArr = issueList.filter(issue => {
+    const filteredArr = issues.filter(issue => {
       if (issueId !== issue._id) {
         return issue
       }
     })
-    setIssueList(
+    setIssues(
       filteredArr
     )
       .catch(err => console.log(err))
   }
 
   function vote(_id, direction){
-    issueList.array.forEach(issue => {
+    issues.foreach(issue => {
         if(issue._id === votedIssue && userState.user._id === issue.user){
           return setUserErr("User Cannot Vote on their own Issues.")
         }else if(issue._id === votedIssue && issue.usersWhoHaveVoted.includes(userState.user._id)){
@@ -151,7 +148,7 @@ export default function UserProvider(props) {
       .then(res => {
         setUserState(prev => ({
           ...prev,
-          issueList: prev.issues.map(issue =>
+          issues: prev.issues.map(issue =>
             issue._id === _id ? res.data : issue
           )
         }));
@@ -161,57 +158,7 @@ export default function UserProvider(props) {
 
 
 
-  // function upVote(votedIssue) {
-  //   issueList.forEach(issue => {
-  //     if (issue._id === votedIssue && userState.user._id === issue.user) {
-  //       return setUserErr("User cannot self vote")
-  //     } else if (issue._id === votedIssue && issue.userWhoHaveVoted.includes(userState.user._id)) {
-  //       return setUserErr("User already voted")
-  //     } else if (issue._id === votedIssue) {
-  //       setUserErr("")
-  //       userAxios.put(`api/issue/upvote/${votedIssue}`)
-  //         .then(res => {
-  //           const updatedIssueArr = issueList.map(issue => {
-  //             if (votedIssue === issue._id) {
-  //               return res.data
-  //             } else {
-  //               return issue
-  //             }
-  //           })
-  //           setIssueList(
-  //             updatedIssueArr
-  //           )
-  //         })
-  //         .catch(err => console.log(err))
-  //     } else { return null }
-  //   })
-  // }
-
-  // function downVote(votedIssue) {
-  //   issueList.forEach(issue => {
-  //     if (issue._id === votedIssue && userState.user._id === issue.user) {
-  //       return setUserErr("User cannot self vote")
-  //     } else if (issue._id === votedIssue && issue.usersWhoHaveVoted.includes(userState.user._id)) {
-  //       return setUserErr("User already voted")
-  //     } else if (issue._id === votedIssue) {
-  //       setUserErr("")
-  //       return userAxios.put(`api/issue/downvote/${votedIssue}`)
-  //         .then(res => {
-  //           const updatedIssueArr = issueList.map(issue => {
-  //             if (votedIssue === issue._id) {
-  //               return res.data
-  //             } else {
-  //               return issue
-  //             }
-  //           })
-  //           setIssueList(
-  //             updatedIssueArr
-  //           )
-  //         })
-  //         .catch(err => console.log(err))
-  //     }
-  //   })
-  // }
+  
   function handleVoteErr(err){
     setUserState(prevState => ({
       ...prevState, 
@@ -222,7 +169,7 @@ export default function UserProvider(props) {
   function addComment(commentIssue, issueId) {
     userAxios.put(`/api/issue/addcomment/${issueId}`, commentIssue)
       .then(res => {
-        const updateCommentsArr = issueList.map(issue => {
+        const updateCommentsArr = issues.map(issue => {
           if (issueId === issue._id) {
             issue.comments.push(commentIssue)
             return issue
@@ -230,7 +177,7 @@ export default function UserProvider(props) {
             return issue
           }
         })
-        setIssueList(
+        setIssues(
           updateCommentsArr
         )
       })
@@ -240,7 +187,7 @@ export default function UserProvider(props) {
   function deleteComment(comments, issueId) {
     userAxios.put(`/api/issue/deletecomment/${issueId}`, comments)
       .then(res => {
-        const updateCommentsArr = issueList.map(issue => {
+        const updateCommentsArr = issues.map(issue => {
           if (issueId === issue._id) {
             issue = res.data
             return issue
@@ -248,7 +195,7 @@ export default function UserProvider(props) {
             return issue
           }
         })
-        setIssueList(
+        setIssues(
           updateCommentsArr
         )
       })
@@ -264,7 +211,7 @@ export default function UserProvider(props) {
         logout,
         addIssue,
         deleteIssue,
-        issueList,
+        issues,
         vote,
         addComment,
         deleteComment,

@@ -16,7 +16,7 @@ export default function CommentForm({_id, setAddComment}) {
  function handleSubmit(e) {
    e.preventDefault()
    setAddComment(false)
-  addComment(input)
+  addComment(input, _id)
  }
   return(
     <form className="commentForm" onSubmit={handleSubmit}>

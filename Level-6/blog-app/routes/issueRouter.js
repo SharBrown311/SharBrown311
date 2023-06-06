@@ -1,197 +1,131 @@
-const express = require('express')
-const issueRouter = express.Router()
-const Issue = require('../models/Issue.js')
+const express = require("express");
+const issueRouter = express.Router();
+const Issue = require('../models/Issue.js');
+const User = require('../models/User.js');
+const {expressjwt} = require('express-jwt')
+require('dotenv').config()
 
-// GET ALL ISSUES
-issueRouter.get("/", (req, res, next) => {
-  Issue.find((err, issues) => {
-    if (err) {
-      res.status(500)
-      return next(err)
-    }
-    return res.status(200).send(issues)
-  })
-})
-
-// GET USER ISSUES
-issueRouter.get("/user", (req, res, next) => {
-  Issue.find({ user: req.auth._id }, (err, issues) => {
-    if (err) {
-      res.status(500)
-      return next(err)
-    }
-    return res.status(200).send(issues)
-  })
-})
-
-// ADD ISSUE
-issueRouter.post("/", (req, res, next) => {
-  console.log('✅', req)
-  req.body.user = req.auth._id
-  const newIssue = new Issue(req.body)
-  newIssue.save((err, savedIssue) => {
-    if (err) {
-      res.status(500)
-      return next(err)
-    }
-    return res.status(201).send(savedIssue)
-  })
-})
-
-// DELETE ISSUE
-issueRouter.delete("/:issueId", (req, res, next) => {
-  Issue.findOneAndDelete(
-    { _id: req.params.issueId },
-    (err, deletedIssue) => {
-      if (err) {
-        res.status(500)
-        return next(err)
-      }
-      return res.status(200).send(`Successfully deleted issue: ${deletedIssue.title}`)
-    }
-  )
-})
-
-// UPDATE ISSUE
-issueRouter.put("/:issueId", (req, res, next) => {
-  Issue.findOneAndUpdate(
-    { _id: req.params.issueId, user: req.auth._id},
-    req.body, 
-    { new: true },
-    (err, updatedIssue) => {
-      if(err){
-        res.status(500)
-        return next(err)
-      }
-      return res.status(201).send(updatedIssue)
-    }
-  )
-})
-
-
-issueRouter.put("/upvote/:_id",
-   async (req, res, next) => {
+// Get All Issues
+issueRouter.get("/", async (req, res, next) => {
   try {
-    const issue = await Issue.findOne({ _id: req.params._id });
-    if (issue.usersWhoHaveVoted.includes(req.auth._id)) {
-      res.status(403);
-      throw new Error("You can only vote once per issue!");
-    }
-    const updated = await Issue.findOneAndUpdate(
-      { _id: req.params._id },
-      {
-        $inc: { upVotes: 1 },
-        $push: { usersWhoHaveVoted: req.auth._id }
-      },
-      { new: true }
-    );
-    return res.status(200).send(updated);
+    const issues = await Issue.find().sort({ createdAt: -1 }).populate('user', 'username profileImage');
+    res.status(200).send(issues);
   } catch (err) {
     res.status(500);
     return next(err);
   }
 });
 
-issueRouter.put("/downvote/:_id", 
-  async (req, res, next) => {
+// Get issues by user id
+issueRouter.get("/user/:id", expressjwt({ secret: process.env.SECRET, algorithms: ['HS256'] }), async (req, res, next) => {
   try {
-    const issue = await Issue.findOne({ _id: req.params._id });
-    if (issue.usersWhoHaveVoted.includes(req.auth._id)) {
-      res.status(403);
-      throw new Error("You can only vote once per issue!");
-    }
-    const updated = await Issue.findOneAndUpdate(
-      { _id: req.params._id },
-      {
-        $inc: { downVotes: 1 },
-        $push: { usersWhoHaveVoted: req.auth._id }
-      },
-      { new: true }
-    );
-    return res.status(200).send(updated);
+    const issues = await Issue.find({ user: req.auth._id }).sort({ createdAt: -1 }).populate('user', 'username profileImage');
+    res.status(200).send(issues);
   } catch (err) {
     res.status(500);
     return next(err);
   }
 });
 
-// // UP VOTE
-// issueRouter.put("/upvote/:issueId", (req, res, next) => {
-//   Issue.findOneAndUpdate(
-//     { _id: req.params.issueId },
-//     {
-//       $inc: { votes: 1 },
-//       $push: { userWhoHaveVoted: req.auth._id }
-//     },
-//     { new: true },
-//     (err, updatedIssue) => {
-//       if (err) {
-//         res.status(500)
-//         return next(err)
-//       }
-//       return res.status(201).send(updatedIssue)
-//     }
-//   )
-// })
 
-// // DOWN VOTE
-// issueRouter.put("/downvote/:issueId", (req, res, next) => {
-//   Issue.findOneAndUpdate(
-//     { _id: req.params.issueId },
-//     {
-//       $inc: { votes: -1 },
-//       $push: { usersWhoHaveVoted: req.auth._id }
-//     },
-//     { new: true },
-//     (err, updatedIssue) => {
-//       if (err) {
-//         res.status(500)
-//         return next(err)
-//       }
-//       return res.status(201).send(updatedIssue)
-//     }
-//   )
-// })
+// Add new Issue
+issueRouter.post("/",expressjwt({ secret: process.env.SECRET, algorithms: ['HS256'] }), async (req, res, next) => {
+  try {
+    req.body.user = req.auth._id;
+    const newIssue = new Issue(req.body);
+    const savedIssue = await newIssue.save();
+    const populatedIssue = await savedIssue.populate('user', 'username profileImage');
+    res.status(201).send(populatedIssue);
+  } catch (err) {
+    res.status(500);
+    return next(err);
+  }
+});
 
-// ADD COMMENT 
-issueRouter.put("/addcomment/:issueId", (req, res, next) => {
-  req.body.user = req.auth._id
-  req.body.issue = req.params.issueId
-  Issue.findOneAndUpdate(
-    { _id: req.params.issueId },
-    {
-      $push: { comments: { username: req.user.username, comment: req.body.comment } }
-    },
-    { new: true },
-    (err, updatedIssue) => {
-      if (err) {
-        res.status(500)
-        return next(err)
-      }
-      return res.status(201).send(updatedIssue)
+// Delete Issue
+issueRouter.delete("/:issueId",expressjwt({ secret: process.env.SECRET, algorithms: ['HS256'] }), async (req, res, next) => {
+  try {
+    const deletedIssue = await Issue.findOneAndDelete({ _id: req.params.issueId, user: req.auth._id }).populate('user', 'username profileImage');
+    res.status(200).send(`Successfully delete issue: ${deletedIssue.title}`);
+  } catch (err) {
+    res.status(500);
+    return next(err);
+  }
+});
+
+// Update Issue
+issueRouter.put("/:issueId",expressjwt({ secret: process.env.SECRET, algorithms: ['HS256'] }), async (req, res, next) => {
+  try {
+    const updatedIssue = await Issue.findOneAndUpdate({ _id: req.params.issueId, user: req.auth._id }, req.body, { new: true }).populate('user', 'username profileImage');
+    res.status(201).send(updatedIssue);
+  } catch (err) {
+    res.status(500);
+    return next(err);
+  }
+});
+
+// @route   PUT api/issues/like/:id
+// @des     Like a issue
+// @access  Private
+issueRouter.put('/like/:id',expressjwt({ secret: process.env.SECRET, algorithms: ['HS256'] }), async (req, res) => {
+  try {
+    const issue = await Issue.findById(req.params.id);
+    const userId = req.auth._id;
+    const username = req.auth.username;
+    console.log(username)
+
+    if (!issue) {
+      return res.status(404).json({ msg: 'Issue not found' });
     }
-  )
-})
 
-// DELETE COMMENT 
-issueRouter.put("/deletecomment/:issueId", (req, res, next) => {
-  Issue.findOneAndUpdate(
-    { _id: req.params.issueId },
-    {
-      $pull: { comments: req.body }
-    },
-    { new: true },
-    (err, updatedIssue) => {
-      if (err) {
-        res.status(500)
-        return next(err)
-      }
-      return res.status(201).send(updatedIssue)
+    // Check if the issue has already been liked by the user
+    if (issue.likes.some(like => like.user.toString() === userId)) {
+      return res.status(400).json({ msg: 'Issue already liked' });
     }
-  )
-})
 
-module.exports = issueRouter
+    issue.likes.push({ user: userId, username: username });
+    await issue.save();
+
+    res.json(issue.likes);
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send('Server Error');
+  }
+});
+
+// @route   PUT api/issues/unlike/:id
+// @des     Unlike an issue
+// @access  Private
+issueRouter.put('/unlike/:id', expressjwt({ secret: process.env.SECRET, algorithms: ['HS256'] }), async (req, res) => {
+  try {
+    const issue = await Issue.findById(req.params.id);
+    const userId = (req.auth._id)
+
+    // Check if the issue has already been liked
+    if (
+      issue.likes.filter((like) => like.user.toString() === userId)
+        .length === 0
+    ) {
+      return res.status(400).json({ msg: 'Issue has not yet been liked' });
+    }
+
+    // Get remove index
+    const removeIndex = issue.likes
+      .map((like) => like.user.toString())
+      .indexOf(userId);
+
+    issue.likes.splice(removeIndex, 1);
+
+    await issue.save();
+
+    res.json(issue.likes);
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send('Server Error');
+  }
+});
+
+module.exports = issueRouter;
 
 
 //Get Issues - check -works

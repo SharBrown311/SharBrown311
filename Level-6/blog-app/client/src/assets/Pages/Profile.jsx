@@ -1,17 +1,17 @@
 import React, { useContext, useEffect } from "react"
-import { UserContext } from "../../Context/UserProvider"
-import IssueForm from "../Components/Issues/IssueForm"
+import {UserContext} from "../../Context/UserProvider"
 import IssueList from "../Components/Issues/IssueList"
-import "./pages.css"
+import IssueForm from "../Components/Issues/IssueForm"
+
 export default function Profile() {
-  const { memberSince ,user: {
+  const { user: {
     username,
     _id
   },
     addIssue,
     upVote,
     downVote,
-    issueList,
+    issues,
     deleteIssue,
     deleteComment,
     setPage,
@@ -21,9 +21,9 @@ export default function Profile() {
     sortByVotes
   } = useContext(UserContext)
 
-  const userIssueList =
-    issueList ?
-      issueList.filter(issue => {
+  const userIssues =
+    issues ?
+      issues.filter(issue => {
         if (issue.user === _id) {
           return issue
         }
@@ -36,18 +36,19 @@ export default function Profile() {
       
       return (
     <div className="profile">
-      <h1 className="username-whole"><span className="username-profile">{username}</span><span className="pluraled">'s Profile</span></h1>
-      <p>{memberSince}</p>
+      <h1>Welcome {username}!</h1>
       <IssueForm addIssue={addIssue} />
+      <h2>Your Issues</h2>
       <IssueList
-        issues={userIssueList}
+        issues={issues}
         upVote={upVote}
         downVote={downVote}
         deleteIssue={deleteIssue}
         deleteComment={deleteComment}
         page={page}
         userErr={userErr}
-        setUserErr={setUserErr} />
+        setUserErr={setUserErr} 
+        userIssues = {userIssues}/>
     </div>
   )
 }

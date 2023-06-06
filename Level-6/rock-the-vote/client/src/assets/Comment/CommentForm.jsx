@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function CommentForm(props) {
-  const { handleChange, handleSubmit, comment } = props;
+  const { handleChange, handleSubmit, input: {comment} } = props;
   return (
     <form onSubmit={handleSubmit}>
       <input
@@ -10,6 +10,7 @@ export default function CommentForm(props) {
         value={comment}
         onChange={handleChange}
         onBlur={handleChange}
+
       />
       <button>Submit</button>
     </form>

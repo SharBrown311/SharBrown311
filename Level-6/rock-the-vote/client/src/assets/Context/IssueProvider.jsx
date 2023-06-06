@@ -1,5 +1,6 @@
 import React, { useState} from "react";
 import axios from "axios";
+import mongoose from "mongoose";
 
 export const IssueContext = React.createContext();
 
@@ -75,7 +76,7 @@ function vote(_id, direction){
     .catch(err => handleVoteErr(err.response.data.errMsg));
 };
 
-function getComments(issueId){
+function getComments(issueId, comment){
   issueAxios
     .get(`/api/issue/${issueId}/comment`)
     .then(res => {
@@ -88,7 +89,7 @@ function getComments(issueId){
         }
       })
     })
-    .catch((err) => console.log(err.response))
+    .catch((err) => console.log(err.response.data.errMsg))
 }
 
 

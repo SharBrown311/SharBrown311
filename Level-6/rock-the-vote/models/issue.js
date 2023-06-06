@@ -31,16 +31,10 @@ const issueSchema = new Schema({
     type: Number,
     default: 0
   },
-  comments: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Comment"
-    }
-  ],
-  usersWhoHaveVoted: {
-    type: [Schema.Types.ObjectId],
-    ref: "User",
-    default: []
-  }
+  comments: [{
+      type: Array, 
+      default: []
+  }   
+  ]
 });
 module.exports = mongoose.model("Issue", issueSchema)

@@ -21,15 +21,6 @@ const userSchema = new Schema({
     isAdmin: {
       type: Boolean,
       default: false
-    }, 
-    issues: {
-      type: Schema.Types.ObjectId,
-      ref: "Issue", 
-      required: true
-    },
-    comments: {
-      type: Array, 
-      default: []
     }
   })
 //pre-save hook to encrypt user passwords on signup

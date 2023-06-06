@@ -1,30 +1,24 @@
-import React, { useContext, useState } from "react"
-import moment from 'moment'
+import React, { useState } from "react"
 import CommentList from "../Comments/CommentList"
 import CommentForm from "../Comments/CommentForm"
-import "./issue.css"
-import { UserContext } from "../../../Context/UserProvider"
 
 export default function Issue(props) {
   const {
     title,
     description,
-    createdOn,
-    vote,
+    votes,
     imgUrl,
-    upVotes,
-    downVotes,
+    upVote,
+    downVote,
     _id,
+    username,
     comments,
     deleteComment,
     deleteIssue,
-    editIssue,
     page,
     userErr,
-    setUserErr,
-  
-  } = props
-const {user: {username}} = useContext(UserContext)
+    setUserErr } = props
+
   const [addComment, setAddComment] = useState(false)
   const [isError, setIsError] = useState(false)
 
@@ -33,43 +27,35 @@ const {user: {username}} = useContext(UserContext)
       return <button className="deleteIssueBtn" onClick={() => deleteIssue(_id)}>Delete</button>
     } else { return null }
   }
-  function editButton(){
-    if(page === "profile"){
-      return <button className="editIssueBtn" onClick={() => editIssue(_id)}>Edit</button>
-     }
+
+  function displayError(id) {
+    if (id === _id) {
+      setIsError(!isError)
+      setTimeout(()=>{ return (setIsError(false))}, 2000)
+    } else { return null }
   }
 
-
-  const formattedDate = moment(createdOn).format('MMMM DD, YYYY');
-console.log(username)
   return (
     <div className="issue">
-      <p style={{color: 'red'}}>{userErr}</p>
-      <div className="card" style = {{textAlign: 'center'}}>
-        <div>
-          <h2 className = "card-title">{title}</h2>
-          <p>Posted By: 
-            <span> {username}</span></p>
+      <div >
+        <div className="issueTitle">
+          <h2>{title}</h2>
           {deleteButton()}
-          {editButton()}
         </div>
-        <img className="card-img-top" src={imgUrl} alt={title}></img>
+        <img src={imgUrl} alt={title}></img>
         <div className="userDescription">
-          <p className="card-body">{description}</p>
-    
+          <p>{description}</p>
+          <p className="username">- {username}</p>
         </div>
-        <hr/>
-        <div>{formattedDate}</div>
-        <div className="votes-container">
-          <div className="upvotes-container">
-            <p className="upvotes">{upVotes}</p>
-            <button className="upvotes-button" onClick={() => vote(_id, 'up')}>Like</button>
-            </div>
-            <div>
-            <p className="downvotes">{downVotes}</p>
-            <button className = "downvotes-button" onClick={() => vote(_id, 'down')}>Dislike</button>
-            </div>
+        <div className="vote-container">
+          <div>
+            <button onClick={() => { return (upVote(_id), displayError(_id)) }}>⬆</button>
+            <p>{votes}</p>
+            <button onClick={() => { return (downVote(_id), displayError(_id)) }}>⬇</button>
+          </div>
+          <div>
             <button onClick={() => { setAddComment(!addComment) }}>✚ 💬</button>
+          </div>
         </div>
         {isError && userErr}
       </div>
@@ -78,7 +64,7 @@ console.log(username)
         _id={_id}
         page={page}
         deleteComment={deleteComment} />
-        {addComment && <CommentForm _id={_id} setAddComment={setAddComment} />}
+      {addComment && <CommentForm _id={_id} setAddComment={setAddComment} />}
     </div>
   )
 }

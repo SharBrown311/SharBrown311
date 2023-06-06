@@ -14,12 +14,14 @@ export default function Issue(props) {
     imgUrl,
     createdOn,
   } = props;
-  const { deleteIssue, editIssue, issue, vote, addComment, getComments, deleteComment, comments} = useContext(IssueContext);
+  const { deleteIssue, editIssue, issue, vote, addComment, getComments, deleteComment, comments, issueId} = useContext(IssueContext);
 
 
   const formattedDate = moment(createdOn).format('MMMM DD, YYYY');
   const [editToggle, setEditToggle] = useState(false);
-
+  function handleDelete(){
+    deleteIssue(issueId)
+  }
 
 
   return (
@@ -44,7 +46,7 @@ export default function Issue(props) {
         <div className="created-date-container">
           <p className="issue-creation-date">{formattedDate}</p>
           <div className="buttons-container">
-            <button className='delete-button' onClick={() => deleteIssue(_id)}>
+            <button className='delete-button' onClick={handleDelete}>
             <i className="fas fa-trash"></i>
             </button>
             <button className = "edit-button" onClick={() => setEditToggle(prevToggle => !prevToggle)}>

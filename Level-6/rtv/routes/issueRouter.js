@@ -50,7 +50,7 @@ issueRouter
           res.status(500);
           return next(err);
         }
-        return res.status(201).send(udpdatedIssue);
+        return res.status(201).send(updatedIssue);
       }
     );
   })
