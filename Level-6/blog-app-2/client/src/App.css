@@ -1,0 +1,65 @@
+*{
+  box-sizing: border-box;
+}
+
+html, body, h1, h2, h3, h4, h5 {
+    font-family: "Open Sans", sans-serif;
+}
+html, body{
+  font-size: 15px;
+  line-height: 1.5;
+}
+body{
+  display: block;
+}
+html{
+  -webkit-text-size-adjust: 100%;
+}
+
+.card{
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+  border: 1px solid black;
+   text-align: center;
+  background-color: #fff;
+} 
+
+
+.profile-welcoming{
+  text-transform: capitalize;
+}
+
+.profile-card{
+  background-color: #fff;
+  
+}
+
+
+.username-comment{
+  text-transform: capitalize;
+}
+.page-container{
+ margin-top: 3rem;
+ text-align: center;
+ height: 200vh;
+}
+
+
+
+
+
+
+
+
+.user-image-circle{
+  border-radius: 50%;
+}
+.user-info{
+  text-align: center;
+}
+
+.issue-form{
+  display: flex;
+  flex-direction: row;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}

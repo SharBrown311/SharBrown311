@@ -16,9 +16,9 @@ app.use(morgan('dev'))
 
 // //CONNECTION TO MONGODB
 mongoose.set('strictQuery', true);
-mongoose.connect(
-  `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.pv3uzqt.mongodb.net/flashCardDb`
-  ,() => console.log("Mongoose Connected to DB"))
+  mongoose.connect(
+    `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.ppwsrh3.mongodb.net/flashcardApplication`
+      ,() => console.log("Mongoose Connected to DB"))
 
 
 app.use('/auth', require('./routes/authRouter'))
