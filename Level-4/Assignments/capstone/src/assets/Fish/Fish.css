@@ -62,9 +62,9 @@
 }
 .fish-name{
   text-transform: capitalize;
-  text-decoration: underline;
+  text-decoration: none;
   text-decoration-color: #125150;
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
 }
 .fish-icon{

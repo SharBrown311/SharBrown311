@@ -1,0 +1,40 @@
+.Card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: blue;
+  width: 31.25rem;
+  height: 10rem;
+  border: solid black 0.06px;
+  border-radius: 2%;    
+  font-size: 0.75rem;
+}
+
+.tform{
+  transform: scale(.7);
+}
+
+.card-buttons{
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.answer{
+  
+  color: #000;
+  font-size: 1.19rem;
+}
+.edit-container{
+  display: flex;
+  flex-direction: column;
+}
+.edit-question{
+  width: 15rem;
+  text-align: center;
+
+}
+.edit-answer{
+  width: 15rem;
+  text-align: center;
+}

@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
-import Footer from "./assets/Footer";
+import Footer from "./assets/Page-Components/Footer";
 import { Routes, Route, Navigate } from "react-router-dom";
-import Navbar from "./assets/Navbar";
-import Auth from "./assets/Auth";
-import Profile from "./assets/Profile";
-import StudyContainer from "./assets/StudyContainer";
-import ProtectedRoute from "./assets/ProtectedRoute";
+import Navbar from "./assets/Page-Components/Navbar";
+import Auth from "./assets/Authentication/Auth"
+import Profile from "./assets/Pages/Profile"
+import StudyContainer from "./assets/Page-Components/StudyContainer";
+import ProtectedRoute from "./assets/Page-Components/ProtectedRoute";
 import { UserContext } from "./context/UserProvider";
 import "./App.css"
-import Decks from "./assets/Decks";
+import Decks from "./assets/Decks/Decks";
 function App() {
   const { token, logout } = useContext(UserContext);
 

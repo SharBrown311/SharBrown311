@@ -25,9 +25,14 @@ function SeaCreaturesList() {
     localStorage.setItem('checkedSea', JSON.stringify(checkedSea))
   }, [checkedSea])
 
+  
+
   const handleSeaClick = (seaId) =>{
     setSelectedSea(seaId)
   }
+  
+  
+
 
 return (
     <div className='page-content-list'>
@@ -69,7 +74,7 @@ return (
           <div className='selectedSea-details'>
           <p className='details'><span>Price:</span> ${selectedSea.price}</p>
           <p className='details'><span>Time:</span> {selectedSea.availability.time ? selectedSea.availability.time : 'Available all day'}</p>
-          <p className='details'><span>Months Available:</span>  {selectedSea.availability['month-array-northern'].join(', ')}</p>
+          <p className='details'><span>Months Available:</span>  {selectedSea.availability['month-array-northern'].join(', ') }</p>
           <p className='details'><span>Shadow Size:</span>  {selectedSea.shadow}</p>
           <p className='details'><span>Catch Phrase:</span>  {selectedSea['catch-phrase']}</p>
           <p className='details'><span>Museum Catch Phrase:</span>  {selectedSea['museum-phrase']}</p>

@@ -1,0 +1,97 @@
+.explanation-container{
+  margin-top: 1rem;
+  height: 77.75rem;
+  width: 156.25rem;
+  max-width: 100%;
+  }
+
+  .container-image-1{
+    height: 25rem;
+    width: 35.625rem;
+    color: rgb(160, 215, 217);
+    background-image: url("../../images/addDeck.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 2.1875rem;
+  }
+   .section-1{
+    display: flex;
+    flex-direction: row-reverse;
+    max-width: 100%;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+   }
+  .section-1-text{
+    margin-top: 8.44rem;
+    color: #000;
+    padding-left: 3.44rem;
+    font-size: 1.44rem;
+    font-style: oblique;
+  } 
+
+  
+  
+  
+  .container-image-2{
+    height: 400px;
+    width: 570px;
+    color: rgb(160, 215, 217);
+    background-image: url("../../images/directionalImage.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 35px;
+  }
+  .section-2{
+
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .section-2-text{
+    margin-top: 135px;
+    color: #000;
+    padding-left: 55px;
+    font-size: 23px;
+    font-style: oblique;
+  }
+  
+  
+    hr{
+    background-color: #e411ac;
+    height: 2px;
+    border: none;
+  }
+  
+  
+
+
+  
+  .section-3{
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    max-width:100% ;
+    justify-content: space-around;
+    max-width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .section-3-text{
+    margin-top: 155px;
+    word-wrap: normal;
+    padding-left: 55px;
+    font-size: 23px;
+    font-style: oblique;
+    color: #000;
+  }
+  .container-image-3{
+    background-image: url("../../images/stopGo.png"); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 400px;
+    width: 600px;
+    
+  }

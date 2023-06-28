@@ -1,11 +1,12 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import "./Header.css"
 function Header() {
   return (
     <div>
       <header className='head'>
       <div className='left-header-image' />
-      <h1>Animal Crossing New Horizons:<br />Creature Catalog</h1>
+      <h1 className='header-title'>Animal Crossing New Horizons:<br />Creature Catalog</h1>
 
         <div className='right-header-image' />
         <ul className='header-nav'>
