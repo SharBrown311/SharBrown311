@@ -20,7 +20,7 @@ function Home() {
     <main>
     <br/>
     <br/>
-    <div className='container'>
+    <div>
     <h1 className='home-header'>About Study Buddy</h1>
 
     <p className='about-us-text '>Welcome to our self-study and self-quizzing website - the ultimate destination for lifelong learners! 

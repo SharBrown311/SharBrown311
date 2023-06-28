@@ -1,8 +1,7 @@
 footer{
   border-top: 5px inset black;
-  height: 300px;
-  margin-top: 80px;
   max-width: 100%;
+  margin-top: 7rem;
 }
 .logo-image-container{
   background-image:url("../../images//lightBulb.png");
@@ -16,25 +15,27 @@ footer{
 .footer-links{
   display: flex;
   flex-direction: row;
-  margin-top: 25px;
+  padding-bottom: 0;
 }
 
 .footer-links-left{
   display: flex;
   flex-direction: column;
-  
+  position: relative;
+  bottom: 8rem;
 }
 .footer-links-right{
   display: flex;
   flex-direction: column;
+  position: relative;
+  bottom: 8rem;
 }
 .footer-button{
   border: none;
   background-color: transparent;
   color: black;
-  font-size: 15px;
-  
-}
+  font-size: 1rem;
+  }
 .footer-button:hover{
   color: 	#00A86B;
   background-color: darkmagenta;
@@ -51,7 +52,7 @@ footer{
   font-style: oblique;
 }
 .footer-contributions{
-  margin-top: 20px;
+  margin-top: 1.5rem;
 }
 
 

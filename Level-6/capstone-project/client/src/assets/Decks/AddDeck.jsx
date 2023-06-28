@@ -115,7 +115,7 @@ userAxios.interceptors.request.use(config => {
           {addCardMode?
           <div className='new-deck-info'>
           <div className="card-builder">
-          <h2>Build your card!</h2>
+          <h2 className="title-card">Build your card!</h2>
             <input type='text' 
               placeholder='What is the Question?' 
               onChange={handleCardChange}
@@ -140,9 +140,9 @@ userAxios.interceptors.request.use(config => {
         :
         <div className='new-deck-info'>
             <div>
-            <h2>Deck Title Name</h2>
+            <h2 className="title-deck">Deck Title Name</h2>
               <input type='text' 
-                placeholder='Deck Title' 
+              placeholder="..."
                 onChange={handleDeckChange}
                 name="title"
               >

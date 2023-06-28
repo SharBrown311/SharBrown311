@@ -11,13 +11,14 @@
   max-width: 100%;
   border-top: 0.63rem double #2b8cb3;
   border-bottom: 0.63rem double #2b8cb3;
+  padding-bottom: 1rem;
   outline: 0.63rem double #00A86B;
 }
 
 .home-header{
   font-family: 'Montserrat', sans-serif;
   text-align: center;
-  font-size: 2.19rem;
+  font-size: 1.19rem;
   margin-top:5.94rem;
   color: #000000;
 }

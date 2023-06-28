@@ -1,6 +1,4 @@
 #root {
-  margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 .routes{
@@ -20,7 +18,8 @@ body{
   flex-direction: row;
 }
 .main-header-image{
-  height: 500px;
+  height: 390px;
+  padding-bottom: 1rem;
   width: 355px;
   background-image: url("./assets/images/Buddy.png");
   background-position: center;

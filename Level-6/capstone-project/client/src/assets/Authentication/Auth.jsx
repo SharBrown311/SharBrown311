@@ -46,7 +46,7 @@ export default function Auth() {
             btnText="Sign Up"
             errMsg={errMsg}
           />
-          <p onClick={toggleForm} style = {{color: "blue"}}>Already a Member?</p>
+          <p className="toggle-text" onClick={toggleForm} style = {{color: "blue"}}>Already a Member?</p>
         </>
       ) : (
         <>
