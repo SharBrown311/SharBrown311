@@ -37,25 +37,25 @@ function StopWatch() {
   const centiseconds = ('0' + (Math.floor(timerTime / 10) % 100)).slice(-2);
   const seconds = ('0' + (Math.floor(timerTime / 1000) % 60)).slice(-2);
   const minutes = ('0' + (Math.floor(timerTime / 60000) % 60)).slice(-2);
-  const hours = ('0' + Math.floor(timerTime / 3600000)).slice(-2);
+  // const hours = ('0' + Math.floor(timerTime / 3600000)).slice(-2);
 
   return (
     <div className='Stopwatch container'>
       <div className='stopwatch-header'>Count Up</div>
       <div className='stopwatch-display'>
-        {hours} : {minutes} : {seconds} : {centiseconds}
+       {minutes} : {seconds} : {centiseconds}
       </div>
       <div>
-        {!timerOn && timerTime === 0 && <button onClick={startTimer}>Start</button>}
+        {!timerOn && timerTime === 0 && <button className='start-button' onClick={startTimer}>Start</button>}
       </div>
-      <div>{timerOn && <button onClick={stopTimer}>Stop</button>}</div>
+      <div>{timerOn && <button className='stop-button' onClick={stopTimer}>Stop</button>}</div>
       <div>
-        {!timerOn && timerTime > 0 && <button onClick={startTimer}>Resume</button>}
+        {!timerOn && timerTime > 0 && <button className='resume-button' onClick={startTimer}>Resume</button>}
       </div>
       <div>
       {timerOn === false ||
         (timerTime !== 0 && timerStart !== timerTime && timerStart !== 0) ? (
-        <button onClick={resetTimer}>Reset</button>
+        <button className='reset-button' onClick={resetTimer}>Reset</button>
         ) : null
       }
     </div>

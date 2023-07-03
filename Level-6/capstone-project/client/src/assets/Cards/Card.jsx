@@ -21,7 +21,7 @@ userAxios.interceptors.request.use(config => {
       deckId: data.deckId,
       cardId: data._id
   })
-  const [flip, setFlip] = useState(false)
+
   const handleChange = (e) => {
     const {name, value} = e.target
     console.log(`card change:`, e.target.value)
@@ -53,8 +53,6 @@ userAxios.interceptors.request.use(config => {
             setCards(prev => prev.filter(card =>  card._id !== cardId))
             console.log('cards filter', cards.filter(card => card._id !== cardId))
             })
-        // userAxios.get('/api/decks')
-        // .then(res => setCards(res.data))
         .catch(err => console.log(err))
         setShowCard(!showCard)
     }
@@ -97,10 +95,11 @@ userAxios.interceptors.request.use(config => {
                 }
               </div>
             </div>
+            
             <h2>Q:{userState.question}</h2>
             {deckVisible?<h2 className = "answer">A: {userState.answer}</h2>:''}
-            {isQuizComp && showAnswer?<h2 className ="answer">A: {data.answer}</h2>:''}
-            {!isQuizComp && showAnswer?<h2 className = "answer">A: {data.answer}</h2>:''}
+            {isQuizComp && showAnswer ? <h2 className ="answer">A: {data.answer}</h2> : ''}
+            {!isQuizComp && showAnswer ? <h2 className = "answer">A: {data.answer}</h2> : ''}
           </div>
         </div>
       }

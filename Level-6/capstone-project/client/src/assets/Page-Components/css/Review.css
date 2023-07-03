@@ -34,6 +34,8 @@ justify-content: space-around;
 border: ridge 10px #b8287e;
 border-radius: 5%;
 max-width: 100%;
+padding-top: 2rem;
+margin-top: 4rem;
 }
 
 .test{
@@ -71,10 +73,6 @@ font-size: 25px;
 text-align: center;
 margin-top: 45px;
 color: rgb(192, 201, 18);
-}
-.carousel-container{
-  padding-top: 2rem;
-  margin-top: 2rem;
 }
 h3{
 text-align: center;

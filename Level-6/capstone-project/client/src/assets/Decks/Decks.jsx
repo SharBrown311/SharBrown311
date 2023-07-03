@@ -16,8 +16,7 @@ userAxios.interceptors.request.use(config => {
 
   return config;
 });
-  // console.log(DeckContext)
-  // const { getDecks } = useContext(DeckContext)
+
   const [decks, setDecks] = useState([])
   const [addDeckMode, setAddDeckMode] = useState(false)
   const [userDeck, setUserDeck] = useState({
@@ -31,15 +30,24 @@ userAxios.interceptors.request.use(config => {
     deckId: ''
   })
 
-  const getDecks = () =>{
+  // const getDecks = () =>{
+  //     userAxios.get('/api/decks')
+  //       .then(res => setDecks(res.data))
+  //       .catch(err => console.log(err.response.data.errMsg))
+  //   }
+
+    function getDecks(){
       userAxios.get('/api/decks')
-        .then(res => setDecks(res.data))
-        .catch(err => console.log(err.response.data.errMsg))
+      .then(res => setDecks(res.data))
+      .catch(err => console.log(err.response))
     }
+
+
+
 
   useEffect(() => {
     getDecks()
-  }, [])
+  }, [decks])
 
   return (
     <div className="Decks">

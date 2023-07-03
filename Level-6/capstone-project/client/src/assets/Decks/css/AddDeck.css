@@ -34,13 +34,13 @@
   align-content: center;
 }
 
-.buttons {
+/* .buttons {
   display: flex;
 
   align-items: center;
   justify-content: center;
   width: fit-content;
-}
+} */
 .new-deck-info{
   transform: scale(1.3);
   display: flex;

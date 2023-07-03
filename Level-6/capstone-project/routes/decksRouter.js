@@ -1,24 +1,23 @@
 const express = require('express')
 const decksRouter = express.Router()
 const Deck = require("../models/deck.js")
-const { expressjwt } = require('express-jwt')
+
 
 //get all decks
 //works
-decksRouter.get("/", expressjwt({secret: process.env.SECRET, algorithms: ['HS256']}), async(req, res, next) => {
-    console.log(typeof(Deck))
-    Deck.find((err, Deck) => {
+decksRouter.get("/", (req, res, next) => {
+    Deck.find((err, decks) => {
         if (err) {
             res.status(500)
             return next(err)
         }
-        return res.status(200).send(Deck)
+        return res.status(200).send(decks)
     })
 })
 
 //get one
 //works
-decksRouter.get("/:deckId",expressjwt({secret: process.env.SECRET, algorithms: ['HS256']}),  (req, res, next) => {
+decksRouter.get("/:deckId", (req, res, next) => {
     Deck.findOne({ _id: req.params.deckId }, (err, Deck) => {
         if(err){
             res.status(500)
@@ -58,7 +57,7 @@ decksRouter.get("/:deckId",expressjwt({secret: process.env.SECRET, algorithms: [
 // })
 
 //post one
-decksRouter.post("/", expressjwt({secret: process.env.SECRET, algorithms: ['HS256']}),  (req, res, next) => {
+decksRouter.post("/",   (req, res, next) => {
     const newDeck = new Deck(req.body)
     newDeck.save((err, savedDeck) => {
         if(err){
@@ -70,7 +69,7 @@ decksRouter.post("/", expressjwt({secret: process.env.SECRET, algorithms: ['HS25
 })
 
 //delete one
-decksRouter.delete("/:deckId", expressjwt({secret: process.env.SECRET, algorithms: ['HS256']}), (req, res, next) =>{
+decksRouter.delete("/:deckId", (req, res, next) =>{
     Deck.deleteMany({ _id: req.params.deckId }, (err, deletedItem) =>{
         if(err){
             res.status(500)
@@ -81,7 +80,7 @@ decksRouter.delete("/:deckId", expressjwt({secret: process.env.SECRET, algorithm
 })
 
 //update function
-decksRouter.put("/:deckId",expressjwt({secret: process.env.SECRET, algorithms: ['HS256']}),  (req, res, next) => {
+decksRouter.put("/:deckId",  (req, res, next) => {
     Deck.findOneAndUpdate(
         {_id : req.params.deckId},
         req.body,
@@ -102,9 +101,3 @@ module.exports = decksRouter
 
 
 
-
-// Postman Deck input form
-// {
-//     "title": "Schema Vocab",
-//     "flashcards": 0
-// }

@@ -5,10 +5,9 @@ const {expressjwt} = require('express-jwt')
 
 
 //Get all cards
-cardsRouter.get("/", expressjwt({secret: process.env.SECRET, algorithms: ['HS256']}),
-async (req, res, next) => {
+cardsRouter.get("/", (req, res, next) => {
     try{
-        const cards = await Flashcard.find()
+        const cards = Flashcard.find()
         return res.status(200).send(cards)
     }
     catch (err) {
@@ -19,7 +18,6 @@ async (req, res, next) => {
 
 // Get by Deck
 cardsRouter.get("/:deckId",
-expressjwt({secret: process.env.SECRET, algorithms: ['HS256']}), 
 (req, res, next) => {
     Flashcard.find({ deckId : req.params.deckId }, (err, Flashcard) => {
         if(err){
@@ -31,7 +29,7 @@ expressjwt({secret: process.env.SECRET, algorithms: ['HS256']}),
 })
 
 //Post one
-cardsRouter.post("/", expressjwt({secret: process.env.SECRET, algorithms: ['HS256']}), (req, res, next) => {
+cardsRouter.post("/", (req, res, next) => {
     const newCard = new Flashcard(req.body)
     newCard.save((err, savedCard) => {
         if(err){
@@ -43,7 +41,7 @@ cardsRouter.post("/", expressjwt({secret: process.env.SECRET, algorithms: ['HS25
 })
 
 // delete function
-cardsRouter.delete( "/:cardId",expressjwt({secret: process.env.SECRET, algorithms: ['HS256']}), async (req, res, next) =>{
+cardsRouter.delete( "/:cardId",async (req, res, next) =>{
     Flashcard.findByIdAndDelete( {_id: req.params.cardId}, (err, deletedItem) => {
         if(err){
             res.status(500)
@@ -54,7 +52,7 @@ cardsRouter.delete( "/:cardId",expressjwt({secret: process.env.SECRET, algorithm
 })
 
 //update one card
-cardsRouter.put("/:cardId" , expressjwt({secret: process.env.SECRET, algorithms: ['HS256']}),(req, res, next) => {
+cardsRouter.put("/:cardId" ,(req, res, next) => {
     Flashcard.findOneAndUpdate(
         {_id : req.params.cardId},
         req.body,
@@ -74,9 +72,3 @@ cardsRouter.put("/:cardId" , expressjwt({secret: process.env.SECRET, algorithms:
 module.exports = cardsRouter
 
 
-//Postman flashcard input form
-// {
-//     "question": "fake Data",
-//     "answer": "more  useless data",
-//     "deckId": ""
-//     }

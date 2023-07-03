@@ -1,21 +1,21 @@
 .deck{
   align-items: center;
-  border-radius: 2%;
+  border-radius: 1%;
   display: flex;
+  font-family: 'Itim', sans-serif;
   max-width: 100%;
-  border : 2px solid black;
+  border : 2px inset #000;
   height: 200px;
   width: 600px;
   cursor: pointer;
-  background-color:#236c70;
-  margin-bottom: 50px;
+  margin-top: 50px;
 }
 .decks-container{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   max-width: 100%;
-  justify-content: space-between;
+  justify-content: space-around;
   text-align: center;
   row-gap: 50px;
 }

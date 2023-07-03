@@ -32,18 +32,26 @@ body{
 
 
 .Timer{
-  max-width:64% ;
+  max-width: 77%;
+  border: 8px ridge #d49969;
+  font-family: 'Itim', sans-serif;
+  background-color: #9370a0;
 }
 
 .Study-Container{
   max-width: 100%;
+  background-color: #9370a0;
+  border: 8px ridge #d49969;
 }
 .Study{
   max-width: 100%;
+  background-color: #9370a0;
 }
 .Stopwatch{
-  padding-top: 25px;
   max-width: 100%;
+  border: 8px ridge #d49969;
+  font-family: 'Itim', sans-serif;
+  background-color: #9370a0;
 }
 
 .Quiz{

@@ -25,7 +25,7 @@ userAxios.interceptors.request.use(config => {
 
   const backOut = (arr) => {
     getDecks()
-    console.log(`create card func cards state:`, cards)
+    console.log(`create card func cards state:`, cards, arr)
     setAddCardMode(!addCardMode)
     setAddDeckMode(!addDeckMode)
   }

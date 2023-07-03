@@ -4,7 +4,7 @@
 .head-container{
   background-image: url(/src/assets/images/Buddy.png);
   margin-top: 3.125rem;
-  height: 25rem;
+  height: 32rem;
   width: 100%;
   background-repeat: no-repeat;
   background-position: top;
@@ -58,6 +58,7 @@ a{
 }
 a:hover{
   color: rgb(138, 36, 141);
+  text-decoration: underline;
 }
 
 .list{
