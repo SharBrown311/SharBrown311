@@ -1,0 +1,20 @@
+span{
+  text-transform: capitalize;
+}
+.head-container{
+
+   height: 25rem;
+   background-image: url("../Images/newHeader.png");
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: contain;
+
+}
+.home-about-image{
+  height: 30rem;
+  border-radius: 8px;
+  background-image: url('../Images/aboutImage.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
