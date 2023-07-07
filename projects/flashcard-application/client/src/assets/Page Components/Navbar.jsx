@@ -13,14 +13,14 @@ export default function Navbar() {
       <li>
       <button className="button-routes" to="/" onClick={() => navigate("/")}>Home Page</button>
       </li>
-      <li className="button-routes">Create
+      <li ><button className="button-routes">Create</button>
       
         <ul className="sub-menu">
           <li className="sub-link">
         <button className="button-routes sub-link" onClick={() => navigate("/decks")}> Flashcard Creator</button>
         </li>
         <li className="sub-link">
-        <button className="button-routes sub-link" onClick = {() => navigate("/study")}>Study & Quiz Yourself</button>
+        <button className="button-routes sub-link" onClick = {() => navigate("/study")}>Quiz & Study</button>
         </li>
         <li className="sub-link">
         <button className="button-routes sub-link" onClick = {() => navigate("/notes")}>Note Taking</button>

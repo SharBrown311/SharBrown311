@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import Footer from "./assets/Page Components/Footer";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./assets/Page Components/Navbar";
@@ -10,12 +10,17 @@ import {UserContext} from "./assets/context/UserProvider";
 import Notes from "./assets/Notes/Notes";
 import "./App.css"
 import Decks from "./assets/Decks/Decks";
+import Header from "./assets/Page Components/Header";
 function App() {
   const { token, logout } = useContext(UserContext);
-
+  // const windowSize = useRef([window.outerWidth, window.outerHeight])
   return (
     <div className="App">
-      {token && <Navbar logout={logout} />}
+      {/* <div>
+        <h5>Width: {windowSize.current[0]}</h5>
+        <h5>Height: {windowSize.current[1]}</h5>
+      </div> */}
+      {token && <Header logout={logout} />}
       <Routes>
         <Route
           path="/"

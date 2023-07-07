@@ -3,6 +3,7 @@ import "../../App.css"
 function Footer() {
   return (
     <footer className = "Footer">
+      <hr />
     <div className="footer-contributions">
     <h5>Built and Designed By: <span className="conrad"><a className = 'author-link'  href = "github.com">Conrad Rhoades</a></span>, 
     <span className="kyle">
@@ -29,7 +30,7 @@ function Footer() {
     <hr />
     <button className="footer-button" disabled  href= "#">Careers</button>
     <button className="footer-button" disabled href = "#">Support</button>
-    <button className="footer-button" disabled href = "#">Community Guidelines</button>
+    <button className="footer-button" disabled href = "#">Guidelines</button>
     </div>
     </div>
     </footer>
