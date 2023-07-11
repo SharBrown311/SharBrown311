@@ -1,0 +1,61 @@
+.icon{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+ .customization-icon{
+  background-image: url('../src/assets/images/customization-icon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 120px;
+  height: 106px;
+  margin-bottom: 30px;
+ }
+
+ .quiz-icon{
+background-image: url('../src/assets/images/timer-icon.png');
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+width: 120px;
+height: 106px;
+margin-bottom: 30px;
+ }
+ .notes-icon{
+  background-image: url('../src/assets/images/notes-icon.png');
+  background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+width: 120px;
+height: 106px;
+margin-bottom: 30px;
+ }
+
+
+.main-nav{
+  display: block;
+ }
+
+@media screen and (max-width: 767px){
+
+.menu-trigger::before {
+    content: "menu";
+}
+
+.menu-trigger nav{
+    display: none;
+}
+
+.main-nav:hover ul:hover {
+    display: block;
+    float: right;
+}
+
+.main-nav, ul, li {
+    display: list-item;
+}
+}
+

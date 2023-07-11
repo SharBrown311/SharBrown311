@@ -1,0 +1,15 @@
+.logo-image{
+  background-image: url('../../assets/images/logoSB.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 4.3rem;
+  width: 4.3rem;
+  margin-top: .5rem;
+}
+.logo{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+

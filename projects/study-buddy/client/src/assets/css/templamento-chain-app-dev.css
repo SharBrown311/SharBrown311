@@ -1270,12 +1270,9 @@ The Clients
 
 .the-clients .nacc .thumb .client-content {
   padding: 60px 30px;
-  background-image: url(../images/client-bg.png);
-  background-size: cover;
   border-radius: 50px;
   width: 100%;
   height: auto;
-  background-repeat: no-repeat;
 }
 
 .the-clients .nacc .thumb .client-content p {

@@ -1,6 +1,7 @@
 import React from 'react'
 import Auth from '../assets/Auth'
-
+import './Header.css'
+import '../App.css'
 function Banner() {
   return (
     <div className='Banner'>
@@ -25,17 +26,20 @@ function Banner() {
                 <div className='col-lg-6 align-self-center'>
                   <div className='left-content show-up header-text wow fadeInLeft animated'>
                     <div className='row'>
-                      <div className='col-lg-12'>
-                        <h2>Heading</h2>
-                        <p>Subheader</p>
+                      <div className='col-lg-12 banner-text-group'>
+                        <div className='banner-group'>
+                        <h2 className='banner-title'>Study Buddy</h2>
+                        <p className='banner-subtitle'>Mastering the Learning Process</p>
+                      </div>
+                      <div className='banner-book-image'></div>
                       </div>
                       <div className='col-lg-12'>
-                        <div className='white-button first-button scroll-to-section'><a href = "#">
+                        {/* <div className='white-button first-button scroll-to-section'><a href = "#">
                           </a>
                           </div>
                           <div className='white-button scroll-to-section'>
                             <a href='#'></a>
-                          </div>
+                          </div> */}
                       </div>
                     </div>
                   </div>

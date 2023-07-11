@@ -1,5 +1,6 @@
 import React from "react";
-
+import './Header.css'
+import '../App.css'
 function Clients() {
   return (
     <div id="clients" className="the-clients">
@@ -8,12 +9,11 @@ function Clients() {
           <div className="col-lg-8 offset-lg-2">
             <div className="section-heading">
               <h4>
-                Check What <em>The Clients Say</em> About Our App Dev
+                Check What <em>The Clients Say</em> About Our App
               </h4>
-              <img src="assets/images/heading-line-dec.png" alt="" />
+      
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eismod tempor incididunt ut labore et dolore magna.
+              Check Out Our Testimonials
               </p>
             </div>
           </div>
@@ -27,19 +27,23 @@ function Clients() {
                         <div className="thumb">
                           <div className="row">
                             <div className="col-lg-4 col-sm-4 col-12">
-                              <h4>David Martino Co</h4>
+                              <div className="reviewer">
+                              <h4>Issac Powell</h4>
+                              <span className="category">Nursing Student</span>
+                       
+                            <div className="col-lg-4 col-sm-4 d-none d-sm-block rating-date-container">
+                            
                               <span className="date">30 November 2021</span>
-                            </div>
-                            <div className="col-lg-4 col-sm-4 d-none d-sm-block">
-                              <span className="category">Financial Apps</span>
-                            </div>
                             <div className="col-lg-4 col-sm-4 col-12">
                               <i className="fa fa-star"></i>
                               <i className="fa fa-star"></i>
                               <i className="fa fa-star"></i>
                               <i className="fa fa-star"></i>
                               <i className="fa fa-star"></i>
-                              <span className="rating">4.8</span>
+                              <span className="rating">4.9</span>
+                              </div>
+                              </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -48,12 +52,13 @@ function Clients() {
                         <div className="thumb">
                           <div className="row">
                             <div className="col-lg-4 col-sm-4 col-12">
-                              <h4>Jake Harris Nyo</h4>
-                              <span className="date">29 November 2021</span>
-                            </div>
-                            <div className="col-lg-4 col-sm-4 d-none d-sm-block">
-                              <span className="category">Digital Business</span>
-                            </div>
+                              <div className="reviewer">
+                              <h4>Eric Talbot</h4>
+                              <span className="category">Psychology Major</span>
+                        
+                            <div className="col-lg-4 col-sm-4 d-none d-sm-block rating-date-container">
+                      
+                            <span className="date">09 June 2021</span>
                             <div className="col-lg-4 col-sm-4 col-12">
                               <i className="fa fa-star"></i>
                               <i className="fa fa-star"></i>
@@ -61,6 +66,9 @@ function Clients() {
                               <i className="fa fa-star"></i>
                               <i className="fa fa-star"></i>
                               <span className="rating">4.5</span>
+                              </div>
+                              </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -69,14 +77,17 @@ function Clients() {
                         <div className="thumb">
                           <div className="row">
                             <div className="col-lg-4 col-sm-4 col-12">
-                              <h4>May Catherina</h4>
-                              <span className="date">27 November 2021</span>
-                            </div>
-                            <div className="col-lg-4 col-sm-4 d-none d-sm-block">
+                              <div className="reviewer">
+                              <h4>Janis Iannaco</h4>
                               <span className="category">
-                                Business &amp; Economics
+                                Educator
                               </span>
-                            </div>
+                        
+                            <div className="col-lg-4 col-sm-4 d-none d-sm-block rating-date-container">
+                             
+                          
+                          
+                            <span className="date">07 March 2021</span>
                             <div className="col-lg-4 col-sm-4 col-12">
                               <i className="fa fa-star"></i>
                               <i className="fa fa-star"></i>
@@ -84,6 +95,9 @@ function Clients() {
                               <i className="fa fa-star"></i>
                               <i className="fa fa-star"></i>
                               <span className="rating">4.7</span>
+                              </div>
+                              </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -92,21 +106,27 @@ function Clients() {
                         <div className="thumb">
                           <div className="row">
                             <div className="col-lg-4 col-sm-4 col-12">
-                              <h4>Random User</h4>
-                              <span className="date">24 November 2021</span>
-                            </div>
-                            <div className="col-lg-4 col-sm-4 d-none d-sm-block">
+                              <div className="reviewer">
+                              <h4>Bryan Cerolli</h4>
                               <span className="category">
-                                New App Ecosystem
+                                High School Student
                               </span>
-                            </div>
+                          
+                            <div className="col-lg-4 col-sm-4 d-none d-sm-block rating-date-container">
+                         
+                   
+                         
+                            <span className="date">24 November 2021</span>
                             <div className="col-lg-4 col-sm-4 col-12">
                               <i className="fa fa-star"></i>
                               <i className="fa fa-star"></i>
                               <i className="fa fa-star"></i>
                               <i className="fa fa-star"></i>
                               <i className="fa fa-star"></i>
-                              <span className="rating">3.9</span>
+                              <span className="rating">4.1</span>
+                              </div>
+                              </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -115,19 +135,26 @@ function Clients() {
                         <div className="thumb">
                           <div className="row">
                             <div className="col-lg-4 col-sm-4 col-12">
-                              <h4>Mark Amber Do</h4>
-                              <span className="date">21 November 2021</span>
-                            </div>
-                            <div className="col-lg-4 col-sm-4 d-none d-sm-block">
-                              <span className="category">Web Development</span>
-                            </div>
+                              <div className="reviewer">
+                              <h4>Jessica Arulla</h4>
+                              <span className="category">Web Development Student</span>
+                          
+                            <div className="col-lg-4 col-sm-4 d-none d-sm-block rating-date-container">
+                           
+                          
+                            
+                            <span className="date">21 January 2022</span>
                             <div className="col-lg-4 col-sm-4 col-12">
+                              
                               <i className="fa fa-star"></i>
                               <i className="fa fa-star"></i>
                               <i className="fa fa-star"></i>
                               <i className="fa fa-star"></i>
                               <i className="fa fa-star"></i>
-                              <span className="rating">4.3</span>
+                              <span className="rating">4.6</span>
+                              </div>
+                              </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -142,7 +169,6 @@ function Clients() {
                             <div className="row">
                               <div className="col-lg-12">
                                 <div className="client-content">
-                                  <img src="assets/images/quote.png" alt="" />
                                   <p>
                                     “Lorem ipsum dolor sit amet, consectetur
                                     adpiscing elit, sed do eismod tempor idunte
@@ -152,15 +178,28 @@ function Clients() {
                                   </p>
                                 </div>
                                 <div className="down-content">
-                                  <img
-                                    src="assets/images/client-image.jpg"
-                                    alt=""
-                                  />
+                                 
                                   <div className="right-content">
-                                    <h4>David Martino</h4>
-                                    <span>CEO of David Company</span>
+                                    <div className="developers">
+                                      <div className="developers-individual">
+                                    <h4>Conrad Rhoades</h4>
+                                    <span>Developer of Study Buddy</span>
+                                    </div>
+                                    <br />
+                                    <div className="developers-individual">
+                                    <h4>Kyle Schutt</h4>
+                                    <span>Developer of Study Buddy</span>
+                                    </div>
+                                    <br />
+                                    <div className="developers-individual gradient-button">
+                                    <h4>Sharon Brown</h4>
+                                    <span>Developer of Study Buddy</span>
+                                    </div>
+                                    </div>
                                   </div>
+                           
                                 </div>
+                               
                               </div>
                             </div>
                           </div>
@@ -172,7 +211,7 @@ function Clients() {
                             <div className="row">
                               <div className="col-lg-12">
                                 <div className="client-content">
-                                  <img src="assets/images/quote.png" alt="" />
+                               
                                   <p>
                                     “CTO, Lorem ipsum dolor sit amet,
                                     consectetur adpiscing elit, sed do eismod
@@ -183,10 +222,6 @@ function Clients() {
                                   </p>
                                 </div>
                                 <div className="down-content">
-                                  <img
-                                    src="assets/images/client-image.jpg"
-                                    alt=""
-                                  />
                                   <div className="right-content">
                                     <h4>Jake H. Nyo</h4>
                                     <span>CTO of Digital Company</span>
@@ -203,7 +238,6 @@ function Clients() {
                             <div className="row">
                               <div className="col-lg-12">
                                 <div className="client-content">
-                                  <img src="assets/images/quote.png" alt="" />
                                   <p>
                                     “May, Lorem ipsum dolor sit amet,
                                     consectetur adpiscing elit, sed do eismod
@@ -214,10 +248,6 @@ function Clients() {
                                   </p>
                                 </div>
                                 <div className="down-content">
-                                  <img
-                                    src="assets/images/client-image.jpg"
-                                    alt=""
-                                  />
                                   <div className="right-content">
                                     <h4>May C.</h4>
                                     <span>Founder of Catherina Co.</span>
@@ -234,20 +264,8 @@ function Clients() {
                             <div className="row">
                               <div className="col-lg-12">
                                 <div className="client-content">
-                                  <img src="assets/images/quote.png" alt="" />
-                                  <p>
-                                    “Lorem ipsum dolor sit amet, consectetur
-                                    adpiscing elit, sed do eismod tempor idunte
-                                    ut labore et dolore magna aliqua darwin
-                                    kengan lorem ipsum dolor sit amet,
-                                    consectetur picing elit massive big blasta.”
-                                  </p>
-                                </div>
+                                  </div>
                                 <div className="down-content">
-                                  <img
-                                    src="assets/images/client-image.jpg"
-                                    alt=""
-                                  />
                                   <div className="right-content">
                                     <h4>Random Staff</h4>
                                     <span>Manager, Digital Company</span>
@@ -264,7 +282,6 @@ function Clients() {
                             <div className="row">
                               <div className="col-lg-12">
                                 <div className="client-content">
-                                  <img src="assets/images/quote.png" alt="" />
                                   <p>
                                     “Mark, Lorem ipsum dolor sit amet,
                                     consectetur adpiscing elit, sed do eismod
@@ -275,10 +292,6 @@ function Clients() {
                                   </p>
                                 </div>
                                 <div className="down-content">
-                                  <img
-                                    src="assets/images/client-image.jpg"
-                                    alt=""
-                                  />
                                   <div className="right-content">
                                     <h4>Mark Am</h4>
                                     <span>CTO, Amber Do Company</span>

@@ -1,28 +1,17 @@
 import React from 'react'
-
+import './Header.css'
+import '../App.css'
 function Footer() {
   return (
 <footer id="newsletter">
     <div className="container">
       <div className="row">
         <div className="col-lg-8 offset-lg-2">
-          <div className="section-heading">
-            <h4>Join our mailing list to receive the news &amp; latest trends</h4>
-          </div>
         </div>
         <div className="col-lg-6 offset-lg-3">
           <form id="search" action="#" method="GET">
             <div className="row">
-              <div className="col-lg-6 col-sm-6">
-                <fieldset>
-                  <input type="address" name="address" className="email" placeholder="Email Address..." autocomplete="on" required="" fdprocessedid="ma6rnf"/>
-                </fieldset>
-              </div>
-              <div className="col-lg-6 col-sm-6">
-                <fieldset>
-                  <button type="submit" className="main-button" fdprocessedid="dn1v5e">Subscribe Now <i className="fa fa-angle-right"></i></button>
-                </fieldset>
-              </div>
+        
             </div>
           </form>
         </div>
@@ -44,12 +33,10 @@ function Footer() {
               <li><a href="#">Services</a></li>
               <li><a href="#">About</a></li>
               <li><a href="#">Testimonials</a></li>
-              <li><a href="#">Pricing</a></li>
             </ul>
             <ul>
               <li><a href="#">About</a></li>
               <li><a href="#">Testimonials</a></li>
-              <li><a href="#">Pricing</a></li>
             </ul>
           </div>
         </div>
@@ -72,9 +59,6 @@ function Footer() {
         </div>
         <div className="col-lg-3">
           <div className="footer-widget">
-            <h4>About Our Company</h4>
-            <div className="logo">
-              <img src="assets/images/white-logo.png" alt="" />
             </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
           </div>
@@ -83,13 +67,10 @@ function Footer() {
           <div className="copyright-text">
             <p>Copyright © 2022 Chain App Dev Company. All Rights Reserved. 
           <br/>Design: <a href="https://templatemo.com/" target="_blank" title="css templates">TemplateMo</a><br/>
-        
-          Distributed By: <a href="https://themewagon.com/" target="_blank" title="Bootstrap Template World">ThemeWagon</a>
         </p>
           </div>
         </div>
       </div>
-    </div>
   </footer>
   )
 }

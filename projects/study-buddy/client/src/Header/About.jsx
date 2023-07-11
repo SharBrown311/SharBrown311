@@ -1,47 +1,47 @@
 import React from 'react'
-
+import './Header.css'
+import '../App.css'
 function About() {
   return (
-<div id="about" className="about-us section">
+<div id="about" className="About about-us section">
     <div className="container">
       <div className="row">
         <div className="col-lg-6 align-self-center">
           <div className="section-heading">
-            <h4>About <em>What We Do</em> &amp; Who We Are</h4>
-            <img src="assets/images/heading-line-dec.png" alt=""/>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor incididunt ut labore et dolore magna.</p>
+            <h4 className='about-text'>About <em>What We Do</em> &amp; Who We Are</h4>
+            <div className='double-line'></div>
+            <p>Study Buddy was developed to build a one stop application for users who need a place to study and store all their study materials. Because organization is key!</p>
           </div>
           <div className="row">
             <div className="col-lg-6">
               <div className="box-item">
-                <h4><a href="#">Maintance Problems</a></h4>
-                <p>Lorem Ipsum Text</p>
+                <h4><a href="#">Timing Capabilities</a></h4>
+                <p>See how fast you can get through your study sesh or give yourself a time limit. </p>
               </div>
             </div>
             <div className="col-lg-6">
               <div className="box-item">
-                <h4><a href="#">24/7 Support &amp; Help</a></h4>
-                <p>Lorem Ipsum Text</p>
+                <h4><a href="#">Store Notes</a></h4>
+                <p>What better place to have all of your notes than with your flashcards.</p>
               </div>
             </div>
             <div className="col-lg-6">
               <div className="box-item">
-                <h4><a href="#">Fixing Issues About</a></h4>
-                <p>Lorem Ipsum Text</p>
+                <h4><a href="#">Customization</a></h4>
+                <p>Design your flashcards to your own specifications.</p>
               </div>
             </div>
             <div className="col-lg-6">
               <div className="box-item">
-                <h4><a href="#">Co. Development</a></h4>
-                <p>Lorem Ipsum Text</p>
+                <h4><a href="#">Quiz Yourself</a></h4>
+                <p>Grade yourself and practice to perfection.</p>
               </div>
             </div>
             <div className="col-lg-12">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor idunte ut labore et dolore adipiscing  magna.</p>
+              <p>Study and win with our one-of-a-kind application</p>
               <div className="gradient-button">
-                <a href="#">Start 14-Day Free Trial</a>
+                <a href="#">Start Creating Now</a>
               </div>
-              <span>*No Credit Card Required</span>
             </div>
           </div>
         </div>

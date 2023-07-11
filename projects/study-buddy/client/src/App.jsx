@@ -7,7 +7,7 @@ import StudyContainer from "./assets/Study/StudyContainer";
 import ProtectedRoute from "./assets/Protected/ProtectedRoutes";
 import { UserContext } from "./assets/context/UserProvider";
 import Notes from "./assets/Notes/Notes";
-import "./App.css"
+import './App.css'
 import Decks from "./assets/Decks/Decks";
 import Header from "./Header/Header";
 function App() {
@@ -67,6 +67,8 @@ function App() {
         }
       />
       </Routes>
+      <br />
+      <Footer />
     </div>
   );
 }
