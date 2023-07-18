@@ -1,18 +1,14 @@
 import React, {useState, useContext} from "react";
-import { Dropdown, Modal } from "react-bootstrap";
+import { Dropdown } from "react-bootstrap";
 import { Link, useNavigate } from 'react-router-dom';
-import { UserContext } from '../../context/UserProvider';
+import { UserContext } from "../../context/UserProvider";
 import "./Header.css"
-import Menu from "../Menu/Menu";
-import ModalTry from "../Modal/ModalTry";
 
 
 
 export default function Header(){
-  const {login, signup, logout} = useContext(UserContext)
+  const {logout} = useContext(UserContext)
   const navigate = useNavigate()
-  const [openModal, setOpenModal] = useState(false)
-
   return(
 <header className="header-area header-sticky wow slideInDown animated" data-wow-duration="0.75s" data-wow-delay="0s" style={{visibility: "visible", animationDuration: "0.75s",animationDelay: "0s"}}>
     <div className="container">
@@ -57,18 +53,15 @@ export default function Header(){
           </Dropdown.Menu>
       </Dropdown></a>
               </li>
-              <li><div className="gradient-button"><a id="trigger" type="button" data-toggle = "modal" data-target = "#signupModal"
-              onClick={() => setOpenModal(true)}
-              ><i className="fa fa-sign-in-alt"></i> Sign up/Login Now</a><ModalTry openModal = {openModal} setOpenModal = {setOpenModal} /></div></li> 
+              <li className="scroll-to-section"><a href="#newsletter">Newsletter</a></li>
+              <li><div className="gradient-button"><a id="modal_trigger" href="#modal"><i className="fa fa-sign-in-alt"></i> Sign In Now</a></div></li> 
               <li>
-                <div className="gradient-button"><a id = "trigger" onClick={logout}><i className="fas fa-door-open"></i></a></div>
+                <button className="gradient-button" onClick={logout} onChange={() => navigate('/')}>Logout</button>
               </li>
             </ul> 
                
             <a className="menu-trigger">
-               <span className = "menu-span">
-         
-               </span>
+               <span className = "menu-span"></span>
             </a>
       
           </nav>

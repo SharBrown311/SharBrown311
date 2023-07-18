@@ -35,27 +35,6 @@ margin-bottom: 30px;
  }
 
 
-.main-nav{
-  display: block;
- }
-
-@media screen and (max-width: 767px){
-
-.menu-trigger::before {
-    content: "menu";
+#newsletter{
+  padding-top: 15rem;
 }
-
-.menu-trigger nav{
-    display: none;
-}
-
-.main-nav:hover ul:hover {
-    display: block;
-    float: right;
-}
-
-.main-nav, ul, li {
-    display: list-item;
-}
-}
-

@@ -29,7 +29,7 @@ export default function Header() {
         </ul>
         </li>
       <li >
-      <button className="button-routes" onClick={logout}>Logout</button>
+      <button className="button-routes" onClick={logout} onChange={() => navigate('/home')}>Logout</button>
       </li>
 
      

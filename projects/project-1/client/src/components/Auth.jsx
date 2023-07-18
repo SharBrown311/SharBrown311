@@ -1,13 +1,12 @@
-import React, {useState, useContext} from 'react'
-import ModalForm from './ModalForm'
-import { UserContext } from '../../context/UserProvider'
-import "./Modal.css"
-
+import React, { useState, useContext } from "react";
+import Modal from "./Modal";
+import { UserContext } from "../context/UserProvider";
+import "../App.css"
 const initInputs = { username: "", password: "" };
-export default function Modal() {
+
+export default function Auth() {
   const [inputs, setInputs] = useState(initInputs);
   const [toggle, setToggle] = useState(false);
-  const [modalOpen, setModalIsOpen] = useState(false)
 
   const { signup, login, errMsg, resetAuthError } = useContext(UserContext);
 
@@ -34,40 +33,34 @@ export default function Modal() {
     resetAuthError();
   }
 
-  function openModal(){
-    setModalIsOpen((prev) => !prev)
-    modalOpen(true)
-  }
   return (
-    <div className='Modal container'>
-      <div className='head-container'></div>
+    <div className="Auth container">
+      <div className="head-container"></div>
       {!toggle ? (
         <>
-          <ModalForm
-               handleChange={handleChange}
-               handleSubmit={handleSignup}
-               inputs={inputs}
-               btnText="Sign Up"
-               errMsg={errMsg}
-               />
-                   <p className="toggle-text" onClick={toggleForm} style = {{color: "blue"}}
-          >Already a Member?</p>
+          <Modal
+            handleChange={handleChange}
+            handleSubmit={handleSignup}
+            inputs={inputs}
+            btnText="Sign Up"
+            errMsg={errMsg}
+          />
+          <p className="toggle-text" onClick={toggleForm} style = {{color: "blue"}}>Already a Member?</p>
         </>
       ) : (
         <>
-          <ModalForm 
+          <Modal
             handleChange={handleChange}
             handleSubmit={handleLogin}
             inputs={inputs}
             btnText="Login"
             errMsg={errMsg}
           />
-             <p className="toggle-text" onClick={toggleForm} style = {{color: "blue"}}>Not a member?</p>
+          <p onClick={toggleForm} style = {{color: "blue"}}>Not a member?</p>
         </>
       )}
-      
     </div>
-  )
+  );
 }
 
 

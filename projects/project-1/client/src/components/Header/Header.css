@@ -13,8 +13,8 @@
   justify-content: flex-start;
 }
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
 .main-nav{
   justify-content: center;
 }
-} */
+}

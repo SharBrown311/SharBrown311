@@ -13,7 +13,7 @@ app.use(morgan('dev'))
 // //CONNECTION TO MONGODB
 mongoose.set('strictQuery', true);
   mongoose.connect(
-    `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.pdaoc4g.mongodb.net/flashcardDb`
+    `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.amwwxnt.mongodb.net/`
       ,() => console.log("Mongoose Connected to DB"))
 
 

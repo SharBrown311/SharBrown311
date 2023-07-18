@@ -3,7 +3,7 @@ import React from 'react'
 function StudyContainer() {
   return (
     <div>
-      Study & Quiz Page
+      Study Container
     </div>
   )
 }

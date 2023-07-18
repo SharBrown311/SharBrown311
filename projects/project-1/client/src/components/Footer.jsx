@@ -21,30 +21,50 @@ function Footer() {
         </div>
         <div className="col-lg-3">
           <div className="footer-widget">
-            <h4>Useful Links</h4>
+            <h4>About Us</h4>
             <ul>
-              <li><a href="#">How to Take Effective Notes</a></li>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Testimonials</a></li>
+              <li><a href="#">Pricing</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Pricing</a></li>
             </ul>
           </div>
         </div>
-
-        </div>
-        <div className="col-lg-12">
-          <div className="copyright-text">
-          <div className="col-lg-3">
+        <div className="col-lg-3">
           <div className="footer-widget">
-          <h4>Study Buddy</h4>
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="#">How to Take Effective Notes</a></li>
+              <li><a href="#">Study Advice</a></li>
+              <li><a href="#">Study Advice</a></li>
+              <li><a href="#">Study Advice</a></li>
+              <li><a href="#">Study Advice</a></li>
+              <li><a href="#">Study Advice</a></li>
+            </ul>
+          </div>
+        </div>
+        <div className="col-lg-3">
+          <div className="footer-widget">
+            <h4>Study Buddy</h4>
             <div className="logo">
               <div className='study-buddy-logo'></div>
             </div>
           </div>
-           <li style={{color: "#fff"}}>Copyright © 2023
+        </div>
+        <div className="col-lg-12">
+          <div className="copyright-text">
+            <p>Copyright © 2023
               <br />Developed & Designed By: <ul>
-                  <li style={{color: "#fff"}}><a style={{color: "#fff"}} href = "#">Conrad Rhoades</a></li>
-                  <li style={{color: "#fff"}}><a style={{color: "#fff"}} href = "#">Kyle Shutt</a></li>
-                  <li style={{color: "#fff"}}><a style={{color: "#fff"}} href = "#">Sharon Brown</a></li>
+                  <li><a href = "#">Conrad Rhoades</a></li>
+                  <li><a href = "#">Kyle Shutt</a></li>
+                  <li><a href = "#">Sharon Brown</a></li>
                 </ul><br />
-            </li>
+            </p>
           </div>
         </div>
       </div>
