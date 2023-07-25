@@ -3,7 +3,7 @@ import React from 'react'
 function About() {
   return (
 <>
-  <div id="about" className="About about-us section">
+  <div id="about" className="About about-us section" style={{textAlign: 'center', paddingRight: '2rem', paddingLeft: '2rem'}}>
     <div className="container">
       <div className="row">
         <div className="align-self-center">

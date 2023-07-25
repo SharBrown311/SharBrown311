@@ -1,5 +1,6 @@
 import React, {useContext} from "react"
 import {Routes, Route, Navigate} from 'react-router-dom'
+import Profile from "./pages/Profile"
 import Modal from "./components/Modal/Modal"
 import Footer from "./components/Footer"
 import ProtectedRoute from "./components/ProtectedRoute"
@@ -28,16 +29,17 @@ return (
 {token && <Header logout = 
 {logout} />}
 <Banner />
+
 <Routes>
-  <Route path="/" element = {token ? <Navigate to = "/home" /> : <Modal />}
+  <Route path="/" element = {!token ? <Navigate to = "/home" /> : <Home />}
   />
         <Route
-          path="/home"
+          path="/profile"
           element={
             <ProtectedRoute 
               token={token} 
               redirectTo="/">
-              <Home />
+              <Profile />
             </ProtectedRoute>
           }
         />

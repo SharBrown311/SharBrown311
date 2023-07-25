@@ -1,36 +1,33 @@
 import React from 'react'
-import "./Menu.css"
-import { Container } from 'react-bootstrap'
-import { Nav } from 'react-bootstrap'
-import { Navbar } from 'react-bootstrap'
-import { NavDropdown } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import './Menu.css'
+import {Link, useNavigate} from 'react-router-dom'
+
 function Menu() {
+  const dropFunction = function dropdownFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "main-nav") {
+      x.className += " responsive";
+    } else {
+      x.className = "main-nav";
+    }
+  }
+  const navigate = useNavigate()
   return (
-    <Navbar
-    collapseOnSelect
-    expand = "lg" className="bg-body-tertiary .navbar-menu" id = "Menu">
-    <Container className = "menu-container">
-      <Navbar.Brand href="/"></Navbar.Brand>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" className='toggle-button' />
-      <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="me-auto">
-          <Nav.Link className='nav-item'><Link to ="">Home</Link></Nav.Link>
-          <Nav.Link className = "scroll-to-section nav-item" href="#services">Services</Nav.Link>
-          <Nav.Link className = "scroll-to-section nav-item" href="#about">About</Nav.Link>
-          <NavDropdown title="Create" id="collapsible-nav-dropdown"
-          className='nav-item'
-          >
-            <NavDropdown.Item href="#action/3.1"><Link to = "/decks">Flashcard Creator</Link></NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">
-            <Link to = "/study">Quiz & Study</Link>
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3"><Link to = "/notes">Note Taking</Link></NavDropdown.Item>
-          </NavDropdown>
-        </Nav>
-      </Navbar.Collapse>
-    </Container>
-  </Navbar>
+    <div className="header-area header-sticky wow" data-wow-duration="0.75s" data-wow-delay="0s" style={{visibility: "visible", animationDuration: "0.75s",animationDelay: "0s"}}>
+    <div className="topnav" id="myTopnav">
+  <a className="active">Home</a>
+  <a href="#services">Services</a>
+  <a href="#about">About</a>
+
+{/* <li className='scroll-to-section'> */}
+        {/* <div className='gradient-button'>
+            <a id = "trigger" type = "button" data-toggle = "modal" datatarget = "#authModal" onClick = {() => setShow(!show)}>
+              <i className="fa fa-sign-in-alt"></i> Signup Now</a><Modal1 show={show} setShow={setShow}></Modal1></div>
+      </li> */}
+      <li className='scroll-to-section'><div className='gradient-button'><a onClick={logout}><i className='fas fa-door-open'></i></a></div></li>
+</div>
+</div> 
+
   )
 }
 

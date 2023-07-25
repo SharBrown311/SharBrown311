@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Modal() {
+function ModalSignUp() {
   return (
     <div>
-      Modal
+      
     </div>
   )
 }
 
-export default Modal
+export default ModalSignUp

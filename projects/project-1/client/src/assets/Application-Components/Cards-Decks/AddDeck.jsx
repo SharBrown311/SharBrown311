@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Notes() {
+function AddDeck() {
   return (
     <div>
-      Notes Page
+      
     </div>
   )
 }
 
-export default Notes
+export default AddDeck

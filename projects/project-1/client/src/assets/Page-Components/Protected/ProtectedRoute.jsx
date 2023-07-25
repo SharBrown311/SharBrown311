@@ -5,4 +5,3 @@ export default function ProtectedRoute(props) {
   const { token, children, redirectTo } = props;
   return token ? children : <Navigate to={redirectTo} />;
 }
-

@@ -1,19 +1,20 @@
 import React, {useContext} from "react"
 import {Routes, Route, Navigate} from 'react-router-dom'
-import Auth from "./components/Auth"
-import Footer from "./components/Footer"
-import ProtectedRoute from "./components/ProtectedRoute"
+import Footer from "./assets/Page-Components/Main-Areas/Footer"
+import ProtectedRoute from "./assets/Page-Components/Protected/ProtectedRoute"
 import { UserContext } from "./context/UserProvider"
-import Decks from "./pages/Decks"
-import Notes from "./pages/Notes"
-import StudyContainer from "./pages/StudyContainer"
-import Header from "./components/Header/Header"
-import Banner from "./components/Banner"
-import Modal from "./components/Modal"
-import HomePage from "./pages/HomePage"
-import CreateSection from "./components/CreateSection"
+import Decks from "./assets/Application-Components/Cards-Decks/Decks"
+import Notes from "./assets/Application-Components/Notes/Notes"
+import StudyContainer from "./assets/Application-Components/Study/StudyContainer"
+// import Header from "./assets/Page-Components/Main-Areas/Header.jsx"
+import Banner from './assets/Page-Components/Main-Areas/Banner.jsx'
+import ModalContainer from "./assets/Page-Components/Modal/ModalContainer"
+import HomePage from './assets/Pages/HomePage.jsx'
+import Navbar from "./assets/Page-Components/Main-Areas/Navbar"
+import "./App.css"
+
 function App() {
-  const { token, logout } = useContext(UserContext);
+ const { token, logout } = useContext(UserContext); 
 return (
   <div className="App">
        <div id="js-preloader" className="js-preloader">
@@ -26,12 +27,12 @@ return (
       </div>
     </div>
     </div>
-{token && <Header logout = 
+{token && <Navbar logout = 
 {logout} />}
-<Modal />
+<ModalContainer />
 <Banner />
 <Routes>
-  <Route path="/" element = {token ? <Navigate to = "/home" /> : <Auth />}
+  <Route path="/" element = {token ? <Navigate to = "/homepage" /> : <Auth />}
   />
         <Route
           path="/homepage"
@@ -50,14 +51,8 @@ return (
               <Decks/>
             </ProtectedRoute>
           }
-        />
-        <Route path = '/create'
-        element = {
-          <ProtectedRoute token = {token} redirectTo = "/">
-            <CreateSection />
-          </ProtectedRoute>
-        } />
-                  <Route
+/>
+         <Route
           path="/notes"
           element={
             <ProtectedRoute token={token} redirectTo="/">

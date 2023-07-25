@@ -1,23 +1,15 @@
 import React from 'react'
-import DashBoard from '../components/DashBoard.jsx/DashBoard'
-
+import Menu from '../components/Menu/Menu.jsx'
+import Decks from './Decks/Decks.jsx'
+import Notes from './Notes.jsx'
+import StudyContainer from './Study/StudyContainer.jsx'
 function Profile() {
-  if(localStorage.getItem("isLoggedIn")){
-    return (
-      <>
-        <DashBoard />
-      </>
-    )
-  }else{
-    return (
-      <ErrorPage />
-    )
-  }
-  return (
-    <div>
-      
-    </div>
-  )
+  <div className='Profile'>
+<Menu />
+  <Decks />
+  <Notes />
+  <StudyContainer />
+</div>
 }
 
 export default Profile

@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Decks() {
+function Deck() {
   return (
     <div>
-      Decks Page
+      
     </div>
   )
 }
 
-export default Decks
+export default Deck

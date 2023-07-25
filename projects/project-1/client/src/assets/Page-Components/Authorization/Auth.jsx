@@ -1,7 +1,9 @@
 import React, { useState, useContext } from "react";
-import Modal from "./Modal";
-import { UserContext } from "../context/UserProvider";
-import "../App.css"
+import AuthForm from './AuthForm'
+import { UserContext } from "../../context/UserProvider";
+import './Auth.css'
+
+
 const initInputs = { username: "", password: "" };
 
 export default function Auth() {
@@ -33,30 +35,34 @@ export default function Auth() {
     resetAuthError();
   }
 
+
+
   return (
     <div className="Auth container">
       <div className="head-container"></div>
       {!toggle ? (
         <>
-          <Modal
+          <AuthForm
             handleChange={handleChange}
             handleSubmit={handleSignup}
             inputs={inputs}
             btnText="Sign Up"
             errMsg={errMsg}
           />
-          <p className="toggle-text" onClick={toggleForm} style = {{color: "blue"}}>Already a Member?</p>
+          <p className="toggle-text" onClick={toggleForm} style = {{color: "blue"}}
+          >Already a Member?</p>
+  
         </>
       ) : (
         <>
-          <Modal
+          <AuthForm
             handleChange={handleChange}
             handleSubmit={handleLogin}
             inputs={inputs}
             btnText="Login"
             errMsg={errMsg}
           />
-          <p onClick={toggleForm} style = {{color: "blue"}}>Not a member?</p>
+          <p className="toggle-text" onClick={toggleForm} style = {{color: "blue"}}>Not a member?</p>
         </>
       )}
     </div>
