@@ -38,7 +38,6 @@ function StudyContainer() {
   const [showQuiz, setShowQuiz] = useState(false);
   const [showStudy, setShowStudy] = useState(false);
   
-  console.log(cards)
 
   const swapQuizState = () => {
     setShowStudy(false)

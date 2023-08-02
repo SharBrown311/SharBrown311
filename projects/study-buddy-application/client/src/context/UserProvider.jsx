@@ -23,7 +23,7 @@ export default function UserProvider(props) {
 
 
   const [userState, setUserState] = useState(initState);
-
+  const [page, setPage] = useState("")
 
   
 //axios functions
@@ -96,7 +96,9 @@ function signup(credentials){
         signup,
         login,
         logout,
-        resetAuthError
+        resetAuthError, 
+        page, 
+        setPage
       }}
     >
       {props.children}

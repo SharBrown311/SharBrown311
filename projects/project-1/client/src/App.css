@@ -16,12 +16,16 @@ body {
 }
 
 .topnav {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  justify-content: space-evenly;
+  align-items: center;
   overflow: hidden;
   background-color: #fff;
 }
 
 .topnav a {
-  float: left;
   display: block;
   color: #000;
   text-align: center;
@@ -32,7 +36,7 @@ body {
 
 .active {
   background-color: #fff;
-  color: black;
+  color: blue;
 }
 
 .topnav .icon {
@@ -40,7 +44,7 @@ body {
 }
 
 .dropdown {
-  float: left;
+  float: center;
   overflow: hidden;
 }
 
@@ -58,29 +62,29 @@ body {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #000;
+  background-color: #fff;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
 .dropdown-content a {
-  float: none;
+
   color: #000;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  text-align: left;
+  text-align: center;
 }
 
 .topnav a:hover, .dropdown:hover .dropbtn {
-  background-color: #fff;
-  color: #000;
+  background-color: #4e87f0;
+  color: #fff;
 }
 
 .dropdown-content a:hover {
-  background-color: #fff;
-  color: #000;
+  background-color: #4e87f0;
+  color: #fff;
 }
 
 .dropdown:hover .dropdown-content {
@@ -118,4 +122,78 @@ body {
     width: 100%;
     text-align: left;
   }
+}
+
+
+
+.icon{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  cursor: pointer;
+}
+
+ .customization-icon{
+  background-image: url('../src/assets/images/customization-icon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 120px;
+  height: 106px;
+  margin-bottom: 30px;
+ }
+
+ .quiz-icon{
+background-image: url('../src/assets/images/timer-icon.png');
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+width: 120px;
+height: 106px;
+margin-bottom: 30px;
+ }
+ 
+.notes-icon{
+  background-image: url('../src/assets/images/notes-icon.png');
+  background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+width: 120px;
+height: 106px;
+margin-bottom: 30px;
+ }
+.footer-content{
+  margin-top: 2rem;
+}
+.modal{
+  color: #fff;
+}
+
+
+@media screen and (min-width: 766px) {
+
+.col-lg-3{
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}    
+.authors-container{
+  display: flex;
+  flex-direction: row;
+ 
+  text-align: center;
+}
+.copyright-container{
+  margin-top: 1rem;
+  text-align: center;
+}
+}
+
+
+
+
+.wrapper{
+  padding: 1.5rem;
 }

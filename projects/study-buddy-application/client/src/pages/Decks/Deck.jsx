@@ -37,7 +37,6 @@ userAxios.interceptors.request.use(config => {
             })
             .catch(err => console.log(err))
         }
-        console.log(`delete deck is doing nothing`)
     }
 
     const popCards = (deckId) => {
@@ -45,13 +44,11 @@ userAxios.interceptors.request.use(config => {
         
         userAxios.get(`/api/cards/${deckId}`)
             .then(res => {
-                console.log(`popcards func onclick deck:`, res.data)
                 setCards(res.data)
                 anyCards(res.data)
             })
             .catch(err => console.log(err))
            
-        console.log(cards)
         setShowCard(!showCard)
     }
 

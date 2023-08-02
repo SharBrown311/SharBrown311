@@ -1,77 +1,27 @@
-import React, {useContext} from "react"
-import {Routes, Route, Navigate} from 'react-router-dom'
-import Profile from "./pages/Profile"
-import Modal from "./components/Modal/Modal"
-import Footer from "./components/Footer"
-import ProtectedRoute from "./components/ProtectedRoute"
-import Home from "./pages/Home"
-import { UserContext } from "./context/UserProvider"
-import Decks from "./pages/Decks/Decks"
-import Notes from "./pages/Notes"
-import StudyContainer from "./pages/Study/StudyContainer"
-import Header from './components/Header/Header'
-import Banner from "./components/Banner"
+import React, {useContext} from 'react'
+import Navbar from './components/Navbar'
+import {Routes, Route, Link, Navigate} from 'react-router-dom'
+import Protected from './components/Protected'
+import Home from './pages/Home'
+import Dashboard from './pages/Dashboard'
+import { UserContext } from './context/UserProvider'
+import Banner from './components/Page-Components/Banner'
+import Auth from './components/Auth'
+import './App.css'
+import Footer from './components/Page-Components/Footer'
 
-function App() {
-  const { token, logout } = useContext(UserContext);
-return (
-  <div className="App">
-       <div id="js-preloader" className="js-preloader">
-    <div className="preloader-inner">
-      <span className="dot" />
-      <div className="dots">
-        <span />
-        <span />
-        <span />
-      </div>
-    </div>
-    </div>
-{token && <Header logout = 
-{logout} />}
-<Banner />
-
-<Routes>
-  <Route path="/" element = {!token ? <Navigate to = "/home" /> : <Home />}
-  />
-        <Route
-          path="/profile"
-          element={
-            <ProtectedRoute 
-              token={token} 
-              redirectTo="/">
-              <Profile />
-            </ProtectedRoute>
-          }
-        />
-                <Route
-          path="/decks"
-          element={
-            <ProtectedRoute token={token} redirectTo="/">
-              <Decks/>
-            </ProtectedRoute>
-          }
-        />
-                  <Route
-          path="/notes"
-          element={
-            <ProtectedRoute token={token} redirectTo="/">
-              <Notes/>
-            </ProtectedRoute>
-          }
-        />
-        <Route
-        path="/study"
-        element={
-          <ProtectedRoute token={token} redirectTo="/">
-            <StudyContainer />
-          </ProtectedRoute>
-        }
-      />
+export default function App(){
+  const {token, logout} = useContext(UserContext)
+  return(
+    <div className='App'>
+      {token && <Navbar logout = {logout} />}
+      <Routes>
+      <Route exact path = "/" element = {token ? <Home /> : <Auth/>} />
+      <Route path = "/dashboard" element = {
+      <Protected token = {token}><Dashboard /> </Protected>
+      } />
       </Routes>
-      <br />
       <Footer />
-</div>
+    </div>
   )
 }
-
-export default App

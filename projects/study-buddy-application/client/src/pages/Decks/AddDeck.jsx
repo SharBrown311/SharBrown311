@@ -1,7 +1,7 @@
 
 import React, { useState } from "react"
 import axios from "axios"
-import "../../App.css"
+import "./Deck.css"
 
 
 
@@ -24,13 +24,13 @@ userAxios.interceptors.request.use(config => {
 
   const backOut = (arr) => {
     getDecks()
-    console.log(`create card func cards state:`, cards, arr)
+
     setAddCardMode(!addCardMode)
     setAddDeckMode(!addDeckMode)
   }
 
   const handleDeckChange = (e) => {
-    console.log(e.target.value)
+
     setUserDeck({
       title: e.target.value,
       flashcards: 0
@@ -39,7 +39,7 @@ userAxios.interceptors.request.use(config => {
 
   const handleCardChange = (e) => {
     const {name, value} = e.target
-    console.log(`card change:`, e.target.question, e.target.answer)
+
     setUserCard(prev => ({
       ...prev,
       [name]: value
@@ -52,7 +52,6 @@ userAxios.interceptors.request.use(config => {
     if(newDeck.title){
       userAxios.post('/api/decks', newDeck)
         .then(res => {
-          console.log(`looking for result to be an ID:`, res.data)
           setNewDeckId(res.data)
           setUserCard(prev => {
             return ({
@@ -66,7 +65,6 @@ userAxios.interceptors.request.use(config => {
         })
     
     setAddCardMode(!addCardMode)
-    console.log(`should have deck ID:`, userCard)
     }
     
   }
@@ -99,9 +97,6 @@ userAxios.interceptors.request.use(config => {
     }
   }
 
-  console.log(`cards state before render:`, cards)
-  console.log(`userCard should have ID:`, userCard)
-  console.log(newDeckId)
   return (
     <div>
       <div className="AddDeck">

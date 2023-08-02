@@ -3,11 +3,11 @@ const Schema = mongoose.Schema
 
 
 const noteSchema = new Schema({
-  subject:{
+  title:{
     type: String, 
     required: true
   }, 
-  notebody:{
+  content:{
     type: String, 
     required: true
   }, 

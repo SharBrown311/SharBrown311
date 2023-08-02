@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import "../../App.css"
+import "./Deck.css"
 
 function Card(props) {
 
@@ -30,7 +30,7 @@ userAxios.interceptors.request.use(config => {
     }))
   }
 
-  const upDateCard = (updates, cardId) => {
+  const updateCard = (updates, cardId) => {
     console.log(updates)
     userAxios.put(`/api/cards/${cardId}`, updates)
         .then(res => {
@@ -60,8 +60,8 @@ userAxios.interceptors.request.use(config => {
   return (
     <div className='Card'>
       {EditCard?
-        <div>
-          <button onClick={() => upDateCard(userState, data._id)}>Save</button>
+        <div className='container-edit'>
+          <button onClick={() => updateCard(userState, data._id)}>Save</button>
           <div className='edit-container'>
           <input type='text' 
               placeholder={userState.question} 
@@ -85,20 +85,22 @@ userAxios.interceptors.request.use(config => {
             <div className='card-buttons tform'>
               <div>
                 {deckVisible?
-                  <div>
-                    <button onClick={() => setEditCard(!EditCard)}>Edit</button>
-                    <button onClick={() => delCard(userState.cardId)}>Delete</button>
+                  <div className='buttons-container'>
+                    <button className='edit-button' onClick={() => setEditCard(!EditCard)}><i className='fas fa-pen' style={{color: "#4e87f0"}}></i></button>
+                    <button className='delete-button' onClick={() => delCard(userState.cardId)}><i className='fas fa-eraser' style={{color: "red"}}></i></button>
                   </div>
                 :
                 ''
                 }
               </div>
             </div>
-            
-            <h2>Q:{userState.question}</h2>
-            {deckVisible?<h2 className = "answer">A: {userState.answer}</h2>:''}
+            <div className='question-answer-container'>
+            <h2 className='question'>{userState.question}</h2>
+            <hr style={{color: "#fff"}}/>
+            {deckVisible?<h2 className = "answer">{userState.answer}</h2> : ''}
             {isQuizComp && showAnswer ? <h2 className ="answer">A: {data.answer}</h2> : ''}
             {!isQuizComp && showAnswer ? <h2 className = "answer">A: {data.answer}</h2> : ''}
+            </div>
           </div>
         </div>
       }

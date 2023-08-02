@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import "../../App.css"
+import "./Deck.css"
 import Deck from "./Deck"
 import axios from "axios"
 import AddDeck from "./AddDeck"
@@ -40,7 +40,7 @@ userAxios.interceptors.request.use(config => {
 
   useEffect(() => {
     getDecks()
-  }, [decks])
+  }, [])
 
   return (
     <div className="Decks">
